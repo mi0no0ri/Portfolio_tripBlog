@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+/* common */
+li {
+    list-style: none;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    background-color: #dedede;
+}
+.header_menu {
+    display:flex;
+    justify-content: right;
+    gap: 40px;
+    font-size: 15px;
+    padding: 0 20px 10px 0;
+    margin-bottom: 0px!important;
+}
+.menu {
+    color: #a1a1a1;
+}
+.menu:hover {
+    color: #575757;
+}
+a:hover {
+    text-decoration: none!important;
+}
+
+/* top */
+.title {
+    background-image: url(../image/61E23BDD-F30E-4168-8221-C0FEC8D7AD42.JPEG);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    text-align: center;
+    color: black;
+    padding: 250px 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+}
+
+/* japan_map */
+#japan_map {
+    min-height: auto;
+    margin: 50px 7%;
+}
+#map {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+#hokkaido {
+    display: flex;
+    justify-content: center;
+    padding: 40px 60px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#hokkaido:hover {
+    background-color: #7e7ef2;
+    transition: .2s;
+}
+#tohoku {
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px 0 10px;
+    padding: 70px 50px;
+    border-radius: 5px 5px 5px 0;
+    color: #fff;
+    background-color: gray;
+}
+#tohoku:hover {
+    background-color: #7e7ef2;
+    transition: .2s;
+}
+#kanto {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 0;
+    padding: 40px 0;
+    border-radius: 0 5px 5px 5px;
+    color: #fff;
+    background-color: gray;
+}
+#kanto:hover {
+    background-color: #575dff;
+    transition: .2s;
+}
+#chubu {
+    display: flex;
+    justify-content: center;
+    margin: 250px -10px 120px 0;
+    padding: 50px 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#chubu:hover {
+    background-color: #3dc8ff;
+    transition: .2s;
+}
+#kansai {
+    display: flex;
+    justify-content: center;
+    margin: 250px 0 90px 0;
+    padding: 60px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#kansai:hover {
+    background-color: #00a300;
+    transition: .2s;
+}
+#chugoku {
+    display: flex;
+    justify-content: center;
+    margin: 250px 0 50px 0;
+    padding: 40px 50px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#chugoku:hover {
+    background-color: #ffc46b;
+    transition: .2s;
+}
+#shikoku {
+    display: flex;
+    justify-content: center;
+    margin: -30px 20px 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#shikoku:hover {
+    background-color: #ff504a;
+    transition: .2s;
+}
+#kyushu {
+    display: flex;
+    justify-content: center;
+    margin: 300px 30px 30px 0;
+    padding: 50px 40px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#kyushu:hover {
+    background-color: #ffb3b0;
+    transition: .2s;
+}
+#okinawa {
+    display: flex;
+    justify-content: center;
+    margin: 0 60px 0 -30px;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+#okinawa:hover {
+    background-color: #ffb3b0;
+    transition: .2s;
+}
+#hokkaido_tohoku,
+#tyugoku_shikoku,
+#kyushu_okinawa {
+    display: flex;
+    flex-direction: column;
+}
+
+/* World */
+#world_map {
+    margin: 50px 7%;
+}
+#world {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.world_list {
+    color: #575757;
+    font-size: 20px;
+}
+.world_list:hover {
+    color: #000;
+    transition: .2s;
+}
+.world_img {
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    margin: 50px 30px;
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+    line-height: 50px;
+}
+.pic {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+}
+.pic:hover {
+    transform: scale(1.1);
+    transition: .5s;
+    box-shadow: 0 0 2rem rgba(0,0,0,.5);
+}
+
+/* category */
+#category_map {
+    margin: 50px 7%;
+}
+#category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.category_list {
+    color: #575757;
+    font-size: 20px;
+    text-align: center;
+}
+.category_list:hover {
+    color: #000;
+    transition: .2s;
+}
+.category_img {
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    margin: 50px 30px;
+    padding: 10px 20px 20px 20px;
+    line-height: 50px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 50px;
+    background-color: #737373;
+}
+#sns_link {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 40px;
+}
+.fa-brands {
+    color: #737373;
+}
+.fa-brands:hover {
+    color: #575757;
+}
+#copyright {
+    color: #000;
+    display: block;
+    text-align: center;
+}
+
+/* map */
+.map {
+    margin: 0 120px;
+}
+#map_title {
+    margin: 20px 120px;
+}
+.map_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.map_pic {
+    margin: 10px 10px;
+    filter: grayscale(100%);
+}
+.map_pic:hover {
+    filter: grayscale(0%);
+}
