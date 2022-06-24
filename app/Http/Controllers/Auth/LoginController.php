@@ -37,7 +37,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('auth')
+            ->only(['post_list','profile_edit'])
+            ->except('logout');
     }
     protected function logout(Request $request)
     {
@@ -45,5 +47,27 @@ class LoginController extends Controller
 
         Auth::logout();
         return redirect('/login');
+    }
+    public function loginpage()
+    {
+        return view('auth.loginpage');
+    }
+    public function post_list()
+    {
+        $id = Auth::user('id')
+            ->get();
+        return view('auth.post_list');
+    }
+    public function post_edit()
+    {
+        return view('auth.post_edit');
+    }
+    public function profile_edit()
+    {
+        return view('auth.profile_edit');
+    }
+    public function post()
+    {
+        return view('auth.post');
     }
 }

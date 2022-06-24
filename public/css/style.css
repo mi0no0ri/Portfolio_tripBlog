@@ -21,7 +21,7 @@ header {
     margin-bottom: 0px!important;
 }
 .menu {
-    color: #a1a1a1;
+    color: #737373;
 }
 .menu:hover {
     color: #575757;
@@ -405,4 +405,45 @@ footer {
 }
 .profile_sns {
     margin: 50px 0 0 0;
+}
+
+/* profile_edit */
+.profile_edit {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.edit_title {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 50px 0;
+}
+.profile_date {
+    width: 100px;
+}
+.profile_dest {
+    width: 130px;
+}
+.profile_comment {
+    width: 400px;
+}
+.profile_btn {
+    width: 50px;
+}
+.post_btn {
+    color: #737373;
+}
+.post_btn:hover {
+    color: #4d4d4d;
+}
+.post {
+    margin: 30px 150px 0 0;
+    padding: 7px 10px;
+    background-color: #efefef;
+    border-radius: 10px;
+    color: #737373;
+    border: 1px solid #7a7a7a;
+}
+.post:hover {
+    color: #4d4d4d;
 }

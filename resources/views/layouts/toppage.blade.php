@@ -25,10 +25,16 @@
     <header>
         <a href="#"><img src="" alt=""></a>
         <ul class="header_menu">
-            <a href="/"><li class="menu">Home</li></a>
+            <a href="/"><li class="menu">Top</li></a>
             <a href="/profile"><li class="menu">Profile</li></a>
-            <a href="/home"><li class="menu">Login</li></a>
             <a href="/contact"><li class="menu"  >Contact</li></a>
+            @if(Auth::User())
+                <a href="/home">
+                    <li class="menu">My page</li>
+                </a>
+            @else
+                <a href="/home"><li class="menu">Login</li></a>
+            @endif
         </ul>
     </header>
     <div class="content">

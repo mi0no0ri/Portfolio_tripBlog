@@ -1,4 +1,4 @@
-@extends('layouts.toppage')
+@extends('auth.loginpage')
 
 @section('content')
 <p>mypage</p>
