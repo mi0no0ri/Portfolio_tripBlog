@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/added';
 
     /**
      * Create a new controller instance.
@@ -36,7 +38,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest',['except' => 'added']);
+        $this->redirectTo = route('login');
     }
 
     /**
@@ -45,14 +48,6 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -63,9 +58,41 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
+    }
+    public function register(Request $request)
+    {
+        if($request->isMethod('post')){
+            $request->validate([
+                'username' => 'required|string|max:20',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6',
+                'password-confirm' => 'required|string|min:6|same:password'
+                ],[
+                'username.required' => 'お名前を入力してください。',
+                'username.max' => 'お名前は20文字以内で入力してください。',
+                'email.required' => 'emailを入力してください。',
+                'email.email' => '正しいemailを入力してください。',
+                'email.max' => 'emailは255文字以内で入力してください。',
+                'email.unique' => 'そのメールアドレスはすでに登録されています。',
+                'password.required' => 'パスワードを入力してください。',
+                'password.min' => 'パスワードは6文字以上で入力してください。',
+                'password.confirmed' => '入力されたパスワードが一致しません。',
+                ]);
+            $data = $request->input();
+
+            $this->create($data);
+            return view('auth.added');
+        }
+        return view('auth.register');
+    }
+    public function added(Request $request)
+    {
+        return view('auth.added');
     }
 }

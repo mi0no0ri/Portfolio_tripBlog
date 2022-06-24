@@ -26,9 +26,9 @@
         <a href="#"><img src="" alt=""></a>
         <ul class="header_menu">
             <a href="/"><li class="menu">Home</li></a>
-            <a href="/profile"><li class="menu">Profile</li></a>
-            <a href="/home"><li class="menu">Login</li></a>
-            <a href="/contact"><li class="menu"  >Contact</li></a>
+            <a href="/post_edit"><li class="menu">Post</li></a>
+            <a href="/profile_edit"><li class="menu">Profile</li></a>
+            <a href="{{ route('logout') }}"><li class="menu">Logout</li></a>
         </ul>
     </header>
     <div class="content">

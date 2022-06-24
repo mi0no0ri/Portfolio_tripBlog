@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MapsController extends Controller
 {
-    function map(){
-        return view('japan_maps.map');
+    function gallery(){
+        return view('japan_maps.gallery');
     }
 }
