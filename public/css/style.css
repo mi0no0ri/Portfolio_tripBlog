@@ -430,6 +430,7 @@ footer {
 .profile_btn {
     width: 50px;
 }
+/* post_edit */
 .post_btn {
     color: #737373;
 }
@@ -440,10 +441,54 @@ footer {
     margin: 30px 150px 0 0;
     padding: 7px 10px;
     background-color: #efefef;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #737373;
     border: 1px solid #7a7a7a;
 }
 .post:hover {
     color: #4d4d4d;
+}
+/* post */
+.post_content {
+    margin: 20px 10%;
+}
+.post_title {
+    margin: 0 6%;
+}
+.post_title label {
+    width: 15%;
+}
+.dest,
+.date,
+.area {
+    margin: 10px;
+}
+.post_img {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    align-items: center;
+}
+.category {
+    display: inline!important;
+}
+.post_btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 47%;
+    padding: 5px 10px;
+}
+.image_post {
+    display: none;
+}
+.image_label {
+    padding: 10px 40px;
+    color: #fff;
+    background-color: #7a7a7a;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.image_label:hover {
+    opacity: 0.8;
 }

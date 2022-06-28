@@ -49,3 +49,9 @@ $(function(){
         toggleChangeBtn();
     });
 });
+
+// post
+$('.img_file').on('change',function(){
+    var file = $(this).prop('files')[0];
+    $('.select_image').text(file.name);
+});
