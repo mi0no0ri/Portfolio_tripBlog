@@ -24,13 +24,13 @@
         @for($i = 0; $i < 10; $i++)
             <div class="post_img">
                 <div>
-                    <label for="image" class="image_label">Icon Image</label>
-                        <div class="image_post">
-                            <input type="hidden" name="image" class="img_file">
-                            <input type="file" name="image" class="img_file" id="image">
-                            <div><span class="select_image">No select</span></div>
-                        </div>
+                    <label for="image{{$i}}" class="image_label">Icon Image</label>
+                    <div class="image_post">
+                        <input type="hidden" name="image" class="img_file">
+                        <input type="file" name="image" class="img_file" id="image{{$i}}">
+                    </div>
                 </div>
+                <div class="select_image"><span>No select</span></div>
                 <div>
                     {{ Form::label('comment','Comment') }}
                     {{ Form::text('comment',null,['class' => 'comment']) }}

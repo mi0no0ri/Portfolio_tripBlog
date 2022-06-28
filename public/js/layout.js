@@ -52,7 +52,6 @@ $(function(){
 
 // post
 $('.img_file').on('change',function(){
-    var file = $(this).prop('file')[0];
-    console.log(file);
+    var file = $(this).prop('files')[0];
     $('.select_image').text(file.name);
 });
