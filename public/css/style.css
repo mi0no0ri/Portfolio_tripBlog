@@ -17,8 +17,9 @@ header {
     justify-content: right;
     gap: 40px;
     font-size: 15px;
-    padding: 0 20px 10px 0;
+    padding: 0 20px 0 0;
     margin-bottom: 0px!important;
+    align-items: center;
 }
 .menu {
     color: #737373;
@@ -29,6 +30,17 @@ header {
 a:hover {
     text-decoration: none!important;
 }
+.top_header {
+    display: flex;
+    justify-content: space-between;
+}
+.top_image {
+    height: 50px;
+    width: 110px;
+    margin: 0 50% 0 20px;
+    align-items: center;
+}
+
 
 /* footer */
 footer {
@@ -214,25 +226,30 @@ footer {
 }
 #world {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 .world_list {
-    color: #575757;
-    font-size: 20px;
+    display: flex;
+    justify-content: start;
 }
-.world_list:hover {
-    color: #000;
-    transition: .2s;
-}
-.world_img {
-    background-color: #e3e3e3;
+#europe {
+    padding: 30px 150px;
+    background-color: #7e7ef2;
     border-radius: 5px;
-    margin: 50px 30px;
-    padding: 10px 20px 20px 20px;
-    text-align: center;
-    line-height: 50px;
 }
+#asia {
+    margin: 0 30px 0 150px;
+    padding: 30px 80px;
+    background-color: #ffc46b;
+    border-radius: 0 0 5px 5px;
+}
+.eu_asia {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 0 30px 20%;
+}
+
 .pic {
     height: 200px;
     width: 200px;
@@ -243,6 +260,7 @@ footer {
     transition: .5s;
     box-shadow: 0 0 2rem rgba(0,0,0,.5);
 }
+
 
 /* category */
 #category_map {

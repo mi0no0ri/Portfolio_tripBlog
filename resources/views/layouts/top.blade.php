@@ -46,33 +46,35 @@
 
 <div id="world_map" data-aos="fade-up">
     <h2>World</h2>
-    <ul id="world">
-        <a href="/gallery" class="world_list">
-            <li class="world_img">Asia<br>
-                <img src="/image/IMG_5594_Original.jpg" class="pic">
-            </li>
-        </a>
-        <a href="/gallery" class="world_list">
-            <li class="world_img">America/Canada<br>
-                <img src="/image/PB120148のコピー.jpg" class="pic">
-            </li>
-        </a>
-        <a href="/gallery" class="world_list">
-            <li class="world_img">Austraria<br>
-                <img src="" class="pic">
-            </li>
-        </a>
-        <a href="/gallery" class="world_list">
-            <li class="world_img">Europe<br>
-                <img src="" class="pic">
-            </li>
-        </a>
-        <a href="/gallery" class="world_list">
-            <li class="world_img">Africa<br>
-                <img src="" class="pic">
-            </li>
-        </a>
-    </ul>
+    <div id="world">
+        <div class="world_list">
+            <div class="eu_asia">
+                <a href="/gallery" id="europe">
+                    <div>Europe</div>
+                </a>
+                <a href="/gallery" id="asia">
+                    <div>Asia</div>
+                </a>
+            </div>
+            <a href="/gallery" id="japan">
+                <div>Japan</div>
+            </a>
+            <a href="/gallery" id="america">
+                <div>America/Canada</div>
+            </a>
+        </div>
+        <div class="world_list">
+            <a href="/gallery" id="africa">
+                <div>Africa</div>
+            </a>
+            <a href="/gallery" id="australia">
+                <div>Australia</div>
+            </a>
+            <a href="/gallery" id="southAmerica">
+                <div>South America</div>
+            </a>
+        </div>
+    </div>
 </div>
 
 <div id="category_map" data-aos="fade-up">
