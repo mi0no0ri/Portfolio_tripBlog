@@ -42,5 +42,5 @@
     <script src="https://kit.fontawesome.com/5f2b6fa0cd.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/js/layout.js"></script>
-</body>
+
 </html>

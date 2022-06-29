@@ -492,3 +492,6 @@ footer {
 .image_label:hover {
     opacity: 0.8;
 }
+.image_name {
+    max-width: 70px;
+}

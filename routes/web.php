@@ -48,4 +48,5 @@ Route::post('/register','Auth\RegisterController@register')->name('register');
 Route::get('/added','Auth\RegisterController@added')->name('added');
 
 // post
-Route::post('/post/create','Auth\PostController@create')->name('create');
+Route::get('/post/create','PostsController@create');
+Route::post('/post/create','PostsController@create');

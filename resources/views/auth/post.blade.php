@@ -4,7 +4,7 @@
 <div class="post_content">
     <h2>Post</h2>
 
-    {!! Form::open(['url' => 'post/create']) !!}
+    {!! Form::open(['url' => 'post/create','enctype' => 'multipart/form-data','method' => 'POST']) !!}
     {{ csrf_field() }}
 
         <div class="post_title">
@@ -14,7 +14,7 @@
             </div>
             <div>
                 {{ Form::label('area','Area') }}
-                {{ Form::select('category',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],0,['class' => 'area']) }}
+                {{ Form::select('area',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],0,['class' => 'area']) }}
             </div>
             <div>
                 {{ Form::label('date','Date') }}
@@ -23,14 +23,14 @@
         </div>
         @for($i = 0; $i < 10; $i++)
             <div class="post_img">
-                <div>
+                <div id="image_insert">
                     <label for="image{{$i}}" class="image_label">Icon Image</label>
                     <div class="image_post">
                         <input type="hidden" name="image" class="img_file">
-                        <input type="file" name="image" class="img_file" id="image{{$i}}">
+                        <input type="file" name="image" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
                     </div>
                 </div>
-                <div class="select_image"><span>No select</span></div>
+                <div class="image_name" id="post{{$i}}"><span>No select</span></div>
                 <div>
                     {{ Form::label('comment','Comment') }}
                     {{ Form::text('comment',null,['class' => 'comment']) }}
