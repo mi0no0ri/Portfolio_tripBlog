@@ -23,19 +23,21 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="" alt=""></a>
-        <ul class="header_menu">
-            <a href="/"><li class="menu">Top</li></a>
-            <a href="/profile"><li class="menu">Profile</li></a>
-            <a href="/contact"><li class="menu"  >Contact</li></a>
-            @if(Auth::User())
-                <a href="/home">
-                    <li class="menu">My page</li>
-                </a>
-            @else
-                <a href="/home"><li class="menu">Login</li></a>
-            @endif
-        </ul>
+        <div class="top_header">
+            <a href="/"><img src="/image/スクリーンショット_2022-06-30_0.00.12-removebg-preview.png" class="top_image"></a>
+            <ul class="header_menu">
+                <a href="/"><li class="menu">Top</li></a>
+                <a href="/profile"><li class="menu">Profile</li></a>
+                <a href="/contact"><li class="menu"  >Contact</li></a>
+                @if(Auth::User())
+                    <a href="/home">
+                        <li class="menu">My page</li>
+                    </a>
+                @else
+                    <a href="/home"><li class="menu">Login</li></a>
+                @endif
+            </ul>
+        </div>
     </header>
     <div class="content">
     @yield('content')

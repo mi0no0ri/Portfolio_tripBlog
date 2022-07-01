@@ -23,14 +23,16 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="" alt=""></a>
-        <ul class="header_menu">
-            <a href="/"><li class="menu">Top</li></a>
-            <a href="/home"><li class="menu">My page</li></a>
-            <a href="{{ route('post_list') }}"><li class="menu">Post edit</li></a>
-            <a href="{{ route('profile_edit') }}"><li class="menu">Profile edit</li></a>
-            <a href="{{ route('logout') }}"><li class="menu">Logout</li></a>
-        </ul>
+        <div class="top_header">
+            <a href="/"><img src="/image/スクリーンショット_2022-06-30_0.00.12-removebg-preview.png" class="top_image"></a>
+            <ul class="header_menu">
+                <a href="/"><li class="menu">Top</li></a>
+                <a href="/mypage"><li class="menu">My page</li></a>
+                <a href="{{ route('post_list') }}"><li class="menu">Post edit</li></a>
+                <a href="{{ route('profile_edit') }}"><li class="menu">Profile edit</li></a>
+                <a href="{{ route('logout') }}"><li class="menu">Logout</li></a>
+            </ul>
+        </div>
     </header>
     <div class="content">
     @yield('content')

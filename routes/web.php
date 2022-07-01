@@ -38,7 +38,8 @@ Route::group(['middleware' => 'auth'],function()
     Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
     Route::get('/post_edit','Auth\LoginController@post_edit')->name('post_edit');
     Route::get('/post','Auth\LoginController@post')->name('post');
-    Route::get('/profile_edit','Auth\LoginController@profile_edit')->name('profile_edit');
+    Route::get('/profile_edit','UsersController@profile_edit')->name('profile_edit');
+    Route::put('/profile_edit','UsersController@profile_edit')->name('profile_edit');
 });
 
 // register
@@ -50,3 +51,6 @@ Route::get('/added','Auth\RegisterController@added')->name('added');
 // post
 Route::get('/post/create','PostsController@create');
 Route::post('/post/create','PostsController@create');
+
+// profile_edit
+Route::get('/profile_edit','UsersController@index')->name('profile_edit');

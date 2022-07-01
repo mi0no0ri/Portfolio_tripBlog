@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="edit_title">
-    <h2 class="">Post edit</h2>
+    <h2 class="">Post List</h2>
     <a href="{{ route('post') }}" class="post">投稿</a>
 </div>
 
-<table class="profile_edit">
+<table class="post_edit">
     <tr>
-        <th class="profile_date">Date</th>
-        <th class="profile_dest">Dest</th>
-        <th class="profile_comment">Comment</th>
-        <th class="profile_btn"></th>
-        <th class="profile_btn"></th>
+        <th class="post_date">Date</th>
+        <th class="post_dest">Dest</th>
+        <th class="post_comment">Comment</th>
+        <th class="post_list_btn"></th>
+        <th class="post_list_btn"></th>
     </tr>
     <tr>
         <td>29Nov18</td>
