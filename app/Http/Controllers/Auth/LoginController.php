@@ -38,7 +38,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('auth')
-            ->only(['post_list','profile_edit'])
+            ->only(['post_list','profile_edit','mypage'])
             ->except('logout');
     }
     protected function logout(Request $request)

@@ -1,7 +1,9 @@
 @extends('auth.loginpage')
 
 @section('content')
-<h2 class="edit_title">Post edit</h2>
+<div class="edit_title">
+    <h2>Post edit</h2>
+</div>
 
 <div class="">
     <h3>29Nov18</h3>

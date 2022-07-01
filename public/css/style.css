@@ -222,33 +222,142 @@ footer {
 
 /* World */
 #world_map {
+    min-height: auto;
     margin: 50px 7%;
 }
 #world {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .world_list {
     display: flex;
     justify-content: start;
+    margin: 10px 20%;
+}
+.europe {
+    display: flex;
+    flex-direction: row-reverse;
 }
 #europe {
-    padding: 30px 150px;
+    padding: 30px 140px 30px 100px;
+    background-color: gray;
+    border-radius: 0 5px 5px 5px;
+    color: #fff;
+}
+#europe2 {
+    margin: 0 0 30px 0;
+    padding: 10px 30px;
+    background-color: gray;
+    border-radius: 5px 0 0 5px;
+}
+#europe:hover + #europe2 {
     background-color: #7e7ef2;
-    border-radius: 5px;
+    transition: 0.2s;
+}
+#europe:hover,#europe2:hover {
+    background-color: #7e7ef2;
+    transition: 0.2s;
+}
+.asia {
+    display: flex;
+    flex-direction: column;
 }
 #asia {
-    margin: 0 30px 0 150px;
+    margin: 0 60px 0 100px;
     padding: 30px 80px;
-    background-color: #ffc46b;
+    background-color: gray;
     border-radius: 0 0 5px 5px;
+    color: #fff;
+}
+#asia2 {
+    margin: 20px 80px -60px 240px;
+    padding: 30px 10px;
+    background-color: gray;
+    border-radius:5px;
 }
 .eu_asia {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 50px 0 30px 20%;
+    margin: 50px 0 30px 0;
 }
+.japan {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#japan {
+    margin: 150px 30px 30px 0;
+    padding: 30px 1px 10px;
+    background-color: gray;
+    border-radius: 5px 5px 5px 0;
+    color: #fff;
+}
+#japan2 {
+    margin: 200px 0 30px -30px;
+    padding: 20px 10px;
+    background-color: gray;
+    border-radius: 5px 0 0 5px;
+}
+.america {
+    display: flex;
+    flex-direction: column;
+}
+#america {
+    margin: 50px 30px 0 100px;
+    padding: 50px 30px 30px;
+    background-color: gray;
+    border-radius: 5px 5px 0 5px;
+    color: #fff;
+}
+#america2 {
+    margin: 0 30px 30px 150px;
+    padding: 20px 30px;
+    background-color: gray;
+    border-radius: 0 0 5px 5px;
+}
+.africa {
+    display: flex;
+    flex-direction: column;
+}
+#africa {
+    margin: -130px 120px 0 0;
+    padding: 40px 30px 20px;
+    background-color: gray;
+    border-radius: 5px 5px 0 5px;
+    color: #fff;
+}
+#africa2 {
+    margin: 0px 120px 0 30px;
+    padding: 20px 30px;
+    background-color: gray;
+    border-radius: 0 0 5px 5px;
+}
+#australia {
+    margin: 10px 100px 80px;
+    padding: 20px 30px;
+    background-color: gray;
+    border-radius: 5px;
+    color: #fff;
+}
+.southAmerica {
+    display: flex;
+    flex-direction: column;
+}
+#southAmerica {
+    margin: -80px 40px 0 60px;
+    padding: 40px 30px 20px;
+    background-color: gray;
+    border-radius: 5px 5px 5px 0;
+    color: #fff;
+}
+#southAmerica2 {
+    margin: 0 80px 0 60px;
+    padding: 30px 0;
+    background-color: gray;
+    border-radius: 0 0 5px 5px;
+}
+
 
 .pic {
     height: 200px;
@@ -425,8 +534,8 @@ footer {
     margin: 50px 0 0 0;
 }
 
-/* profile_edit */
-.profile_edit {
+/* post_edit */
+.post_edit {
     display: flex;
     justify-content: center;
     padding: 20px 0;
@@ -436,16 +545,16 @@ footer {
     justify-content: space-between;
     margin: 30px 50px 0;
 }
-.profile_date {
+.post_date {
     width: 100px;
 }
-.profile_dest {
+.post_dest {
     width: 130px;
 }
-.profile_comment {
+.post_comment {
     width: 400px;
 }
-.profile_btn {
+.post_list_btn {
     width: 50px;
 }
 /* post_edit */
@@ -512,4 +621,11 @@ footer {
 }
 .image_name {
     max-width: 70px;
+}
+
+/* profile_edit */
+.profile_edit {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 40px 30px;
 }
