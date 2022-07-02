@@ -4,7 +4,7 @@
 <div class="profile">
     <h3 class="profile_title">Profile</h3>
     <div class="profile_content">
-        <img src="/{{ $profiles->image }}" class="profile_pic">
+        <img src="/storage/images/{{ $profiles->image }}" class="profile_pic">
         <div class="profile_list">
             <small>{{ $profiles->kana }}</small>
             <p>{{ $profiles->username }}</p>
