@@ -8,7 +8,8 @@
 <div class="profile_edit">
     {!! Form::open(['route' => ['profile_edit'],'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
     {!! Form::hidden('id',$auth->id) !!}
-    @csrf
+    {{csrf_field()}}
+
     {{ Form::label('kana','Kana') }}
     {{ Form::text('kana',$auth->kana,['class'=>'form_controls']) }}
 
@@ -18,7 +19,7 @@
     {{ Form::label('email','Email') }}
     {{ Form::text('email',$auth->email,['class'=>'form_controls']) }}
 
-    {{ Form::label('password','Password') }}
+    {{ Form::label('password','New Password') }}
     {{ Form::password('password',['class'=>'form_controls','value'=>encrypt($auth->password)]) }}
 
     {{ Form::label('bio','Bio') }}

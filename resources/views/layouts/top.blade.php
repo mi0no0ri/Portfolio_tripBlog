@@ -50,10 +50,10 @@
         <div class="world_list">
             <div class="eu_asia">
                 <div class="europe">
-                    <a href="/gallery" id="europe">
+                    <a href="/gallery" id="europe" class="ex">
                         <div>Europe</div>
                     </a>
-                    <a href="/gallery" id="europe2">
+                    <a href="/gallery" id="europe2" class="ex">
                         <div></div>
                     </a>
                 </div>

@@ -86,6 +86,19 @@ footer {
     font-size: 30px!important;
     filter: grayscale(50%);
 }
+.fa-twitter:hover {
+    color: #1DA1F2;
+    transition: 0.2s;
+}
+.fa-facebook:hover {
+    color: #1877f2;
+    transition: 0.2s;
+}
+.fa-instagram:hover {
+    background: linear-gradient(135deg, #427eff 0%, #f13f79 70%)no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
 
 /* japan_map */
 #japan_map {
@@ -626,6 +639,6 @@ footer {
 /* profile_edit */
 .profile_edit {
     display: flex;
-    flex-direction: column;
+    flex-direction: row!important;
     margin: 20px 40px 30px;
 }
