@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -29,22 +30,24 @@ class UsersController extends Controller
     public function profile_edit(Request $request){
         $user = Auth::user();
 
-        $user->kana = $request
-            ->input('kana');
-        $user->username = $request
-            ->input('username');
-        $user->email = $request
-            ->input('email');
-        $user->bio = $request
-            ->input('bio');
+        $user->fill($request->except('password','image'));
 
-        if($request->password !== null){
+        if(null!==$request->password){
             $user->password = bcrypt($request->input('password'));
         }
         if($request->image !== null){
             $user->image = $request
                 ->file('image');
         }
+
+        if(null!==($request->file('image'))){
+            $fileName = $request
+                ->file('image');
+            $path = $request
+                ->file('image')
+                ->storeAs('public/images',$fileName);
+        }
+
         $user->updated_at = now();
         $user->save();
 
