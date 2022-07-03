@@ -50,56 +50,56 @@
         <div class="world_list">
             <div class="eu_asia">
                 <div class="europe">
-                    <a href="/gallery" id="europe" class="ex">
+                    <a href="/gallery" id="europe" class="europe_map">
                         <div>Europe</div>
                     </a>
-                    <a href="/gallery" id="europe2" class="ex">
+                    <a href="/gallery" id="europe2" class="europe_map">
                         <div></div>
                     </a>
                 </div>
                 <div class="asia">
-                    <a href="/gallery" id="asia">
+                    <a href="/gallery" id="asia" class="asia_map">
                         <div>Asia</div>
                     </a>
-                    <a href="/gallery" id="asia2">
+                    <a href="/gallery" id="asia2" class="asia_map">
                         <div></div>
                     </a>
                 </div>
             </div>
             <div class="japan">
-                <a href="#japan_map" id="japan">
+                <a href="#japan_map" id="japan" class="japan_map">
                     <div>Japan</div>
                 </a>
-                <a href="#japan_map" id="japan2">
+                <a href="#japan_map" id="japan2" class="japan_map">
                     <div></div>
                 </a>
             </div>
             <div class="america">
-                <a href="/gallery" id="america">
+                <a href="/gallery" id="america" class="america_map">
                     <div>America/Canada</div>
                 </a>
-                <a href="/gallery" id="america2">
+                <a href="/gallery" id="america2" class="america_map">
                     <div></div>
                 </a>
             </div>
         </div>
         <div class="world_list">
             <div class="africa">
-                <a href="/gallery" id="africa">
+                <a href="/gallery" id="africa" class="africa_map">
                     <div>Africa</div>
                 </a>
-                <a href="/gallery" id="africa2">
+                <a href="/gallery" id="africa2" class="africa_map">
                     <div></div>
                 </a>
             </div>
-            <a href="/gallery" id="australia">
+            <a href="/gallery" id="australia" class="australia_map">
                 <div>Australia</div>
             </a>
             <div class="southAmerica">
-                <a href="/gallery" id="southAmerica">
+                <a href="/gallery" id="southAmerica" class="south_map">
                     <div>South America</div>
                 </a>
-                <a href="/gallery" id="southAmerica2">
+                <a href="/gallery" id="southAmerica2" class="south_map">
                     <div></div>
                 </a>
             </div>

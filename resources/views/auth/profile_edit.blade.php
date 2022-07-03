@@ -10,25 +10,39 @@
     {!! Form::hidden('id',$auth->id) !!}
     {{csrf_field()}}
 
-    {{ Form::label('kana','Kana') }}
-    {{ Form::text('kana',$auth->kana,['class'=>'form_controls']) }}
+    <div class="form_content">
+        {{ Form::label('kana','Kana',['class' => 'profile_edit_tag']) }}
+        {{ Form::text('kana',$auth->kana,['class'=>'form_controls']) }}
+    </div>
 
-    {{ Form::label('username','Username') }}
-    {{ Form::text('username',$auth->username,['class'=>'form_controls']) }}
+    <div class="form_content">
+        {{ Form::label('username','Username',['class' => 'profile_edit_tag']) }}
+        {{ Form::text('username',$auth->username,['class'=>'form_controls']) }}
+    </div>
 
-    {{ Form::label('email','Email') }}
-    {{ Form::text('email',$auth->email,['class'=>'form_controls']) }}
+    <div class="form_content">
+        {{ Form::label('email','Email',['class' => 'profile_edit_tag']) }}
+        {{ Form::text('email',$auth->email,['class'=>'form_controls']) }}
+    </div>
 
-    {{ Form::label('password','New Password') }}
-    {{ Form::password('password',['class'=>'form_controls','value'=>encrypt($auth->password)]) }}
+    <div class="form_content">
+        {{ Form::label('password','New Password',['class' => 'profile_edit_tag']) }}
+        {{ Form::password('password',['class'=>'form_controls','value'=>encrypt($auth->password)]) }}
+    </div>
 
-    {{ Form::label('bio','Bio') }}
-    {{ Form::text('bio',$auth->bio,['class'=>'form_controls']) }}
+    <div class="form_content">
+        {{ Form::label('bio','Bio',['class' => 'profile_edit_tag']) }}
+        {{ Form::text('bio',$auth->bio,['class' => 'profile_bio']) }}
+    </div>
 
-    {{ Form::label('image','Image') }}
-    {{ Form::file('image',['class'=>'form_controls','value'=>$auth->image]) }}
+    <div class="form_content">
+        {{ Form::label('image','Image',['class' => 'profile_edit_tag']) }}
+        {{ Form::file('image',['class'=>'form_controls','value'=>$auth->image]) }}
+    </div>
 
-    {{Form::submit('更新する',['class'=>'btn btn-success'])}}
+    <div class="send">
+        {{Form::submit('更新する',['class'=>'send_btn'])}}
+    </div>
 </div>
 
 {!! Form::close() !!}

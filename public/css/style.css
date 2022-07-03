@@ -63,9 +63,6 @@ footer {
 .fa-brands {
     color: #737373;
 }
-.fa-brands:hover {
-    color: #575757;
-}
 #copyright {
     color: #000;
     display: block;
@@ -103,7 +100,7 @@ footer {
 /* japan_map */
 #japan_map {
     min-height: auto;
-    margin: 50px 7%;
+    margin: 50px 7% 150px;
 }
 #map {
     display: flex;
@@ -264,14 +261,6 @@ footer {
     background-color: gray;
     border-radius: 5px 0 0 5px;
 }
-#europe:hover + #europe2 {
-    background-color: #7e7ef2;
-    transition: 0.2s;
-}
-#europe:hover,#europe2:hover {
-    background-color: #7e7ef2;
-    transition: 0.2s;
-}
 .asia {
     display: flex;
     flex-direction: column;
@@ -371,7 +360,6 @@ footer {
     border-radius: 0 0 5px 5px;
 }
 
-
 .pic {
     height: 200px;
     width: 200px;
@@ -382,7 +370,6 @@ footer {
     transition: .5s;
     box-shadow: 0 0 2rem rgba(0,0,0,.5);
 }
-
 
 /* category */
 #category_map {
@@ -538,13 +525,47 @@ footer {
     background-color: rgba(255,255,255,.6);
     border-radius: 20px;
     margin: 0 10%;
+    padding: 20px 0 0;
 }
 .my_background {
     font-size: 15px;
-    padding: 30px 15% 10px;
+    padding: 15px 15% 10px;
 }
-.profile_sns {
-    margin: 50px 0 0 0;
+.fa-brands {
+    margin: 50px 0 20px 0;
+}
+.fa-user {
+    display: block;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.6);
+    padding: 30px;
+}
+
+/* profile_edit */
+.profile_edit {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15%;
+}
+.profile_edit_tag {
+    width: 150px;
+}
+.form_controls {
+    margin: 10px 0 20px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+    width: 200px;
+    text-align: center;
+}
+.profile_bio {
+    margin: 10px 0 20px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+    width: 400px;
+    height: 200px;
+    word-wrap: break-word;
 }
 
 /* post_edit */
@@ -570,7 +591,6 @@ footer {
 .post_list_btn {
     width: 50px;
 }
-/* post_edit */
 .post_btn {
     color: #737373;
 }
@@ -588,6 +608,7 @@ footer {
 .post:hover {
     color: #4d4d4d;
 }
+
 /* post */
 .post_content {
     margin: 20px 10%;
@@ -636,9 +657,39 @@ footer {
     max-width: 70px;
 }
 
-/* profile_edit */
-.profile_edit {
+/* contact */
+.contact_content {
     display: flex;
-    flex-direction: row!important;
-    margin: 20px 40px 30px;
+    flex-direction: column;
+    margin: 30px 10%;
+}
+.form_content {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+.send {
+    text-align: center;
+}
+.title_label,
+.message_label {
+    width: 50px;
+}
+.contact_title,
+.contact_message {
+    margin: 20px;
+}
+.contact_title {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+}
+.contact_message {
+    display: block;
+    height: 100px;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
 }
