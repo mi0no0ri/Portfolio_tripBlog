@@ -78,7 +78,7 @@ $(function(){
     });
 })
 
-// japan_map
+// japan_map scroll
 $(function(){
     $('a[href^=#]').on('click',function(){
         var speed = 400;
@@ -87,5 +87,133 @@ $(function(){
         var position = target.offset().top;
         $('body,html').animate({scrollTop:position}, speed, 'swing');
         return false;
+    });
+});
+
+// world_map
+// europe
+$(function(){
+    $('.europe_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#7e7ef2',
+            'transition':'0.2s'
+        }
+        $('.europe_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.europe_map').css(leave);
+    }
+    });
+});
+// asia
+$(function(){
+    $('.asia_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#3dc8ff',
+            'transition':'0.2s'
+        }
+        $('.asia_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.asia_map').css(leave);
+    }
+    });
+});
+// japan
+$(function(){
+    $('.japan_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#575dff',
+            'transition':'0.2s'
+        }
+        $('.japan_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.japan_map').css(leave);
+    }
+    });
+});
+// america/canada
+$(function(){
+    $('.america_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#ff504a',
+            'transition':'0.2s'
+        }
+        $('.america_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.america_map').css(leave);
+    }
+    });
+});
+// africa
+$(function(){
+    $('.africa_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#00a300',
+            'transition':'0.2s'
+        }
+        $('.africa_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.africa_map').css(leave);
+    }
+    });
+});
+// australia
+$(function(){
+    $('.australia_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#ffc46b',
+            'transition':'0.2s'
+        }
+        $('.australia_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.australia_map').css(leave);
+    }
+    });
+});
+// southAmerica
+$(function(){
+    $('.south_map').on({'mouseenter':function(){
+        var enter = {
+            'background-color':'#ffb3b0',
+            'transition':'0.2s'
+        }
+        $('.south_map').css(enter);
+    },
+    'mouseleave':function(){
+        var leave = {
+            'background-color':'gray',
+            'transition':'0.2s'
+        }
+        $('.south_map').css(leave);
+    }
     });
 });

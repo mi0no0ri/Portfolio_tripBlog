@@ -4,7 +4,11 @@
 <div class="profile">
     <h3 class="profile_title">Profile</h3>
     <div class="profile_content">
-        <img src="/storage/images/{{ $profiles->image }}" class="profile_pic">
+        @if($profiles->image == null)
+            <i class="fa-solid fa-user fa-8x"></i>
+        @else
+            <img src="/storage/images/{{ $profiles->image }}" class="profile_pic">
+        @endif
         <div class="profile_list">
             <small>{{ $profiles->kana }}</small>
             <p>{{ $profiles->username }}</p>
