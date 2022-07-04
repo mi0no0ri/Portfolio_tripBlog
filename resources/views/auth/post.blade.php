@@ -30,7 +30,9 @@
                         <input type="file" name="image" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
                     </div>
                 </div>
-                <div class="image_name" id="post{{$i}}"><span>No select</span></div>
+                <div class="image_name" id="post{{$i}}">
+                    <span>No select</span>
+                </div>
                 <div>
                     {{ Form::label('comment','Comment') }}
                     {{ Form::text('comment',null,['class' => 'comment']) }}

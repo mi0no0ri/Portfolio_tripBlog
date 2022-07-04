@@ -6,7 +6,7 @@
 </div>
 
 <div id="japan_map" data-aos="fade-up">
-    <h2 class="">Japan</h2>
+    <h2 class="top_title">Japan</h2>
     <div id="map">
         <div id="hokkaido_tohoku">
             <a href="/gallery" id="hokkaido">
@@ -45,7 +45,7 @@
 </div>
 
 <div id="world_map" data-aos="fade-up">
-    <h2>World</h2>
+    <h2 class="top_title">World</h2>
     <div id="world">
         <div class="world_list">
             <div class="eu_asia">
@@ -108,7 +108,7 @@
 </div>
 
 <div id="category_map" data-aos="fade-up">
-    <h2>Category</h2>
+    <h2 class="top_title">Category</h2>
     <ul id="category">
         <a href="" class="category_list">
             <li class="category_img">Urban<br>

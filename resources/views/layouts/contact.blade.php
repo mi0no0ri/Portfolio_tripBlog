@@ -13,6 +13,16 @@
         </div>
 
         <div class="form_content">
+            {{ Form::label('name','Name',['class' => 'title_label']) }}
+            {{ Form::text('name',null,['class' => 'contact_title']) }}
+        </div>
+
+        <div class="form_content">
+            {{ Form::label('email','Email',['class' => 'title_label']) }}
+            {{ Form::text('email',null,['class' => 'contact_title']) }}
+        </div>
+
+        <div class="form_content">
             {{ Form::label('message','Message',['class' => 'message_label']) }}
             {{ Form::text('message',null,['class' => 'contact_message']) }}
         </div>
@@ -22,6 +32,9 @@
         </div>
 
         {!! Form::close() !!}
+    </div>
+    <div>
+        
     </div>
 </div>
 @endsection

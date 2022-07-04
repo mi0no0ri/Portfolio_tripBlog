@@ -21,6 +21,7 @@ class PostsController extends Controller
                 'area_id' => $request->input('area')[$key],
                 'date' => $request->input('date')[$key],
                 'comment' => $request->input('comment')[$key],
+                'image' => $request->input('image')[$key],
                 'category_id' => $request->input('category')[$key],
                 'created_at' => now()[$key],
                 'updated_at' => now()[$key],

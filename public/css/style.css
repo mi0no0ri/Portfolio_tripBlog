@@ -96,6 +96,9 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
 }
+.top_title {
+    margin: 0 0 0 7%;
+}
 
 /* japan_map */
 #japan_map {
@@ -566,6 +569,27 @@ footer {
     width: 400px;
     height: 200px;
     word-wrap: break-word;
+}
+.image_input {
+    display: none;
+}
+.image_label {
+    margin: 10px 0 20px;
+}
+.profile_img {
+    display: flex;
+    margin: 10px 0 20px;
+    align-items: center;
+    gap: 30px;
+}
+.image_ex {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    top: 150px;
+    right: 15%;
+    height: 800px;
+    width: 800px;
 }
 
 /* post_edit */

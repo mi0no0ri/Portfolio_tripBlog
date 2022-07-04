@@ -217,3 +217,11 @@ $(function(){
     }
     });
 });
+
+// profile_edit
+$('.profile_image').on('change',function(){
+    var file = $(this).prop('files')[0];
+    var target = $(this).data('target');
+    var image = document.getElementById(target);
+    $(image).text(file.name);
+});
