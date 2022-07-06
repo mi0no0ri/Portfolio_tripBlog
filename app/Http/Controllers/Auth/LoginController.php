@@ -70,4 +70,12 @@ class LoginController extends Controller
     {
         return view('auth.post');
     }
+    public function mypage()
+    {
+        return view('auth.mypage');
+    }
+    public function redirectTo()
+    {
+        return 'mypage';
+    }
 }

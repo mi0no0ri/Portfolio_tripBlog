@@ -32,7 +32,7 @@
 
     <div class="form_content">
         {{ Form::label('bio','Bio',['class' => 'profile_edit_tag']) }}
-        {{ Form::text('bio',$auth->bio,['class' => 'profile_bio']) }}
+        {{ Form::textarea('bio',$auth->bio,['class' => 'profile_bio']) }}
     </div>
 
     <div class="form_content">

@@ -27,6 +27,9 @@ Route::get('/gallery','MapsController@gallery');
 Auth::routes([
     'register' => false,
 ]);
+// mypage
+Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
+
 // logout
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
@@ -54,3 +57,6 @@ Route::post('/post/create','PostsController@create');
 
 // profile_edit
 Route::get('/profile_edit','UsersController@index')->name('profile_edit');
+
+// post_delete
+Route::get('/post/delete','LoginController@delete')->name('delete');

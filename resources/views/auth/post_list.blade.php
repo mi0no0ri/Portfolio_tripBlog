@@ -19,7 +19,7 @@
         <td>Hokkaido</td>
         <td>札幌市内</td>
         <td><a href="{{ route('post_edit') }}" class="post_btn"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
-        <td><a href="" class="post_btn"><button><i class="fa-solid fa-eraser"></i></button></a></td>
+        <td><a href="{{ route('delete') }}" class="post_btn"><button><i class="fa-solid fa-eraser"></i></button></a></td>
     </tr>
 </table>
 @endsection

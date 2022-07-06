@@ -140,13 +140,13 @@
 
 <div>
     <div id="sns_link">
-        <a href="">
+        <a href="https://twitter.com/_mi_no_ri_">
             <li><i class="fa-brands fa-twitter"></i></li>
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/_mi_no_ri_/">
             <li><i class="fa-brands fa-instagram"></i></li>
         </a>
-        <a href="">
+        <a href="https://www.facebook.com/profile.php?id=100007798981525">
             <li><i class="fa-brands fa-facebook"></i></li>
         </a>
     </div>

@@ -30,11 +30,11 @@
                 <a href="/profile"><li class="menu">Profile</li></a>
                 <a href="/contact"><li class="menu"  >Contact</li></a>
                 @if(Auth::User())
-                    <a href="/home">
+                    <a href="/mypage">
                         <li class="menu">My page</li>
                     </a>
                 @else
-                    <a href="/home"><li class="menu">Login</li></a>
+                    <a href="/mypage"><li class="menu">Login</li></a>
                 @endif
             </ul>
         </div>

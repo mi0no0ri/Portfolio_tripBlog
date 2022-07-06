@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div>Login</div>
-                    <div><a href="{{ route('register') }}" class="regiset_btn">Register</a></div>
+                    <div><a href="{{ route('register') }}" class="register_btn">Register</a></div>
                 </div>
 
                 <div class="panel-body">

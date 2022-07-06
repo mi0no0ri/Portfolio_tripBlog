@@ -493,6 +493,9 @@ footer {
 .row {
     margin: 8% 0;
 }
+.register_btn {
+    display: none;
+}
 
 /* profile */
 .profile {
@@ -543,12 +546,23 @@ footer {
     background-color: rgba(255,255,255,.6);
     padding: 30px;
 }
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 5%;
+    gap: 20px;
+}
+.send_btn {
+    margin: 30px;
+}
 
 /* profile_edit */
 .profile_edit {
     display: flex;
     flex-direction: column;
     margin: 30px 15%;
+    position: relative;
+    z-index: 999;
 }
 .profile_edit_tag {
     width: 150px;
@@ -567,8 +581,8 @@ footer {
     border-bottom: 1px solid #737373;
     background: none;
     width: 400px;
-    height: 200px;
-    word-wrap: break-word;
+    height: 100px;
+    text-align: center;
 }
 .image_input {
     display: none;
@@ -716,4 +730,11 @@ footer {
     border: none;
     border-bottom: 1px solid #737373;
     background: none;
+}
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+}
+.twitter-timeline {
+    width: 20%;
 }

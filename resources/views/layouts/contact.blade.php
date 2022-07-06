@@ -33,8 +33,10 @@
 
         {!! Form::close() !!}
     </div>
-    <div>
-        
+    <div class="contact_sns">
+        <a class="twitter-timeline profile_sns" data-height="315" href="https://twitter.com/_mi_no_ri_?ref_src=twsrc%5Etfw">Tweets by _mi_no_ri_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline profile_sns" data-height="315" href="https://twitter.com/_mi_no_ri_?ref_src=twsrc%5Etfw">Tweets by _mi_no_ri_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline profile_sns" data-height="315" href="https://twitter.com/_mi_no_ri_?ref_src=twsrc%5Etfw">Tweets by _mi_no_ri_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
 @endsection
