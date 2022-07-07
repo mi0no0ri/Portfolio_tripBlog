@@ -9,7 +9,7 @@
 
         <div class="form_content">
             {{ Form::label('title','Title',['class' => 'title_label']) }}
-            {{ Form::text('title',null,['class' => 'contact_title']) }}
+            {{ Form::select('title',['0' => '','1' => '要望'],0,['class' => 'contact_title']) }}
         </div>
 
         <div class="form_content">
@@ -23,8 +23,8 @@
         </div>
 
         <div class="form_content">
-            {{ Form::label('message','Message',['class' => 'message_label']) }}
-            {{ Form::text('message',null,['class' => 'contact_message']) }}
+            {{ Form::label('comment','Comment',['class' => 'comment_label']) }}
+            {{ Form::text('comment',null,['class' => 'contact_comment']) }}
         </div>
 
         <div class="send">

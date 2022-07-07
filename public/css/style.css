@@ -612,7 +612,7 @@ footer {
     justify-content: center;
     padding: 20px 0;
 }
-.edit_title {
+.sub_title {
     display: flex;
     justify-content: space-between;
     margin: 30px 50px 0;
@@ -710,11 +710,11 @@ footer {
     text-align: center;
 }
 .title_label,
-.message_label {
+.comment_label {
     width: 50px;
 }
 .contact_title,
-.contact_message {
+.contact_comment {
     margin: 20px;
 }
 .contact_title {
@@ -723,7 +723,7 @@ footer {
     border-bottom: 1px solid #737373;
     background: none;
 }
-.contact_message {
+.contact_contact {
     display: block;
     height: 100px;
     width: 300px;
@@ -737,4 +737,21 @@ footer {
 }
 .twitter-timeline {
     width: 20%;
+}
+
+/* mypage */
+.mypage_contact {
+    margin: 20px 15%;
+}
+.mypage_title {
+    margin: 10px 10%;
+}
+.mypage_date,
+.mypage_sub_title,
+.mypage_name,
+.mypage_email {
+    width: 20%;
+}
+.mypage_comment {
+    width: 40%;
 }

@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\DB;
+
 
 class LoginController extends Controller
 {
@@ -56,11 +58,16 @@ class LoginController extends Controller
     {
         $id = Auth::user('id')
             ->get();
-        return view('auth.post_list');
-    }
-    public function post_edit()
-    {
-        return view('auth.post_edit');
+
+        $id = DB::table('posts')
+            ->selectRaw('min(id) as id')
+            ->groupBy('date')
+            ->pluck('id');
+        $posts = DB::table('posts')
+            ->whereIn('id',$id)
+            ->latest()
+            ->get();
+        return view('auth.post_list',['posts' => $posts]);
     }
     public function profile_edit()
     {

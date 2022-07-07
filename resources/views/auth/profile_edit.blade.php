@@ -1,7 +1,7 @@
 @extends('auth.loginpage')
 
 @section('content')
-<div class="edit_title profile_edit_title">
+<div class="sub_title profile_edit_title">
     <h2>Profile Edit</h2>
 </div>
 
