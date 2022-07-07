@@ -21,23 +21,29 @@
                 {{ Form::text('date',null,['class' => 'date','placeholder' => 'DD/MMM/YY']) }}
             </div>
         </div>
-        @for($i = 0; $i < 10; $i++)
+        @for($i = 1; $i <= 10; $i++)
             <div class="post_img">
                 <div id="image_insert">
                     <label for="image{{$i}}" class="image_label">Icon Image</label>
                     <div class="image_post">
-                        <input type="hidden" name="image" class="img_file">
-                        <input type="file" name="image" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
+                        <input type="hidden" name="image{{$i}}" class="img_file">
+                        <input type="file" name="image{{$i}}" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
                     </div>
                 </div>
-                <div class="image_name" id="post{{$i}}"><span>No select</span></div>
-                <div>
-                    {{ Form::label('comment','Comment') }}
-                    {{ Form::text('comment',null,['class' => 'comment']) }}
+                <div class="image_name" id="post{{$i}}">
+                    <span>No select</span>
                 </div>
                 <div>
-                    {{ Form::label('category','Category') }}
-                    {{ Form::select('category',['0' => '','1' => 'Urban','2' => 'Nature','3' => 'Calture','4' => 'Food','5' => 'Others'],0,['class' => 'category']) }}
+                    <label for="comment{{$i}}" class="">Comment</label>
+                    <input type="text" name="comment{{$i}}" class="cooment">
+                </div>
+                <div>
+                    <label for="category{{$i}}" class="">Category</label>
+                    <select name="category{{$i}}" id="category">
+                        @foreach(Config::get('tag.tag_category') as $key => $val)
+                            <option value="{{$key}}">{{$val}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         @endfor

@@ -96,6 +96,9 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
 }
+.top_title {
+    margin: 0 0 0 7%;
+}
 
 /* japan_map */
 #japan_map {
@@ -490,6 +493,9 @@ footer {
 .row {
     margin: 8% 0;
 }
+.register_btn {
+    display: none;
+}
 
 /* profile */
 .profile {
@@ -540,12 +546,23 @@ footer {
     background-color: rgba(255,255,255,.6);
     padding: 30px;
 }
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 5%;
+    gap: 20px;
+}
+.send_btn {
+    margin: 30px;
+}
 
 /* profile_edit */
 .profile_edit {
     display: flex;
     flex-direction: column;
     margin: 30px 15%;
+    position: relative;
+    z-index: 999;
 }
 .profile_edit_tag {
     width: 150px;
@@ -564,8 +581,29 @@ footer {
     border-bottom: 1px solid #737373;
     background: none;
     width: 400px;
-    height: 200px;
-    word-wrap: break-word;
+    height: 100px;
+    text-align: center;
+}
+.image_input {
+    display: none;
+}
+.image_label {
+    margin: 10px 0 20px;
+}
+.profile_img {
+    display: flex;
+    margin: 10px 0 20px;
+    align-items: center;
+    gap: 30px;
+}
+.image_ex {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    top: 150px;
+    right: 15%;
+    height: 800px;
+    width: 800px;
 }
 
 /* post_edit */
@@ -574,7 +612,7 @@ footer {
     justify-content: center;
     padding: 20px 0;
 }
-.edit_title {
+.sub_title {
     display: flex;
     justify-content: space-between;
     margin: 30px 50px 0;
@@ -672,11 +710,11 @@ footer {
     text-align: center;
 }
 .title_label,
-.message_label {
+.comment_label {
     width: 50px;
 }
 .contact_title,
-.contact_message {
+.contact_comment {
     margin: 20px;
 }
 .contact_title {
@@ -685,11 +723,35 @@ footer {
     border-bottom: 1px solid #737373;
     background: none;
 }
-.contact_message {
+.contact_contact {
     display: block;
     height: 100px;
     width: 300px;
     border: none;
     border-bottom: 1px solid #737373;
     background: none;
+}
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+}
+.twitter-timeline {
+    width: 20%;
+}
+
+/* mypage */
+.mypage_contact {
+    margin: 20px 15%;
+}
+.mypage_title {
+    margin: 10px 10%;
+}
+.mypage_date,
+.mypage_sub_title,
+.mypage_name,
+.mypage_email {
+    width: 20%;
+}
+.mypage_comment {
+    width: 40%;
 }

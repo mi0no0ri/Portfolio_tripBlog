@@ -6,40 +6,48 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Filesystem\Filesystem\File;
 
 class PostsController extends Controller
 {
     public function create(Request $request)
     {
-        foreach((array)$request->input(
-            'dest','area_id','date','comment','image','category_id','created_at','updated_at',
-        ) as $key => $val)
-        {
-            dd($request);
-            Post::create([
-                'dest' => $request->input('dest')[$key],
-                'area_id' => $request->input('area')[$key],
-                'date' => $request->input('date')[$key],
-                'comment' => $request->input('comment')[$key],
-                'category_id' => $request->input('category')[$key],
-                'created_at' => now()[$key],
-                'updated_at' => now()[$key],
-            ]);
+        for($i = 1; $i <= 10; $i++){
+            if(empty($request->comment)){
+                $filename = $request->file("image{$i}")->getClientOriginalName();
+                $path = $request->file("image{$i}")->storeAs($filename,'public');
 
-            if($request->image !== null){
-                $posts->image = $request
-                    ->file('image');
-            }
-            if(null!==($request->file('image'))){
-                $fileName = $request
-                    ->file('image');
-                $path = $request
-                    ->file('image')
-                    ->storeAs('public/post',$fileName);
-            }
-            $posts->image->save();
+                $post = new Post();
 
-            return redirect()->route('post_list');
+                $post->create([
+                    'user_id' => Auth::id(),
+                    'dest' => $request->input('dest'),
+                    'area_id' => $request->input('area'),
+                    'date' => $request->input('date'),
+                    'image' => $request->input($path),
+                    'comment' => $request->input("comment{$i}"),
+                    'category_id' => $request->input("category{$i}"),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+                break;
+            }
         }
+
+        return redirect()->route('post_list');
+    }
+    public function delete($id)
+    {
+        DB::table('posts')
+            ->where('id',$id)
+            ->delete();
+        return redirect('/post_list');
+    }
+    public function update($id)
+    {
+        $up_post = DB::table('posts')
+            ->where('id',$id)
+            ->first();
+        return view('auth.post_edit',['up_post' => $up_post]);
     }
 }

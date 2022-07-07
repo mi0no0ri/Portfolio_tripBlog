@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('/profile','UsersController@profile');
 // contact
 Route::get('/contact','UsersController@contact');
+Route::post('/contact','ContactsController@create');
 
 // gallery
 Route::get('/gallery','MapsController@gallery');
@@ -27,6 +28,7 @@ Route::get('/gallery','MapsController@gallery');
 Auth::routes([
     'register' => false,
 ]);
+
 // logout
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
@@ -34,12 +36,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'],function()
 {
+    // login
     Route::get('/loginpage','Auth\LoginController@loginpage');
+    // post
     Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
-    Route::get('/post_edit','Auth\LoginController@post_edit')->name('post_edit');
+    Route::get('/post_edit/{id}','PostsController@update');
     Route::get('/post','Auth\LoginController@post')->name('post');
+    // profile
     Route::get('/profile_edit','UsersController@profile_edit')->name('profile_edit');
     Route::put('/profile_edit','UsersController@profile_edit')->name('profile_edit');
+    // mypage
+    Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
+    Route::get('mypage','ContactsController@view');
+
 });
 
 // register
@@ -54,3 +63,6 @@ Route::post('/post/create','PostsController@create');
 
 // profile_edit
 Route::get('/profile_edit','UsersController@index')->name('profile_edit');
+
+// post_delete
+Route::get('/post/delete','LoginController@delete')->name('delete');

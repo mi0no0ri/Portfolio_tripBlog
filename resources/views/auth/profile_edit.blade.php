@@ -1,7 +1,7 @@
 @extends('auth.loginpage')
 
 @section('content')
-<div class="edit_title">
+<div class="sub_title profile_edit_title">
     <h2>Profile Edit</h2>
 </div>
 
@@ -32,12 +32,21 @@
 
     <div class="form_content">
         {{ Form::label('bio','Bio',['class' => 'profile_edit_tag']) }}
-        {{ Form::text('bio',$auth->bio,['class' => 'profile_bio']) }}
+        {{ Form::textarea('bio',$auth->bio,['class' => 'profile_bio']) }}
     </div>
 
     <div class="form_content">
-        {{ Form::label('image','Image',['class' => 'profile_edit_tag']) }}
-        {{ Form::file('image',['class'=>'form_controls','value'=>$auth->image]) }}
+        <label for="" class="profile_edit_tag">Image</label>
+        <div class="profile_img">
+            <label for="image" class="image_label">Image Select</label>
+            <div class="image_input">
+                <input type="hidden" name="image" class="img_file">
+                <input type="file" name="image" class="img_file form_controls" value="{{$auth->image}}" data-target="profile_image" id="image">
+            </div>
+            <div class="image_name" id="profile_image">
+                <span>No select</span>
+            </div>
+        </div>
     </div>
 
     <div class="send">
@@ -46,5 +55,14 @@
 </div>
 
 {!! Form::close() !!}
+
+<div class="image_ex">
+    @if($auth->image == null)
+        <i class="fa-solid fa-user fa-8x"></i>
+    @else
+        <img src="/storage/images/{{ $auth->image }}" class="profile_pic">
+    @endif
+</div>
+
 
 @endsection

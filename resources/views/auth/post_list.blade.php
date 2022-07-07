@@ -1,7 +1,7 @@
 @extends('auth.loginpage')
 
 @section('content')
-<div class="edit_title">
+<div class="sub_title">
     <h2 class="">Post List</h2>
     <a href="{{ route('post') }}" class="post">投稿</a>
 </div>
@@ -14,12 +14,14 @@
         <th class="post_list_btn"></th>
         <th class="post_list_btn"></th>
     </tr>
+    @foreach($posts as $post)
     <tr>
-        <td>29Nov18</td>
-        <td>Hokkaido</td>
-        <td>札幌市内</td>
-        <td><a href="{{ route('post_edit') }}" class="post_btn"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
-        <td><a href="" class="post_btn"><button><i class="fa-solid fa-eraser"></i></button></a></td>
+        <td>{{ $post->date }}</td>
+        <td>{{ $post->dest }}</td>
+        <td>{{ $post->comment }}</td>
+        <td><a href="/post_edit/{{$post->id}}" class="post_btn"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
+        <td><a href="{{ route('delete') }}" class="post_btn"><button><i class="fa-solid fa-eraser"></i></button></a></td>
     </tr>
+    @endforeach
 </table>
 @endsection
