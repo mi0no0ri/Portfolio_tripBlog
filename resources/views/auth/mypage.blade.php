@@ -20,13 +20,17 @@
             @foreach ($contacts as $contact)
             <tr>
                 <td>{{ $contact->created_at }}</td>
-                <td>{{ $contact->title }}</td>
+                <td>{{ config('tag.tag_name.', $contact->title) }}</td>
                 <td>{{ $contact->comment }}</td>
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->email }}</td>
             </tr>
             @endforeach
         </table>
+    </div>
+
+    <div>
+        <h3 class="mypage_title">Where i wanna go</h3>
     </div>
 </div>
 

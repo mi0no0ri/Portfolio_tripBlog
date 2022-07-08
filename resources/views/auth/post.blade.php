@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <label for="comment{{$i}}" class="">Comment</label>
-                    <input type="text" name="comment{{$i}}" class="cooment">
+                    <input type="text" name="comment{{$i}}" class="comment">
                 </div>
                 <div>
                     <label for="category{{$i}}" class="">Category</label>

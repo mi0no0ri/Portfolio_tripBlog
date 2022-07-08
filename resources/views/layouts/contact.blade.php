@@ -8,8 +8,12 @@
         {{ csrf_field() }}
 
         <div class="form_content">
-            {{ Form::label('title','Title',['class' => 'title_label']) }}
-            {{ Form::select('title',['0' => '','1' => '要望'],0,['class' => 'contact_title']) }}
+            <label for="title" class="title_label">Title</label>
+                <select name="title" id="category" class="contact_title">
+                    @foreach(Config::get('tag.tag_name') as $key => $val)
+                        <option value="{{$key}}">{{$val}}</option>
+                    @endforeach
+                </select>
         </div>
 
         <div class="form_content">
@@ -24,7 +28,7 @@
 
         <div class="form_content">
             {{ Form::label('comment','Comment',['class' => 'comment_label']) }}
-            {{ Form::text('comment',null,['class' => 'contact_comment']) }}
+            {{ Form::textarea('comment',null,['class' => 'contact_comment']) }}
         </div>
 
         <div class="send">
