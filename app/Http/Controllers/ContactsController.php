@@ -22,10 +22,6 @@ class ContactsController extends Controller
     }
     public function view()
     {
-        $title = [
-            '0' => '',
-            '1' => '要望'
-        ];
         $contacts = DB::table('contacts')
             ->select('title','comment','name','email','created_at')
             ->get();
