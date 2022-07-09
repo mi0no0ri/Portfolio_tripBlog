@@ -23,20 +23,20 @@
                 {{ Form::text('date',"$up_post->date",['class' => 'date','placeholder' => 'DD/MMM/YY']) }}
             </div>
         </div>
-        @for($i = 1; $i <= 10; $i++)
-            <div class="post_edit_img">
+        <div class="post_edit_img">
+            @for($i = 1; $i <= 10; $i++)
                 <div class="post_edit_content">
-                    <div id="image_insert">
-                        <label for="image{{$i}}" class="">Icon Image</label>
+                    <div id="image_insert" class="">
+                        <label for="image{{$i}}" class="">IconImage</label>
                         <div class="image_post">
                             <input type="hidden" name="image{{$i}}" class="img_file">
                             <input type="file" name="image{{$i}}" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
                         </div>
                     </div>
-                    <div class="image_name" id="post{{$i}}">
+                    <div class="" id="post{{$i}}">
                         <span>No select</span>
                     </div>
-                    <div>
+                    <div class="post_edit_comment">
                         <label for="comment{{$i}}" class="">Comment</label>
                         <input type="text" name="comment{{$i}}" class="">
                     </div>
@@ -49,8 +49,8 @@
                         </select>
                     </div>
                 </div>
-            </div>
-        @endfor
+            @endfor
+        </div>
         {{ Form::submit('Post',['class' => 'post_btn']) }}
 
 
