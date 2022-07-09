@@ -772,3 +772,7 @@ footer {
 .mypage_comment {
     width: 40%;
 }
+.mypage_links {
+    display: flex;
+    justify-content: center;
+}

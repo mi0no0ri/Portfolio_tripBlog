@@ -20,12 +20,20 @@ class ContactsController extends Controller
         ]);
         return redirect('/contact');
     }
-    public function view()
+    public function view(Request $request)
     {
-        $contacts = DB::table('contacts')
-            ->select('title','comment','name','email','created_at')
-            ->get();
+        $id = $request->query('page');
+        $msg = 'show page: ' . $id;
 
-        return view('auth.mypage',['contacts' => $contacts]);
+        $contacts = DB::table('contacts')
+        ->select('title','comment','name','email','created_at')
+        ->paginate(5);
+
+        $date = [
+            'msg' => $msg,
+            'date' => $contacts,
+        ];
+
+        return view('auth.mypage',$date,['contacts' => $contacts]);
     }
 }
