@@ -4,11 +4,11 @@
 <h2 class="sub_title">My Page</h2>
 <div>
     <div>
-        <h3 class="mypage_title">Already visited in JAPAN</h3>
+        <h3 class="mypage_title">Already visited in JAPAN is...</h3>
     </div>
 
     <div>
-        <h3 class="mypage_title">Contact</h3>
+        <h3 class="mypage_title">The form you are sended is...</h3>
         <table class="mypage_contact">
             <tr class="contact_list">
                 <th class="mypage_date">Date</th>
@@ -27,10 +27,13 @@
             </tr>
             @endforeach
         </table>
+        <div class="mypage_links">
+            {!! $date->links() !!}
+        </div>
     </div>
 
     <div>
-        <h3 class="mypage_title">Where i wanna go</h3>
+        <h3 class="mypage_title">Where i wanna go...</h3>
     </div>
 </div>
 
