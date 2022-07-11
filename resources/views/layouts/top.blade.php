@@ -9,35 +9,35 @@
     <h2 class="top_title">Japan</h2>
     <div id="map">
         <div id="hokkaido_tohoku">
-            <a href="/gallery" id="hokkaido">
+            <a href="/gallery/{{1}}" id="hokkaido">
                 <div>Hokkaido</div>
             </a>
-            <a href="/gallery" id="tohoku">
+            <a href="/gallery/{{2}}" id="tohoku">
                 <div>Tohoku</div>
             </a>
-            <a href="/gallery" id="kanto">
+            <a href="/gallery/{{3}}" id="kanto">
                 <div>Kanto</div>
             </a>
         </div>
-        <a href="/gallery" id="chubu">
+        <a href="/gallery/{{4}}" id="chubu">
             <div>Chubu</div>
         </a>
-        <a href="/gallery" id="kansai">
+        <a href="/gallery/{{5}}" id="kansai">
             <div>Kansai</div>
         </a>
         <div id="tyugoku_shikoku">
-            <a href="/gallery" id="chugoku">
+            <a href="/gallery/{{6}}" id="chugoku">
                 <div>Chugoku</div>
             </a>
-            <a href="/gallery" id="shikoku">
+            <a href="/gallery/{{7}}" id="shikoku">
                 <div>Shikoku</div>
             </a>
         </div>
         <div id="kyushu_okinawa">
-            <a href="/gallery" id="kyushu">
+            <a href="/gallery/{{8}}" id="kyushu">
                 <div>Kyushu</div>
             </a>
-            <a href="/gallery" id="okinawa">
+            <a href="/gallery/{{9}}" id="okinawa">
                 <div>Okinawa</div>
             </a>
         </div>

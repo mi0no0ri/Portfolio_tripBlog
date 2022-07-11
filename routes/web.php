@@ -23,6 +23,7 @@ Route::post('/contact','ContactsController@create');
 
 // gallery
 Route::get('/gallery','MapsController@gallery');
+Route::get('/gallery/{id}','PostsController@show');
 
 // login
 Auth::routes([

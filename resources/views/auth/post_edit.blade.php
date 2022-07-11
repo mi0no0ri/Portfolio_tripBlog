@@ -26,8 +26,8 @@
         <div class="post_edit_img">
             @for($i = 1; $i <= 10; $i++)
                 <div class="post_edit_content">
-                    <div id="image_insert" class="">
-                        <label for="image{{$i}}" class="">IconImage</label>
+                    <div id="image_insert" class="post_edit_center">
+                        <label for="image{{$i}}" class="post_edit_label">IconImage</label>
                         <div class="image_post">
                             <input type="hidden" name="image{{$i}}" class="img_file">
                             <input type="file" name="image{{$i}}" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
@@ -40,13 +40,15 @@
                         <label for="comment{{$i}}" class="">Comment</label>
                         <input type="text" name="comment{{$i}}" class="">
                     </div>
-                    <div class="post_edit_category">
-                        <label for="category{{$i}}" class="">Category</label>
-                        <select name="category{{$i}}" id="category">
+                    <div class="">
+                        <label for="category{{$i}}" class="post_edit_category">Category</label>
+                        <div class="post_edit_center">
+                        <select name="category{{$i}}" id="category" class="post_edit_label">
                             @foreach(Config::get('tag.tag_category') as $key => $val)
-                                <option value="{{$key}}">{{$val}}</option>
+                                <option value="{{$key}}" class="">{{$val}}</option>
                             @endforeach
                         </select>
+                        </div>
                     </div>
                 </div>
             @endfor

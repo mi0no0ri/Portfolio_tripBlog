@@ -711,6 +711,18 @@ footer {
     display: flex;
     flex-direction: column;
 }
+.post_edit_center {
+    display: inline-block;
+}
+.post_edit_label {
+    display: flex;
+    justify-content: start;
+}
+.post_edit_category {
+    display: flex;
+    justify-content: start;
+    margin: 2px auto 5px 3px;
+}
 
 /* contact */
 .contact_content {
