@@ -12,10 +12,10 @@ class PostsController extends Controller
 {
     public function create(Request $request)
     {
-        for($i = 1; $i <= 10; $i++){
-            if(empty($request->comment)){
+        for ($i = 1; $i <= 10; $i++) {
+            if (!empty($request->input("comment{$i}"))) {
                 $filename = $request->file("image{$i}")->getClientOriginalName();
-                $path = $request->file("image{$i}")->storeAs($filename,'public');
+                $path = $request->file("image{$i}")->storeAs($filename, 'public');
 
                 $post = new Post();
 
@@ -24,17 +24,27 @@ class PostsController extends Controller
                     'dest' => $request->input('dest'),
                     'area_id' => $request->input('area'),
                     'date' => $request->input('date'),
-                    'image' => $request->input($path),
+                    'image' => $path,
                     'comment' => $request->input("comment{$i}"),
                     'category_id' => $request->input("category{$i}"),
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]);
+            } else {
                 break;
             }
         }
 
         return redirect()->route('post_list');
+    }
+    public function show($id)
+    {
+        $posts = DB::table('posts')
+            ->where('user_id',1)
+            ->where('area_id',$id)
+            ->select('id','area_id','category_id','dest','date','comment','image')
+            ->get();
+        return view('japan_maps.gallery',['posts' => $posts]);
     }
     public function delete($id)
     {
