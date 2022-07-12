@@ -39,17 +39,23 @@ Route::group(['middleware' => 'auth'],function()
 {
     // login
     Route::get('/loginpage','Auth\LoginController@loginpage');
-    // post
-    Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
-    Route::get('/post_edit/{id}','PostsController@update');
-    Route::get('/post','Auth\LoginController@post')->name('post');
-    // profile
-    Route::get('/profile_edit','UsersController@profile_edit')->name('profile_edit');
-    Route::put('/profile_edit','UsersController@profile_edit')->name('profile_edit');
     // mypage
     Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
     Route::get('mypage','ContactsController@view');
-
+    // post
+    Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
+    Route::get('/post','Auth\LoginController@post')->name('post');
+    Route::get('/post/create','PostsController@create');
+    Route::post('/post/create','PostsController@create');
+    // post_edit
+    Route::get('/post_edit/{id}','PostsController@update');
+    // post_delete
+    Route::get('/post/delete/{id}','PostsController@delete')->name('delete');
+    // profile
+    Route::get('/profile_edit','UsersController@profile_edit')->name('profile_edit');
+    Route::put('/profile_edit','UsersController@profile_edit')->name('profile_edit');
+    // profile_edit
+    Route::get('/profile_edit','UsersController@index')->name('profile_edit');
 });
 
 // register
@@ -58,12 +64,3 @@ Route::post('/register','Auth\RegisterController@register')->name('register');
 
 Route::get('/added','Auth\RegisterController@added')->name('added');
 
-// post
-Route::get('/post/create','PostsController@create');
-Route::post('/post/create','PostsController@create');
-
-// profile_edit
-Route::get('/profile_edit','UsersController@index')->name('profile_edit');
-
-// post_delete
-Route::get('/post/delete','LoginController@delete')->name('delete');
