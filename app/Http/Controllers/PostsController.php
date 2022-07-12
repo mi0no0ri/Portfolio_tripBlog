@@ -45,20 +45,20 @@ class PostsController extends Controller
             ->groupBy('dest')
             ->pluck('id');
         $posts = DB::table('posts')
-            ->where('user_id',Auth::id())
+            ->where('user_id',1)
             ->whereIn('id',$ids)
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment')
             ->get();
 
         $date = DB::table('posts')
-            ->where('user_id',Auth::id())
+            ->where('user_id',1)
             ->where('area_id',$id)
             ->whereIn('id',$ids)
             ->select('dest','date')
             ->get();
         $images = DB::table('posts')
-            ->where('user_id',Auth::id())
+            ->where('user_id',1)
             ->where('area_id',$id)
             ->where('dest','Izumo')
             ->select('id','comment','image')
