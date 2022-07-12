@@ -45,15 +45,22 @@ class PostsController extends Controller
             ->groupBy('dest')
             ->pluck('id');
         $posts = DB::table('posts')
-            ->where('user_id',1)
+            ->where('user_id',Auth::id())
             ->whereIn('id',$ids)
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment')
             ->get();
 
-        $images = DB::table('posts')
-            ->where('user_id',1)
+        $date = DB::table('posts')
+            ->where('user_id',Auth::id())
             ->where('area_id',$id)
+            ->whereIn('id',$ids)
+            ->select('dest','date')
+            ->get();
+        $images = DB::table('posts')
+            ->where('user_id',Auth::id())
+            ->where('area_id',$id)
+            ->where('dest','Izumo')
             ->select('id','comment','image')
             ->get();
 
@@ -61,8 +68,13 @@ class PostsController extends Controller
     }
     public function delete($id)
     {
-        DB::table('posts')
+        $del = DB::table('posts')
             ->where('id',$id)
+            ->select('dest','date')
+            ->first();
+        DB::table('posts')
+            ->where('dest',$del->dest)
+            ->where('date',$del->date)
             ->delete();
         return redirect('/post_list');
     }
@@ -71,6 +83,11 @@ class PostsController extends Controller
         $up_post = DB::table('posts')
             ->where('id',$id)
             ->first();
-        return view('auth.post_edit',['up_post' => $up_post]);
+
+        $posts = DB::table('posts')
+            ->where('dest',$up_post->dest)
+            ->select('id','dest','date','image','comment','category_id')
+            ->get();
+        return view('auth.post_edit',['up_post' => $up_post,'posts' => $posts]);
     }
 }

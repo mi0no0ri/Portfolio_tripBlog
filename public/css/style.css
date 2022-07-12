@@ -650,7 +650,10 @@ footer {
     opacity: 0.8;
 }
 .image_name {
-    max-width: 70px;
+    max-width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* post_edit */
@@ -717,11 +720,26 @@ footer {
 .post_edit_label {
     display: flex;
     justify-content: start;
+    flex-direction: column;
 }
 .post_edit_category {
     display: flex;
     justify-content: start;
     margin: 2px auto 5px 3px;
+}
+.post_edit_btn {
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+}
+.edit_category {
+    width: 10%;
+}
+.edit_image {
+    height: 160px;
+    width: 160px;
+    border-radius: 5px;
 }
 
 /* contact */
