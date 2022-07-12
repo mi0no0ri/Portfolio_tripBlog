@@ -2,63 +2,24 @@
 
 @section('content')
 
-<h2 id="gallery_title">Gallery</h2>
-<p id="gallery_subtitle">Hokkaido</p>
+<h2 id="gallery_title" class="profile_title">Gallery</h2>
+@foreach($posts as $post)
+<p id="gallery_subtitle">{{ $post->dest }}</p>
 
 <ul class="gallery">
-    <h3>29NOV18</h3>
+    <h3>{{ $post->date }}</h3>
     <div class="gallery_list">
+        @foreach($images as $image)
         <li>
             <a href="" data-target="modal1" class="modal_open">
-                <img src="/image/DSC02649_Original.jpg" class="pic map_pic">
+                <img src="/storage/posts/{{$image->image}}" class="pic map_pic">
             </a>
         </li>
-        <li>
-            <a href="" data-target="modal2" class="modal_open">
-                <img src="/image/DSC02655_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal3" class="modal_open">
-                <img src="/image/DSC02663_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal4" class="modal_open">
-                <img src="/image/DSC02709_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal5" class="modal_open">
-                <img src="/image/DSC02744_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal6" class="modal_open">
-                <img src="/image/DSC02769_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal7" class="modal_open">
-                <img src="/image/DSC02789_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal8" class="modal_open">
-                <img src="/image/DSC02802_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal9" class="modal_open">
-                <img src="/image/DSC02819_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
-        <li>
-            <a href="" data-target="modal10" class="modal_open">
-                <img src="/image/IMG_1826_Original.jpg" class="pic map_pic">
-            </a>
-        </li>
+        @endforeach
     </div>
+</ul>
+@endforeach
+
 
     <div id="modal1" class="modal">
         <span class="slide_btn prev"></span>
@@ -160,6 +121,5 @@
             </div>
         </div>
     </div>
-</ul>
 
 @endsection
