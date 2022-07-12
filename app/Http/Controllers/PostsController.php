@@ -7,6 +7,7 @@ use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Filesystem\Filesystem\File;
+use Validator;
 
 class PostsController extends Controller
 {
@@ -15,7 +16,7 @@ class PostsController extends Controller
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {
                 $filename = $request->file("image{$i}")->getClientOriginalName();
-                $path = $request->file("image{$i}")->storeAs($filename, 'public');
+                $path = $request->file("image{$i}")->storeAs('public/posts',$filename);
 
                 $post = new Post();
 
@@ -24,7 +25,7 @@ class PostsController extends Controller
                     'dest' => $request->input('dest'),
                     'area_id' => $request->input('area'),
                     'date' => $request->input('date'),
-                    'image' => $path,
+                    'image' => $filename,
                     'comment' => $request->input("comment{$i}"),
                     'category_id' => $request->input("category{$i}"),
                     'created_at' => now(),
@@ -39,12 +40,24 @@ class PostsController extends Controller
     }
     public function show($id)
     {
+        $ids = DB::table('posts')
+            ->selectRaw('min(id) as id')
+            ->groupBy('dest')
+            ->pluck('id');
         $posts = DB::table('posts')
             ->where('user_id',1)
+            ->whereIn('id',$ids)
             ->where('area_id',$id)
-            ->select('id','area_id','category_id','dest','date','comment','image')
+            ->select('id','area_id','dest','date','comment')
             ->get();
-        return view('japan_maps.gallery',['posts' => $posts]);
+
+        $images = DB::table('posts')
+            ->where('user_id',1)
+            ->where('area_id',$id)
+            ->select('id','comment','image')
+            ->get();
+
+        return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
     }
     public function delete($id)
     {
