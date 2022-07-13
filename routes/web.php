@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'],function()
     // mypage
     Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
     Route::get('mypage','ContactsController@view');
+    Route::post('mypage','ListsController@create')->name('search');
     // post
     Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
     Route::get('/post','Auth\LoginController@post')->name('post');

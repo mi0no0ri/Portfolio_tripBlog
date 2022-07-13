@@ -31,18 +31,22 @@ class UsersController extends Controller
         $user = Auth::user();
 
         $request->validate([
-            'username' => 'max:20',
-            'kana' => 'max:40',
-            'email' => 'max:40',
+            'username' => 'required|max:20',
+            'kana' => 'required|max:40',
+            'email' => 'required|max:40',
             'password' => 'nullable|max:20|alpha_num',
-            'bio' => 'max:100',
+            'bio' => 'required|max:100',
             'image' => 'image|file|mimes:jpg,png,bmp,gif,svg',
         ],[
+            'username.required' => '必須項目です',
             'username.max' => '最大20文字で入力してください。',
+            'kana.required' => '必須項目です',
             'kana.max' => '最大40文字で入力してください。',
+            'email.required' => '必須項目です',
             'email.max' => '最大40文字で入力してください。',
             'password.max' => '最大40文字で入力してください。',
             'password.alpha_num' => 'アルファベットと数字で入力してください。',
+            'bio.required' => '必須項目です',
             'bio.max' => '最大100文字で入力してください。',
             'image.image' => '指定されたファイルが画像ではありません。',
             'image.mimes' => '指定された拡張子（JPG、PNG、BMP、GIF、SVG）ではありません。',
