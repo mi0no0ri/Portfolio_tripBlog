@@ -22,7 +22,7 @@ class UsersController extends Controller
     }
     public function profile(){
         $profiles = DB::table('users')
-            ->where('id',Auth::id())
+            ->where('id',1)
             ->select('id','username','kana','bio','image')
             ->first();
         return view('layouts.profile',['profiles'=>$profiles]);

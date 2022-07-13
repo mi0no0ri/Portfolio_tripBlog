@@ -63,9 +63,6 @@ footer {
 .fa-brands {
     color: #737373;
 }
-.fa-brands:hover {
-    color: #575757;
-}
 #copyright {
     color: #000;
     display: block;
@@ -99,11 +96,14 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
 }
+.top_title {
+    margin: 0 0 0 7%;
+}
 
 /* japan_map */
 #japan_map {
     min-height: auto;
-    margin: 50px 7%;
+    margin: 50px 7% 150px;
 }
 #map {
     display: flex;
@@ -264,14 +264,6 @@ footer {
     background-color: gray;
     border-radius: 5px 0 0 5px;
 }
-#europe:hover + #europe2 {
-    background-color: #7e7ef2;
-    transition: 0.2s;
-}
-#europe:hover,#europe2:hover {
-    background-color: #7e7ef2;
-    transition: 0.2s;
-}
 .asia {
     display: flex;
     flex-direction: column;
@@ -370,8 +362,6 @@ footer {
     background-color: gray;
     border-radius: 0 0 5px 5px;
 }
-
-
 .pic {
     height: 200px;
     width: 200px;
@@ -382,7 +372,6 @@ footer {
     transition: .5s;
     box-shadow: 0 0 2rem rgba(0,0,0,.5);
 }
-
 
 /* category */
 #category_map {
@@ -503,6 +492,9 @@ footer {
 .row {
     margin: 8% 0;
 }
+.register_btn {
+    display: none;
+}
 
 /* profile */
 .profile {
@@ -538,56 +530,81 @@ footer {
     background-color: rgba(255,255,255,.6);
     border-radius: 20px;
     margin: 0 10%;
+    padding: 20px 0 0;
 }
 .my_background {
     font-size: 15px;
-    padding: 30px 15% 10px;
+    padding: 15px 15% 10px;
 }
-.profile_sns {
-    margin: 50px 0 0 0;
+.fa-brands {
+    margin: 50px 0 20px 0;
+}
+.fa-user {
+    display: block;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.6);
+    padding: 30px;
+}
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 5%;
+    gap: 20px;
+}
+.send_btn {
+    margin: 30px;
 }
 
-/* post_edit */
-.post_edit {
+/* profile_edit */
+.profile_edit {
     display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    flex-direction: column;
+    margin: 30px 15%;
+    position: relative;
+    z-index: 999;
 }
-.edit_title {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 50px 0;
+.profile_edit_tag {
+    width: 150px;
 }
-.post_date {
-    width: 100px;
+.form_controls {
+    margin: 10px 0 20px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+    width: 200px;
+    text-align: center;
 }
-.post_dest {
-    width: 130px;
-}
-.post_comment {
+.profile_bio {
+    margin: 10px 0 20px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
     width: 400px;
+    height: 100px;
+    text-align: center;
 }
-.post_list_btn {
-    width: 50px;
+.image_input {
+    display: none;
 }
-/* post_edit */
-.post_btn {
-    color: #737373;
+.image_label {
+    margin: 10px 0 20px;
 }
-.post_btn:hover {
-    color: #4d4d4d;
+.profile_img {
+    display: flex;
+    margin: 10px 0 20px;
+    align-items: center;
+    gap: 30px;
 }
-.post {
-    margin: 30px 150px 0 0;
-    padding: 7px 10px;
-    background-color: #efefef;
-    border-radius: 5px;
-    color: #737373;
-    border: 1px solid #7a7a7a;
+.image_ex {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    top: 150px;
+    right: 15%;
+    height: 800px;
+    width: 800px;
 }
-.post:hover {
-    color: #4d4d4d;
-}
+
 /* post */
 .post_content {
     margin: 20px 10%;
@@ -602,6 +619,7 @@ footer {
 .date,
 .area {
     margin: 10px;
+    width: 12%;
 }
 .post_img {
     display: flex;
@@ -633,12 +651,164 @@ footer {
     opacity: 0.8;
 }
 .image_name {
-    max-width: 70px;
+    max-width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.post_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-/* profile_edit */
-.profile_edit {
+/* post_edit */
+.post_edit {
     display: flex;
-    flex-direction: row!important;
-    margin: 20px 40px 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+.sub_title {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 50px 0;
+}
+.post_date {
+    width: 100px;
+}
+.post_dest {
+    width: 130px;
+}
+.post_comment {
+    width: 400px;
+}
+.post_list_btn {
+    width: 50px;
+}
+.post_btn {
+    color: #737373;
+}
+.post_btn:hover {
+    color: #4d4d4d;
+}
+.post {
+    margin: 30px 150px 0 0;
+    padding: 7px 10px;
+    background-color: #efefef;
+    border-radius: 5px;
+    color: #737373;
+    border: 1px solid #7a7a7a;
+}
+.post:hover {
+    color: #4d4d4d;
+}
+
+.post_edit_img {
+    margin: 40px 0;
+    text-align: center;
+}
+.post_edit_content {
+    display: inline-block;
+    text-align: center;
+    margin: 30px 40px;
+}
+.post_edit_icon {
+    display: flex;
+    flex-direction: row;
+}
+.post_edit_comment {
+    display: flex;
+    flex-direction: column;
+}
+.post_edit_center {
+    display: inline-block;
+}
+.post_edit_label {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+.post_edit_category {
+    display: flex;
+    justify-content: start;
+    margin: 2px auto 5px 3px;
+}
+.post_edit_btn {
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+}
+.edit_category {
+    width: 10%;
+}
+.edit_image {
+    height: 160px;
+    width: 160px;
+    border-radius: 5px;
+}
+
+/* contact */
+.contact_content {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 10%;
+}
+.form_content {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+.send {
+    text-align: center;
+}
+.title_label,
+.comment_label {
+    width: 50px;
+}
+.contact_title,
+.contact_comment {
+    margin: 20px;
+}
+.contact_title {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+}
+.contact_comment {
+    display: block;
+    height: 100px;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #737373;
+    background: none;
+}
+.contact_sns {
+    display: flex;
+    justify-content: space-around;
+}
+.twitter-timeline {
+    width: 20%;
+}
+
+/* mypage */
+.mypage_contact {
+    margin: 20px 15%;
+}
+.mypage_title {
+    margin: 10px 10%;
+}
+.mypage_date,
+.mypage_sub_title,
+.mypage_name,
+.mypage_email {
+    width: 20%;
+}
+.mypage_comment {
+    width: 40%;
+}
+.mypage_links {
+    display: flex;
+    justify-content: center;
 }
