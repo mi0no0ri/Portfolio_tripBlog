@@ -15,8 +15,8 @@
                 {{ Form::text('dest',"$up_post->dest",['class' => 'dest']) }}
             </div>
             <div>
-                {{ Form::label('area','Area') }}
-                {{ Form::select('area',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],"$up_post->area_id",['class' => 'area']) }}
+                {{ Form::label('area_id','Area') }}
+                {{ Form::select('area_id',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],"$up_post->area_id",['class' => 'area']) }}
             </div>
             <div>
                 {{ Form::label('date','Date') }}
@@ -28,7 +28,7 @@
                 <div class="post_edit_content">
                     <div id="image_insert" class="post_edit_center">
                         <label for="image{{$index}}" class="post_edit_label">IconImage
-                            <img src="/storage/posts/{{$post->image}}" class="edit_image" for="image{{$index}}">
+                            <img src="/storage/posts/{{$post->image}}" class="edit_image">
                         </label>
                         <div class="image_post">
                             <input type="hidden" name="image{{$index}}" class="img_file">

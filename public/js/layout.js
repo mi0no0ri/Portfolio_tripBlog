@@ -17,11 +17,10 @@ $(function(){
 });
 });
 
-// animation
+// toppage animation
 AOS.init();
 
 // slide
-
 $(function(){
     function toggleChangeBtn(){
         var slideIndex = $('.modal').index($('.active'));
@@ -76,6 +75,11 @@ $(function(){
         e.preventDefault;
         $(this).css('opacity','0.8');
     });
+})
+
+// post edit
+$('.post_edit_label').on('change',function(){
+
 })
 
 // japan_map scroll

@@ -15,8 +15,10 @@
 Route::get('/', function () {
     return view('layouts/top');
 });
+
 // profile
 Route::get('/profile','UsersController@profile');
+
 // contact
 Route::get('/contact','UsersController@contact');
 Route::post('/contact','ContactsController@create');
@@ -35,6 +37,13 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// register
+Route::get('/register','Auth\RegisterController@register')->name('register');
+Route::post('/register','Auth\RegisterController@register')->name('register');
+
+// add
+Route::get('/added','Auth\RegisterController@added')->name('added');
+
 Route::group(['middleware' => 'auth'],function()
 {
     // login
@@ -48,7 +57,8 @@ Route::group(['middleware' => 'auth'],function()
     Route::get('/post/create','PostsController@create');
     Route::post('/post/create','PostsController@create');
     // post_edit
-    Route::get('/post_edit/{id}','PostsController@update');
+    Route::get('/post_edit/{id}','PostsController@show_update');
+    Route::post('/post_edit/{id}','PostsController@update');
     // post_delete
     Route::get('/post/delete/{id}','PostsController@delete')->name('delete');
     // profile
@@ -57,10 +67,4 @@ Route::group(['middleware' => 'auth'],function()
     // profile_edit
     Route::get('/profile_edit','UsersController@index')->name('profile_edit');
 });
-
-// register
-Route::get('/register','Auth\RegisterController@register')->name('register');
-Route::post('/register','Auth\RegisterController@register')->name('register');
-
-Route::get('/added','Auth\RegisterController@added')->name('added');
 

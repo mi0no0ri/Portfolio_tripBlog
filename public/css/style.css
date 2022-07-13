@@ -619,6 +619,7 @@ footer {
 .date,
 .area {
     margin: 10px;
+    width: 12%;
 }
 .post_img {
     display: flex;
@@ -654,6 +655,11 @@ footer {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.post_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* post_edit */

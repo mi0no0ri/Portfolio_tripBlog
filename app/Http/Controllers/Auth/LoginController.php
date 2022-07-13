@@ -59,12 +59,13 @@ class LoginController extends Controller
         $id = Auth::user('id')
             ->get();
 
-        $id = DB::table('posts')
+        $ids = DB::table('posts')
             ->selectRaw('min(id) as id')
             ->groupBy('date')
+            ->groupBy('dest')
             ->pluck('id');
         $posts = DB::table('posts')
-            ->whereIn('id',$id)
+            ->whereIn('id',$ids)
             ->latest()
             ->get();
         return view('auth.post_list',['posts' => $posts]);

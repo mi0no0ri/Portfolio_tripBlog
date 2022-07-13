@@ -24,25 +24,11 @@ class HelloRequest extends FormRequest
     public function rules()
     {
         return [
-            'area_id' => ['required'],
-            'dest' => ['required','max:10'],
-            'date' => ['required','max:10'],
-            'comment' => ['max:15'],
-            'image' => ['image','file','mimes:jpg,png,bmp','max:2048']
         ];
     }
     public function messages()
     {
         return [
-            'area_id.required' => 'エリアは必須項目です。',
-            'dest.required' => '旅行先は必須項目です。',
-            'dest.max' => '最大10文字までで入力してください。',
-            'date.required' => '日にちは必須項目です。',
-            'date.max' => '最大10文字までで入力してください。',
-            'comment.max' => '最大15文字までで入力してください。',
-            'image.image' => '指定されたファイルが画像ではありません。',
-            'image.mimes' => '指定された拡張子（JPG、PNG、BMP）ではありません。',
-            'image.max' => '最大2MBまでで投稿してください。',
         ];
     }
 }
