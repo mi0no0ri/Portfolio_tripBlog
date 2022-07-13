@@ -34,6 +34,24 @@
 
     <div>
         <h3 class="mypage_title">Where i wanna go...</h3>
+        {!! Form::open(['route' => ['search'],'method' => 'POST']) !!}
+        {!! Form::hidden('id',Auth::id()) !!}
+        {{csrf_field()}}
+        <div class="todo_list mypage_contact">
+            {{ Form::label('list','ToDo List',['class' => 'list_title']) }}
+            <div class="list_bar">
+                {{ Form::text('list',null,['class' => 'list_content','placeholder' => '世界一周したい!']) }}
+                {{Form::submit('追加する',['class'=>''])}}
+                @foreach ($errors->get("list") as $error)
+                    <div>
+                        <strong>{{ $error }}</strong>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        {!! Form::close() !!}
+        <div>
+        </div>
     </div>
 </div>
 

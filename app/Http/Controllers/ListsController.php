@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lists;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ListsController extends Controller
 {
@@ -20,7 +22,16 @@ class ListsController extends Controller
         $list->list = $request->list;
         $list->created_at = now();
         $list->updated_at = now();
+        $list->save();
 
-        return view('/mypage');
+        return redirect()->route('search');
+    }
+    public function show()
+    {
+        $lists = DB::table('lists')
+            ->where('user_id',Auth::id())
+            ->select('list','created_at')
+            ->get();
+        return view('auth.mypage',['lists' => $lists]);
     }
 }

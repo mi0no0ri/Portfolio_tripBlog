@@ -812,3 +812,15 @@ footer {
     display: flex;
     justify-content: center;
 }
+.todo_list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.list_title {
+    width: 10%;
+}
+.list_content {
+    width: 40%;
+    margin: 0 auto 0 20px;
+}
