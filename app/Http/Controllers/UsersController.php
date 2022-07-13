@@ -30,6 +30,8 @@ class UsersController extends Controller
     public function profile_edit(Request $request){
         $user = Auth::user();
 
+        $user
+
         $user->fill($request->except('password','image'));
 
         if(null!==$request->password){
