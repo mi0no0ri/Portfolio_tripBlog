@@ -55,7 +55,6 @@ class PostsController extends Controller
                 break;
             }
         }
-
         return redirect()->route('post_list');
     }
     public function show($id)
