@@ -2,7 +2,7 @@
 
 @section('content')
 <h2 class="sub_title">My Page</h2>
-<div>
+<div class="">
     <div>
         <h3 class="mypage_title">Already visited in JAPAN is...</h3>
     </div>
@@ -32,25 +32,46 @@
         </div>
     </div>
 
-    <div>
+    <div class="">
         <h3 class="mypage_title">Where i wanna go...</h3>
-        {!! Form::open(['route' => ['search'],'method' => 'POST']) !!}
-        {!! Form::hidden('id',Auth::id()) !!}
-        {{csrf_field()}}
-        <div class="todo_list mypage_contact">
-            {{ Form::label('list','ToDo List',['class' => 'list_title']) }}
-            <div class="list_bar">
-                {{ Form::text('list',null,['class' => 'list_content','placeholder' => '世界一周したい!']) }}
-                {{Form::submit('追加する',['class'=>''])}}
-                @foreach ($errors->get("list") as $error)
-                    <div>
-                        <strong>{{ $error }}</strong>
-                    </div>
-                @endforeach
+        <div class="todo">
+            {!! Form::open(['route' => ['search'],'method' => 'POST']) !!}
+            {!! Form::hidden('id',Auth::id()) !!}
+            {{csrf_field()}}
+            <div class="todo_list mypage_contact">
+                {{ Form::label('list','ToDo',['class' => 'list_title']) }}
+                <div class="list_bar">
+                    {{ Form::text('list',null,['class' => 'list_content','placeholder' => 'ex)世界一周したい!']) }}
+                    {{Form::submit('追加する',['class'=>''])}}
+                    @foreach ($errors->get("list") as $error)
+                        <div>
+                            <strong>{{ $error }}</strong>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-        {!! Form::close() !!}
-        <div>
+            {!! Form::close() !!}
+            <div class="todo_content mypage_contact">
+                <table>
+                    <tr class="todo_show">
+                        <th class="todo_show_list">ToDo List</th>
+                        <th class="">Check Box</th>
+                    </tr>
+                    @foreach($lists as $list)
+                    <tr class="todo_show">
+                        <td class="todo_show_list">・{{ $list->list }}</td>
+                        <td>
+                            <a href="mypage/{{$list->id}}" onclick="return confirm('todoを更新します。')">
+                                <i class="fa-solid fa-square-check"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+                <div class="">
+                    {!! $date->links() !!}
+                </div>
+            </div>
         </div>
     </div>
 </div>

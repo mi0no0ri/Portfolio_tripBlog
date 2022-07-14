@@ -26,12 +26,11 @@ class ListsController extends Controller
 
         return redirect()->route('search');
     }
-    public function show()
+    public function delete($id)
     {
-        $lists = DB::table('lists')
-            ->where('user_id',Auth::id())
-            ->select('list','created_at')
-            ->get();
-        return view('auth.mypage',['lists' => $lists]);
+        DB::table('lists')
+        ->where('id',$id)
+        ->delete();
+        return redirect('/mypage');
     }
 }
