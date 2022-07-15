@@ -6,25 +6,12 @@ use Illuminate\Http\Request;
 use App\Contact;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CommentRequest;
 
 class ContactsController extends Controller
 {
-    public function create(Request $request)
+    public function create(CommentRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'comment' => 'required|max:50',
-            'name' => 'required|max:10',
-            'email' => 'max:30'
-        ],[
-            'title.required' => 'タイトルは必須です。',
-            'comment.required' => 'コメントは必須です。',
-            'comment.max' => '最大50文字で入力してくだいさい。',
-            'name.required' => 'お名前は必須です。',
-            'name.max' => '最大10文字で入力してください。',
-            'email.max' => '最大30文字で入力してください。'
-        ]);
-
         $contact = Contact::create([
             'title' => $request->title,
             'comment' => $request->comment,

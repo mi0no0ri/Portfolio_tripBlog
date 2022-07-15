@@ -7,12 +7,12 @@ use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Filesystem\Filesystem\File;
-use App\Http\Requests\HelloRequest;
+use App\Http\Requests\PostRequest;
 use Validator;
 
 class PostsController extends Controller
 {
-    public function create(HelloRequest $request)
+    public function create(PostRequest $request)
     {
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {
