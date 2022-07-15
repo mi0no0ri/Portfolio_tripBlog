@@ -661,6 +661,9 @@ footer {
     flex-direction: row;
     align-items: center;
 }
+.errors {
+    color: red;
+}
 
 /* post_edit */
 .post_edit {

@@ -16,7 +16,7 @@
                 </select>
                 @foreach ($errors->get('title') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
         </div>
@@ -26,7 +26,7 @@
             {{ Form::text('name',null,['class' => 'contact_title']) }}
                 @foreach ($errors->get('name') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
 
@@ -48,7 +48,7 @@
             {{ Form::textarea('comment',null,['class' => 'contact_comment']) }}
                 @foreach ($errors->get('comment') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
 
