@@ -7,32 +7,13 @@ use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Filesystem\Filesystem\File;
+use App\Http\Requests\HelloRequest;
 use Validator;
 
 class PostsController extends Controller
 {
-    public function create(Request $request)
+    public function create(HelloRequest $request)
     {
-        $request->validate(
-            [
-                'area_id' => '',
-                'dest' => 'required|max:10',
-                'date' => 'required|max:10',
-                'comment' => 'max:15',
-                'image' => 'image|file|mimes:jpg,png,bmp|max:2048'
-            ],[
-                'area_id.required' => 'エリアは必須項目です。',
-                'dest.required' => '旅行先は必須項目です。',
-                'dest.max' => '最大10文字までで入力してください。',
-                'date.required' => '日にちは必須項目です。',
-                'date.max' => '最大10文字までで入力してください。',
-                'comment.max' => '最大15文字までで入力してください。',
-                'image.image' => '指定されたファイルが画像ではありません。',
-                'image.mimes' => '指定された拡張子（JPG、PNG、BMP）ではありません。',
-                'image.max' => '最大2MBまでで投稿してください。',
-            ]
-        );
-
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {
                 $filename = $request->file("image{$i}")->getClientOriginalName();
