@@ -24,14 +24,6 @@ class ListsController extends Controller
         $list->updated_at = now();
         $list->save();
 
-        return redirect()->route('search');
-    }
-    public function show()
-    {
-        $lists = DB::table('lists')
-            ->where('user_id',Auth::id())
-            ->select('list','created_at')
-            ->get();
-        return view('auth.mypage',['lists' => $lists]);
+        return redirect()->route('todo');
     }
 }

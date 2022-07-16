@@ -29,20 +29,20 @@ class ContactsController extends Controller
         $contacts = DB::table('contacts')
             ->select('title','comment','name','email','created_at')
             ->paginate(5,["*"],'contactpage')
-            ->appends(["todopage" => \Request::get('todopage')]);
+            ->appends(["todopage" => $request->input('todopage')]);
 
-        $lists = DB::table('lists')
+        $todo = DB::table('lists')
             ->where('user_id',Auth::id())
             ->select('id','list','created_at')
             ->paginate(5,["*"],'todopage')
-            ->appends(["contactpage" => \Request::get('contactpage')]);
+            ->appends(["contactpage" => $request->input('contactpage')]);
 
         $date = [
             'msg' => $msg,
             'contacts' => $contacts,
-            'lists' => $lists,
+            'todo' => $todo,
         ];
 
-        return view('auth.mypage',$date,['contacts' => $contacts]);
+        return view('auth.mypage',$date,['contacts' => $contacts,'todo' => $todo]);
     }
 }
