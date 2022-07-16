@@ -19,8 +19,8 @@
         <td>{{ $post->date }}</td>
         <td>{{ $post->dest }}</td>
         <td>{{ $post->comment }}</td>
-        <td><a href="/post_edit/{{$post->id}}" class="post_btn"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
-        <td><a href="/post/delete/{{$post->id}}" class="post_btn" onclick="return confirm('投稿を削除しますか')"><button><i class="fa-solid fa-eraser"></i></button></a></td>
+        <td><a href="/post_edit/{{$post->id}}" class="edit_btn"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
+        <td><a href="/post/delete/{{$post->id}}" class="edit_btn" onclick="return confirm('投稿を削除しますか')"><button><i class="fa-solid fa-eraser"></i></button></a></td>
     </tr>
     @endforeach
 </table>
