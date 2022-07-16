@@ -68,6 +68,19 @@ footer {
     display: block;
     text-align: center;
 }
+.new_wrap {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(224, 102, 102,.7);
+}
+.new_title {
+    color: #fff;
+    size: 10px;
+    padding: 5px auto;
+}
+.new_hidden {
+    display: none;
+}
 
 /* top */
 .title {
@@ -661,6 +674,9 @@ footer {
     flex-direction: row;
     align-items: center;
 }
+.errors {
+    color: red;
+}
 
 /* post_edit */
 .post_edit {
@@ -685,10 +701,10 @@ footer {
 .post_list_btn {
     width: 50px;
 }
-.post_btn {
+.edit_btn {
     color: #737373;
 }
-.post_btn:hover {
+.edit_btn:hover {
     color: #4d4d4d;
 }
 .post {

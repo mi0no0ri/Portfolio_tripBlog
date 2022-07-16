@@ -20,6 +20,13 @@ $(function(){
 // toppage animation
 AOS.init();
 
+// toppage new
+$(function(){
+    $('.post_btn').on('click',function(){
+        $('.new_wrap').removeClass("new_hidden");
+    });
+});
+
 // slide
 $(function(){
     function toggleChangeBtn(){

@@ -12,7 +12,7 @@ use Validator;
 
 class PostsController extends Controller
 {
-    public function create(PostRequest $request)
+    public function create(Request $request)
     {
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {
@@ -89,7 +89,7 @@ class PostsController extends Controller
             ->get();
         return view('auth.post_edit',['up_post' => $up_post,'posts' => $posts]);
     }
-    public function update($id,Request $request)
+    public function update($id,PostRequest $request)
     {
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {

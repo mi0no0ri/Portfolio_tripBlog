@@ -13,7 +13,7 @@
                 {{ Form::text('dest',null,['class' => 'dest','placeholder' => 'ex)Tokyo']) }}
                 @foreach ($errors->get('dest') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
             </div>
@@ -22,7 +22,7 @@
                 {{ Form::select('area',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],0,['class' => 'area']) }}
                 @foreach ($errors->get('area_id') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
             </div>
@@ -31,7 +31,7 @@
                 {{ Form::text('date',null,['class' => 'date','placeholder' => 'DD/MMM/YY']) }}
                 @foreach ($errors->get('date') as $error)
                     <div>
-                        <strong>{{ $error }}</strong>
+                        <strong class="errors">{{ $error }}</strong>
                     </div>
                 @endforeach
             </div>
@@ -41,11 +41,11 @@
                 <div id="image_insert">
                     <label for="image{{$i}}" class="image_label">Icon Image</label>
                     <div class="image_post">
-                        <input type="hidden" name="image{{$i}}" class="img_file">
+                        <input type="hidden" name="image" class="img_file">
                         <input type="file" name="image{{$i}}" class="img_file" id="image{{$i}}" data-target="post{{$i}}">
-                        @foreach ($errors->get("image{{$i}}") as $error)
+                        @foreach ($errors->get("image") as $error)
                             <div>
-                                <strong>{{ $error }}</strong>
+                                <strong class="errors">{{ $error }}</strong>
                             </div>
                         @endforeach
 
@@ -56,10 +56,11 @@
                 </div>
                 <div>
                     <label for="comment{{$i}}" class="">Comment</label>
+                    <input type="hidden" name="comment" class="">
                     <input type="text" name="comment{{$i}}" class="comment">
-                    @foreach ($errors->get("comment{{$i}}") as $error)
+                    @foreach ($errors->get("comment") as $error)
                         <div>
-                            <strong>{{ $error }}</strong>
+                            <strong class="errors">{{ $error }}</strong>
                         </div>
                     @endforeach
 
