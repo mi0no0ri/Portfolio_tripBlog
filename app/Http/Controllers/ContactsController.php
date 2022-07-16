@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ContactsController extends Controller
 {
@@ -26,12 +27,20 @@ class ContactsController extends Controller
         $msg = 'show page: ' . $id;
 
         $contacts = DB::table('contacts')
-        ->select('title','comment','name','email','created_at')
-        ->paginate(5);
+            ->select('title','comment','name','email','created_at')
+            ->paginate(5,["*"],'contactpage')
+            ->appends(["todopage" => \Request::get('todopage')]);
+
+        $lists = DB::table('lists')
+            ->where('user_id',Auth::id())
+            ->select('id','list','created_at')
+            ->paginate(5,["*"],'todopage')
+            ->appends(["contactpage" => \Request::get('contactpage')]);
 
         $date = [
             'msg' => $msg,
             'contacts' => $contacts,
+            'lists' => $lists,
         ];
 
         return view('auth.mypage',$date,['contacts' => $contacts]);

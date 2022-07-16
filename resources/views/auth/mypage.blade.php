@@ -28,7 +28,7 @@
             @endforeach
         </table>
         <div class="mypage_links">
-            {!! $date->links() !!}
+            {!! $contacts->links() !!}
         </div>
     </div>
 
@@ -50,7 +50,8 @@
             </div>
         </div>
         {!! Form::close() !!}
-        <div>
+        <div class="mypage_links">
+            {!! $lists->links() !!}
         </div>
     </div>
 </div>
