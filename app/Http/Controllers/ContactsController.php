@@ -31,7 +31,7 @@ class ContactsController extends Controller
 
         $date = [
             'msg' => $msg,
-            'date' => $contacts,
+            'contacts' => $contacts,
         ];
 
         return view('auth.mypage',$date,['contacts' => $contacts]);
