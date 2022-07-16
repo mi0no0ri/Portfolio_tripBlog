@@ -28,7 +28,7 @@
             @endforeach
         </table>
         <div class="mypage_links">
-            {!! $date->links() !!}
+            {!! $contacts->links() !!}
         </div>
     </div>
 
@@ -69,7 +69,7 @@
                     @endforeach
                 </table>
                 <div class="">
-                    {!! $date->links() !!}
+                    {!! $lists->links() !!}
                 </div>
             </div>
         </div>
