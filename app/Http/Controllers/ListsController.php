@@ -24,7 +24,7 @@ class ListsController extends Controller
         $list->updated_at = now();
         $list->save();
 
-        return redirect()->route('search');
+        return redirect()->route('todo');
     }
     public function delete($id)
     {
