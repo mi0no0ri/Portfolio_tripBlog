@@ -1,6 +1,10 @@
 @extends('layouts.toppage')
 
 @section('content')
+<div class="new_wrap new_hidden">
+    <a href="" class="new_title">new post!!</a>
+</div>
+
 <div class="title">
     <h1 >My Journey</h1>
 </div>

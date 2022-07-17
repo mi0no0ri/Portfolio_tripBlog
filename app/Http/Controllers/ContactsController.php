@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Contact;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CommentRequest;
 
 class ContactsController extends Controller
 {
-    public function create(Request $request)
+    public function create(CommentRequest $request)
     {
         $contact = Contact::create([
             'title' => $request->title,
@@ -52,5 +53,5 @@ class ContactsController extends Controller
             ->paginate(5);
 
         return view('auth.contactForm',['forms' => $forms]);
-    }
+
 }

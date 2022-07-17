@@ -2,7 +2,7 @@
 
 @section('content')
 <h2 class="sub_title">My Page</h2>
-<div>
+<div class="">
     <div>
         <h3 class="mypage_title">Already visited in JAPAN is...</h3>
     </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="">
         <h3 class="mypage_title">Where i wanna go...</h3>
         {!! Form::open(['route' => ['todo'],'method' => 'POST']) !!}
         {!! Form::hidden('id',Auth::id()) !!}

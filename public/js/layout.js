@@ -20,6 +20,13 @@ $(function(){
 // toppage animation
 AOS.init();
 
+// toppage new
+$(function(){
+    $('.post_btn').on('click',function(){
+        $('.new_wrap').removeClass("new_hidden");
+    });
+});
+
 // slide
 $(function(){
     function toggleChangeBtn(){
@@ -57,25 +64,7 @@ $('.img_file').on('change',function(){
     $(image).text(file.name);
 });
 
-// post insert
-$(function(){
-    var obj = $('.image_label');
-    obj.on('dragover',function(e){
-        e.stopPropagation;
-        e.preventDefault;
-        $(this).css('opacity','0.8');
-    });
-    obj.on('dragleave',function(e){
-        e.stopPropagation;
-        e.preventDefault;
-        $(this).css('opacity','1.0');
-    });
-    obj.on('dragenter',function(e){
-        e.stopPropagation;
-        e.preventDefault;
-        $(this).css('opacity','0.8');
-    });
-})
+// post drag&drop
 
 // post edit
 $('.post_edit_label').on('change',function(){
