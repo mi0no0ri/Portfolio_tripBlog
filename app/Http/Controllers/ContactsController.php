@@ -28,21 +28,29 @@ class ContactsController extends Controller
 
         $contacts = DB::table('contacts')
             ->select('title','comment','name','email','created_at')
-            ->paginate(5,["*"],'contactpage')
-            ->appends(["todopage" => $request->input('todopage')]);
+            ->latest()
+            ->get();
 
         $todo = DB::table('lists')
             ->where('user_id',Auth::id())
             ->select('id','list','created_at')
-            ->paginate(5,["*"],'todopage')
-            ->appends(["contactpage" => $request->input('contactpage')]);
+            ->orderBy('id','desc')
+            ->paginate(3);
 
-        $date = [
+        $data = [
             'msg' => $msg,
-            'contacts' => $contacts,
             'todo' => $todo,
         ];
 
-        return view('auth.mypage',$date,['contacts' => $contacts,'todo' => $todo]);
+        return view('auth.mypage',$data,['contacts' => $contacts,'todo' => $todo]);
+    }
+    public function show()
+    {
+        $forms = DB::table('contacts')
+            ->select('title','comment','name','email','created_at')
+            ->latest()
+            ->paginate(5);
+
+        return view('auth.contactForm',['forms' => $forms]);
     }
 }

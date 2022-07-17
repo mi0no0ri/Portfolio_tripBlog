@@ -52,6 +52,8 @@ Route::group(['middleware' => 'auth'],function()
     Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
     Route::get('mypage','ContactsController@view');
     Route::post('mypage','ListsController@create')->name('todo');
+    Route::get('mypage/{id}','ListsController@delete')->name('delete');
+    Route::get('contactForm','ContactsController@show');
     // post
     Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
     Route::get('/post','Auth\LoginController@post')->name('post');

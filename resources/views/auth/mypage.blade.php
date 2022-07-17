@@ -28,7 +28,7 @@
             @endforeach
         </table>
         <div class="mypage_links">
-            {!! $contacts->links() !!}
+            <a href="/contactForm">詳しく見る...</a>
         </div>
     </div>
 

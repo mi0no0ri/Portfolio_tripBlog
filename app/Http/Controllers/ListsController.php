@@ -26,4 +26,11 @@ class ListsController extends Controller
 
         return redirect()->route('todo');
     }
+    public function delete($id)
+    {
+        DB::table('lists')
+        ->where('id',$id)
+        ->delete();
+        return redirect('/mypage');
+    }
 }
