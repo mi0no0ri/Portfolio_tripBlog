@@ -116,4 +116,12 @@ class PostsController extends Controller
         }
         return redirect('/post_list');
     }
+    public function category($id)
+    {
+        $categorys = DB::table('posts')
+            ->where('category_id',$id)
+            ->select('id','area_id','dest','date','comment')
+            ->get();
+        return view('layouts.category',['categorys' => $categorys]);
+    }
 }
