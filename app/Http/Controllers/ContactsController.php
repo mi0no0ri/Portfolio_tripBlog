@@ -54,4 +54,5 @@ class ContactsController extends Controller
 
         return view('auth.contactForm',['forms' => $forms]);
 
+    }
 }

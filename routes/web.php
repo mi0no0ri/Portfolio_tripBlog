@@ -26,6 +26,7 @@ Route::post('/contact','ContactsController@create');
 // gallery
 Route::get('/gallery','MapsController@gallery');
 Route::get('/gallery/{id}','PostsController@show');
+Route::get('/category/{id}','PostsController@category');
 
 // login
 Auth::routes([
