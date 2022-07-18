@@ -30,7 +30,7 @@ class ContactsController extends Controller
         $contacts = DB::table('contacts')
             ->select('title','comment','name','email','created_at')
             ->latest()
-            ->get();
+            ->paginate(5);
 
         $todo = DB::table('lists')
             ->where('user_id',Auth::id())
@@ -50,7 +50,7 @@ class ContactsController extends Controller
         $forms = DB::table('contacts')
             ->select('title','comment','name','email','created_at')
             ->latest()
-            ->paginate(5);
+            ->paginate(10);
 
         return view('auth.contactForm',['forms' => $forms]);
 

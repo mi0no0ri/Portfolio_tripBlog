@@ -411,6 +411,15 @@ footer {
     padding: 10px 20px 20px 20px;
     line-height: 50px;
 }
+.category_page {
+    margin: 0 10%;
+}
+.category_wrap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
 /* gallery */
 .gallery {

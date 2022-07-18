@@ -118,10 +118,17 @@ class PostsController extends Controller
     }
     public function category($id)
     {
+        $title = DB::table('posts')
+            ->where('category_id',$id)
+            ->select('category_id')
+            ->first();
+        $cateTitle = config("tag.tag_category.$title");
+            dd($cateTitle);
+
         $categorys = DB::table('posts')
             ->where('category_id',$id)
-            ->select('id','area_id','dest','date','comment')
+            ->select('id','area_id','dest','date','comment','image')
             ->get();
-        return view('layouts.category',['categorys' => $categorys]);
+        return view('layouts.category',['cateTitle' => $cateTitle,'categorys' => $categorys]);
     }
 }
