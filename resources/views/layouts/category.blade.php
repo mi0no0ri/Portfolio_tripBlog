@@ -1,9 +1,16 @@
 @extends('layouts.toppage')
 
 @section('content')
-<div>
-    @foreach($categorys as $category)
-    <p>{{ $category->comment }}</p>
-    @endforeach
+<div class="category_page">
+    <h3>{{ $cateTitle }}</h3>
+    <div class="category_wrap">
+        @foreach($categorys as $category)
+            <li>
+                <a href="" data-target="modal1" class="modal_open">
+                    <img src="/storage/posts/{{$category->image}}" class="pic map_pic">
+                </a>
+            </li>
+        @endforeach
+    </div>
 </div>
 @endsection
