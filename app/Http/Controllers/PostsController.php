@@ -122,8 +122,7 @@ class PostsController extends Controller
             ->where('category_id',$id)
             ->select('category_id')
             ->first();
-        $cateTitle = config("tag.tag_category.$title");
-            dd($cateTitle);
+        $cateTitle = config("tag.tag_category.$title->category_id");
 
         $categorys = DB::table('posts')
             ->where('category_id',$id)
