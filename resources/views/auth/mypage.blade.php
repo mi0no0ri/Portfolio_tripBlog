@@ -7,7 +7,7 @@
         <h3 class="mypage_title">Already visited in JAPAN is...</h3>
         <div>
             @for($i = 1; $i <= 47; $i++)
-                <p>{{$i}}</p>
+                <p></p>
             @endfor
         </div>
     </div>
@@ -25,7 +25,7 @@
             @foreach ($contacts as $contact)
             <tr>
                 <td>{{ $contact->created_at }}</td>
-                <td>{{ config('tag.tag_name.', $contact->title) }}</td>
+                <td>{{ config("tag.tag_name.$contact->title") }}</td>
                 <td>{{ $contact->comment }}</td>
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->email }}</td>

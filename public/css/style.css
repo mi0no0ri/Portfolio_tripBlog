@@ -112,6 +112,9 @@ footer {
 .top_title {
     margin: 0 0 0 7%;
 }
+.noneLink {
+    pointer-events: none;
+}
 
 /* japan_map */
 #japan_map {

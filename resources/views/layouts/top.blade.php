@@ -13,7 +13,7 @@
     <h2 class="top_title">Japan</h2>
     <div id="map">
         <div id="hokkaido_tohoku">
-            <a href="/gallery/{{1}}" id="hokkaido">
+            <a href="/gallery/{{1}}" id="hokkaido" class="">
                 <div>Hokkaido</div>
             </a>
             <a href="/gallery/{{2}}" id="tohoku">
