@@ -54,4 +54,12 @@ class UsersController extends Controller
 
         return redirect()->route('profile_edit',['user' => $user]);
     }
+    public function topPage()
+    {
+        $pref = DB::table('posts')
+            ->select('area_id')
+            ->groupBy('area_id')
+            ->get('area_id');
+        return view('layouts.top',['pref' => $pref]);
+    }
 }

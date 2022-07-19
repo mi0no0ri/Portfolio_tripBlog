@@ -12,9 +12,10 @@ class ListsController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'list' => 'max:100'
+            'list' => 'max:100|required'
         ],[
-            'list.max' => '100文字以内で入力してください。'
+            'list.max' => '100文字以内で入力してください。',
+            'list.required' => '入力してください。'
         ]);
         $list = new Lists;
 

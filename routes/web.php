@@ -15,6 +15,7 @@
 Route::get('/', function () {
     return view('layouts/top');
 });
+Route::get('/','UsersController@topPage');
 
 // profile
 Route::get('/profile','UsersController@profile');

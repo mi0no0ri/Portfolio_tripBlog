@@ -13,35 +13,35 @@
     <h2 class="top_title">Japan</h2>
     <div id="map">
         <div id="hokkaido_tohoku">
-            <a href="/gallery/{{1}}" id="hokkaido" class="">
+            <a href="/gallery/{{1}}" id="hokkaido" class="noneLink">
                 <div>Hokkaido</div>
             </a>
-            <a href="/gallery/{{2}}" id="tohoku">
+            <a href="/gallery/{{2}}" id="tohoku" class="noneLink">
                 <div>Tohoku</div>
             </a>
-            <a href="/gallery/{{3}}" id="kanto">
+            <a href="/gallery/{{3}}" id="kanto" class="noneLink">
                 <div>Kanto</div>
             </a>
         </div>
-        <a href="/gallery/{{4}}" id="chubu">
+        <a href="/gallery/{{4}}" id="chubu" class="noneLink">
             <div>Chubu</div>
         </a>
-        <a href="/gallery/{{5}}" id="kansai">
+        <a href="/gallery/{{5}}" id="kansai" class="noneLink">
             <div>Kansai</div>
         </a>
         <div id="tyugoku_shikoku">
-            <a href="/gallery/{{6}}" id="chugoku">
+            <a href="/gallery/{{6}}" id="chugoku" class="noneLink">
                 <div>Chugoku</div>
             </a>
-            <a href="/gallery/{{7}}" id="shikoku">
+            <a href="/gallery/{{7}}" id="shikoku" class="noneLink">
                 <div>Shikoku</div>
             </a>
         </div>
         <div id="kyushu_okinawa">
-            <a href="/gallery/{{8}}" id="kyushu">
+            <a href="/gallery/{{8}}" id="kyushu" class="noneLink">
                 <div>Kyushu</div>
             </a>
-            <a href="/gallery/{{9}}" id="okinawa">
+            <a href="/gallery/{{9}}" id="okinawa" class="noneLink">
                 <div>Okinawa</div>
             </a>
         </div>
@@ -155,4 +155,33 @@
         </a>
     </div>
 </div>
+@endsection
+
+@section('layout')
+<script>
+        $(function(){
+            var array = @json($pref);
+            var result = $.grep(array,function(obj,index){
+                if(obj.area_id == 1){
+                    $("#hokkaido").removeClass("noneLink");
+                } else if(obj.area_id == 2) {
+                    $("#tohoku").removeClass("noneLink");
+                } else if(obj.area_id == 3) {
+                    $("#kanto").removeClass("noneLink");
+                } else if(obj.area_id == 4) {
+                    $("#chubu").removeClass("noneLink");
+                } else if(obj.area_id == 5) {
+                    $("#kansai").removeClass("noneLink");
+                } else if(obj.area_id == 6) {
+                    $("#chugoku").removeClass("noneLink");
+                } else if(obj.area_id == 7) {
+                    $("#shikoku").removeClass("noneLink");
+                } else if(obj.area_id == 8) {
+                    $("#kyushu").removeClass("noneLink");
+                } else if(obj.area_id == 9) {
+                    $("#okinawa").removeClass("noneLink");
+                }
+            })
+        })
+    </script>
 @endsection
