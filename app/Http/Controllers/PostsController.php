@@ -49,18 +49,18 @@ class PostsController extends Controller
             ->where('user_id',1)
             ->whereIn('id',$ids)
             ->where('area_id',$id)
-            ->select('id','area_id','dest','date','comment')
+            ->select('id','area_id','dest','date','comment','image')
             ->get();
 
         foreach($posts as $key => $val) {
-        $images = DB::table('posts')
-            ->where('user_id',1)
-            ->where('area_id',$id)
-            ->whereIn('dest',[$key => $val->dest])
-            ->whereIn('date',[$key => $val->date])
-            ->select('id','comment','image')
-            ->get();
-        }
+            $images = DB::table('posts')
+                ->where('user_id',1)
+                ->where('area_id',$id)
+                ->whereIn('dest',[$key => $val->dest])
+                ->whereIn('date',[$key => $val->date])
+                ->select('id','comment','image',)
+                ->get();
+            }
 
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
     }
@@ -68,9 +68,10 @@ class PostsController extends Controller
     {
         $del = DB::table('posts')
             ->where('id',$id)
-            ->select('dest','date')
+            ->select('dest','date','area_id')
             ->first();
         DB::table('posts')
+            ->where('area_id',$del->area_id)
             ->where('dest',$del->dest)
             ->where('date',$del->date)
             ->delete();
@@ -83,6 +84,7 @@ class PostsController extends Controller
             ->first();
 
         $posts = DB::table('posts')
+            ->where('area_id',$up_post->area_id)
             ->where('dest',$up_post->dest)
             ->where('date',$up_post->date)
             ->select('id','dest','date','image','comment','category_id')

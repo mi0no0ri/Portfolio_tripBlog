@@ -28,9 +28,6 @@ $(function(){
 });
 
 // toppage link
-$(function(){
-    $('#Hokkaido').addClass('.noneLink');
-})
 
 // slide
 $(function(){

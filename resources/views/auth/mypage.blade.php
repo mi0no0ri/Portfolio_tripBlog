@@ -5,15 +5,15 @@
 <div class="">
     <div>
         <h3 class="mypage_title">Already visited in JAPAN is...</h3>
-        <div>
+        <div class="mypage_map">
             @for($i = 1; $i <= 47; $i++)
-                <p></p>
+                <p class="map_content prefecture{{$i}}"></p>
             @endfor
         </div>
     </div>
 
     <div>
-        <h3 class="mypage_title">The form you are sended is...</h3>
+        <h3 class="mypage_title">The form i received is...</h3>
         <table class="mypage_contact">
             <tr class="contact_list">
                 <th class="mypage_date">Date</th>

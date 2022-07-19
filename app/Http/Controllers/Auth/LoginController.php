@@ -61,6 +61,7 @@ class LoginController extends Controller
 
         $ids = DB::table('posts')
             ->selectRaw('min(id) as id')
+            ->groupBy('area_id')
             ->groupBy('date')
             ->groupBy('dest')
             ->pluck('id');

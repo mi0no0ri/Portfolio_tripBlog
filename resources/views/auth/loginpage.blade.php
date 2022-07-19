@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/map.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Comforter&family=Great+Vibes&family=Lobster&display=swap" rel="stylesheet">    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
