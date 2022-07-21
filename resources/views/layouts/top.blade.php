@@ -160,7 +160,7 @@
 @section('layout')
 <script>
         $(function(){
-            var array = @json($pref);
+            var array = @json($area);
             var result = $.grep(array,function(obj,index){
                 if(obj.area_id == 1){
                     $("#hokkaido").removeClass("noneLink");
@@ -180,6 +180,18 @@
                     $("#kyushu").removeClass("noneLink");
                 } else if(obj.area_id == 9) {
                     $("#okinawa").removeClass("noneLink");
+                }
+            })
+        })
+    </script>
+    <script>
+        $(function(){
+            var info = @json($new);
+            var label = $.grep(info,function(obj,index){
+                if(obj.created_at !== null){
+                    $(".new_wrap").removeClass("new_hidden");
+                } else {
+                    $(".new_wrap").addClass("new_hidden");
                 }
             })
         })

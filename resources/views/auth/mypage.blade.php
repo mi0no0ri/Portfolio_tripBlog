@@ -40,14 +40,14 @@
     <div class="">
         <h3 class="mypage_title">Where i wanna go...</h3>
         <div class="todo">
-            {!! Form::open(['route' => ['todo'],'method' => 'POST']) !!}
+            {!! Form::open(['route' => 'todo','method' => 'POST']) !!}
             {!! Form::hidden('id',Auth::id()) !!}
             {{csrf_field()}}
             <div class="todo_list mypage_contact">
                 {{ Form::label('list','ToDo List',['class' => 'list_title']) }}
                 <div class="list_bar">
                     {{ Form::text('list',null,['class' => 'list_content','placeholder' => '世界一周したい!']) }}
-                    {{Form::submit('追加する',['class'=>''])}}
+                    {{ Form::submit('追加する',['class'=>'']) }}
                     @foreach ($errors->get("list") as $error)
                         <div>
                             <strong>{{ $error }}</strong>
@@ -80,5 +80,31 @@
         </div>
     </div>
 </div>
+@endsection
 
+@section('map')
+<script>
+    $(function(){
+        var pref = @json($pref);
+        var result = $.grep(pref,function(obj,index){
+            for(let i = 1;i <= 47;i++){
+                if(obj.pref == i && i >=1 && i <=7){
+                    $(".prefecture" + i).addClass("hokkaido_tohoku_color");
+                } else if(obj.pref == i && i >= 8 && i <= 14){
+                    $(".prefecture" + i).addClass("kanto_color");
+                } else if(obj.pref == i && i >= 15 && i <= 23) {
+                    $(".prefecture" + i).addClass("chubu_color");
+                } else if(obj.pref == i && i >= 24 && i <= 29) {
+                    $(".prefecture" + i).addClass("kansai_color");
+                } else if(obj.pref == i && i >= 30 && i <= 35) {
+                    $(".prefecture" + i).addClass("chugoku_color");
+                } else if(obj.pref == i && i >= 36 && i <= 39) {
+                    $(".prefecture" + i).addClass("shikoku_color");
+                } else if(obj.pref == i && i >= 40 && i <= 47) {
+                    $(".prefecture" + i).addClass("kyushu_color");
+                }
+            }
+        })
+    })
+</script>
 @endsection

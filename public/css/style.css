@@ -4,6 +4,10 @@
 li {
     list-style: none;
 }
+.required {
+    color: red;
+    width: 1rem;
+}
 
 /* header */
 header {
