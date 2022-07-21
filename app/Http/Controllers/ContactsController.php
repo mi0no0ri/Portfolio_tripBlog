@@ -24,6 +24,7 @@ class ContactsController extends Controller
     }
     public function view(Request $request)
     {
+        if($request !== null){
         $id = $request->query('page');
         $msg = 'show page: ' . $id;
 
@@ -42,8 +43,13 @@ class ContactsController extends Controller
             'msg' => $msg,
             'todo' => $todo,
         ];
+        }
+        $pref = DB::table('posts')
+            ->select('pref')
+            ->groupBy('pref')
+            ->get('pref');
 
-        return view('auth.mypage',$data,['contacts' => $contacts,'todo' => $todo]);
+        return view('auth.mypage',$data,['contacts' => $contacts,'todo' => $todo,'pref' => $pref]);
     }
     public function show()
     {

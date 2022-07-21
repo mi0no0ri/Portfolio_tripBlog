@@ -56,10 +56,17 @@ class UsersController extends Controller
     }
     public function topPage()
     {
-        $pref = DB::table('posts')
+        $area = DB::table('posts')
             ->select('area_id')
             ->groupBy('area_id')
             ->get('area_id');
-        return view('layouts.top',['pref' => $pref]);
+
+        $today = today();
+        $new = DB::table('posts')
+            ->select('created_at')
+            ->whereDate('created_at',$today)
+            ->orderBy('created_at','desc')
+            ->get();
+        return view('layouts.top',['area' => $area,'new' => $new]);
     }
 }

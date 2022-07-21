@@ -27,8 +27,6 @@ $(function(){
     });
 });
 
-// toppage link
-
 // slide
 $(function(){
     function toggleChangeBtn(){

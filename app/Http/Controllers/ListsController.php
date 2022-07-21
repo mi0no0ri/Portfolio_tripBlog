@@ -4,19 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lists;
+use App\Gone;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ListRequest;
 
 class ListsController extends Controller
 {
-    public function create(Request $request)
+    public function create(ListRequest $request)
     {
-        $request->validate([
-            'list' => 'max:100|required'
-        ],[
-            'list.max' => '100文字以内で入力してください。',
-            'list.required' => '入力してください。'
-        ]);
         $list = new Lists;
 
         $list->user_id = Auth::id();

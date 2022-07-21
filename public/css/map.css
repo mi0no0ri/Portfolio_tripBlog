@@ -287,3 +287,26 @@
     width: 50px;
     margin: 40px 72% 30px auto;
 }
+
+/* hover */
+.hokkaido_tohoku_color {
+    background-color: #7e7ef2;
+}
+.kanto_color {
+    background-color: #575dff;
+}
+.chubu_color {
+    background-color: #3dc8ff;
+}
+.kansai_color {
+    background-color: #00a300;
+}
+.chugoku_color {
+    background-color: #ffc46b;
+}
+.shikoku_color {
+    background-color: #ff504a;
+}
+.kyushu_color {
+    background-color: #ffb3b0;
+}

@@ -81,7 +81,12 @@ class LoginController extends Controller
     }
     public function mypage()
     {
-        return view('auth.mypage');
+        $pref = DB::table('posts')
+            ->select('pref')
+            ->groupBy('pref')
+            ->get('pref');
+            dd($pref);
+        return view('auth.mypage',['pref' => $pref]);
     }
     public function redirectTo()
     {
