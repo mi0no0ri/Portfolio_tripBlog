@@ -24,11 +24,9 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'area_id' => '',
             'dest' => 'required|max:10',
             'date' => 'required|max:10',
             'comment' => 'max:15',
-            'image' => 'image|file|mimes:jpg,png,bmp|max:2048'
         ];
     }
     public function messages()
@@ -42,7 +40,7 @@ class PostRequest extends FormRequest
             'comment.max' => '最大15文字までで入力してください。',
             'image.image' => '指定されたファイルが画像ではありません。',
             'image.mimes' => '指定された拡張子（JPG、PNG、BMP）ではありません。',
-            'image.max' => '最大2MBまでで投稿してください。',
+            'image.max' => '最大3MBまでで投稿してください。',
         ];
     }
 

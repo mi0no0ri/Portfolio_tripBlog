@@ -53,6 +53,8 @@ footer {
     padding: 20px 0;
     width: 100%;
     background-color: #737373;
+    bottom:0;
+    line-height:0;
 }
 .mini_footer {
     position: absolute;
@@ -137,6 +139,7 @@ footer {
     border-radius: 5px;
     color: #fff;
     background-color: gray;
+    position: relative;
 }
 #hokkaido:hover {
     background-color: #7e7ef2;
@@ -630,7 +633,6 @@ footer {
     justify-content: end;
     top: 150px;
     right: 15%;
-    height: 800px;
     width: 800px;
 }
 

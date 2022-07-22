@@ -76,5 +76,11 @@ return [
         '7' => 'Shikoku',
         '8' => 'Kyushu',
         '9' => 'Okinawa',
+        '10' => 'Europe',
+        '11' => 'Asia',
+        '12' => 'America/Canada',
+        '13' => 'Africa',
+        '14' => 'Australia',
+        '15' => 'South America',
     ]
 ];
