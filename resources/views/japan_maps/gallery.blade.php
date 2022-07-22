@@ -8,10 +8,10 @@
 <ul class="gallery">
     <h3>{{ $post->date }}</h3>
     <div class="gallery_list">
-        @foreach($images as $index => $image)
+        @foreach($images as $index => $val)
         <li>
             <a href="" data-target="modal{{$index}}" class="modal_open">
-                <img src="/storage/posts/{{$image->image}}" class="pic map_pic">
+                <img src="/storage/posts/{{$val->image}}" class="pic map_pic">
             </a>
         </li>
         @endforeach
@@ -19,14 +19,14 @@
 </ul>
 @endforeach
 
-@foreach($images as $index => $image)
+@foreach($images as $index => $val)
 <div id="modal{{$index}}" class="modal active{{$index}}">
     <span class="slide_btn prev"></span>
     <span class="slide_btn next"></span>
     <div class="modal_inner">
         <div class="modal_content modal_close">
-            <img src="/storage/posts/{{$image->image}}" class="image">
-            <p class="inner_title">{{$image->comment}}</p>
+            <img src="/storage/posts/{{$val->image}}" class="image">
+            <p class="inner_title">{{$val->comment}}</p>
         </div>
     </div>
 </div>

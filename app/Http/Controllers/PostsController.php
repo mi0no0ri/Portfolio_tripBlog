@@ -46,26 +46,25 @@ class PostsController extends Controller
             ->groupBy('dest')
             ->groupBy('date')
             ->pluck('id');
+            // dd($ids);
         $posts = DB::table('posts')
             ->where('user_id',1)
             ->whereIn('id',$ids)
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment','image')
-            ->get();
+            ->get()
+            ->toArray();
             // dd($posts);
 
         foreach($posts as $key => $val) {
             $images = DB::table('posts')
                 ->where('user_id',1)
                 ->where('area_id',$id)
-                ->whereIn('dest',[$val->dest])
-                ->whereIn('date',[$val->date])
+                ->where('dest',[$key => $val->dest])
                 ->select('id','comment','image',)
-                ->get()
-                ->toArray();
-                // dd([$val->dest]);
+                ->get();
             }
-            dd($images);
+            // dd($images);
 
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
     }
