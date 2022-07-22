@@ -46,6 +46,7 @@
         <small id="copyright">©️ 2022 Portfolio_blog</small>
     </footer>
     @yield('layout')
+    @yield('slide')
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/5f2b6fa0cd.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
