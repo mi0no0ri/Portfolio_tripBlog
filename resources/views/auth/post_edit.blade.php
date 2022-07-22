@@ -47,7 +47,7 @@
                         <div class="post_edit_center">
                         <select name="category{{$index}}" id="category" class="post_edit_label">
                             @foreach(Config::get('tag.tag_category') as $key => $val)
-                                <option value="{{$key}}" class="">{{$val}}</option>
+                                <option value="{{$post->category_id}}" class="">{{$val}}</option>
                             @endforeach
                         </select>
                         </div>
