@@ -44,7 +44,12 @@
                     </div>
                 @endforeach
             </div>
+            <div>
+                <small>※画像は1枚2MB,トータル20MBまでアップロードできます。<br></small>
+                <small>※画像の拡張子はJPEG,PNG,BMPでアップロードしてください。</small>
+            </div>
         </div>
+
         @for($i = 1; $i <= 10; $i++)
             <div class="post_img">
                 <div id="image_insert">

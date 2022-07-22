@@ -12,7 +12,7 @@ use Validator;
 
 class PostsController extends Controller
 {
-    public function create(Request $request)
+    public function create(PostRequest $request)
     {
         for ($i = 1; $i <= 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {

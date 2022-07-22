@@ -54,18 +54,18 @@
         <div class="world_list">
             <div class="eu_asia">
                 <div class="europe">
-                    <a href="/gallery/{{10}}" id="europe" class="europe_map">
+                    <a href="/gallery/{{10}}" id="europe" class="europe_map noneLink">
                         <div>Europe</div>
                     </a>
-                    <a href="/gallery/{{10}}" id="europe2" class="europe_map">
+                    <a href="/gallery/{{10}}" id="europe2" class="europe_map noneLink">
                         <div></div>
                     </a>
                 </div>
                 <div class="asia">
-                    <a href="/gallery/{{11}}" id="asia" class="asia_map">
+                    <a href="/gallery/{{11}}" id="asia" class="asia_map noneLink">
                         <div>Asia</div>
                     </a>
-                    <a href="/gallery/{{11}}" id="asia2" class="asia_map">
+                    <a href="/gallery/{{11}}" id="asia2" class="asia_map noneLink">
                         <div></div>
                     </a>
                 </div>
@@ -79,31 +79,31 @@
                 </a>
             </div>
             <div class="america">
-                <a href="/gallery/{{12}}" id="america" class="america_map">
+                <a href="/gallery/{{12}}" id="america" class="america_map noneLink">
                     <div>America/Canada</div>
                 </a>
-                <a href="/gallery/{{12}}" id="america2" class="america_map">
+                <a href="/gallery/{{12}}" id="america2" class="america_map noneLink">
                     <div></div>
                 </a>
             </div>
         </div>
         <div class="world_list">
             <div class="africa">
-                <a href="/gallery/{{13}}" id="africa" class="africa_map">
+                <a href="/gallery/{{13}}" id="africa" class="africa_map noneLink">
                     <div>Africa</div>
                 </a>
-                <a href="/gallery/{{13}}" id="africa2" class="africa_map">
+                <a href="/gallery/{{13}}" id="africa2" class="africa_map noneLink">
                     <div></div>
                 </a>
             </div>
-            <a href="/gallery/{{14}}" id="australia" class="australia_map">
+            <a href="/gallery/{{14}}" id="australia" class="australia_map noneLink">
                 <div>Australia</div>
             </a>
             <div class="southAmerica">
-                <a href="/gallery/{{15}}" id="southAmerica" class="south_map">
+                <a href="/gallery/{{15}}" id="southAmerica" class="south_map noneLink">
                     <div>South America</div>
                 </a>
-                <a href="/gallery/{{15}}" id="southAmerica2" class="south_map">
+                <a href="/gallery/{{15}}" id="southAmerica2" class="south_map noneLink">
                     <div></div>
                 </a>
             </div>
@@ -180,6 +180,18 @@
                     $("#kyushu").removeClass("noneLink");
                 } else if(obj.area_id == 9) {
                     $("#okinawa").removeClass("noneLink");
+                } else if(obj.area_id == 10) {
+                    $(".europe_map").removeClass("noneLink");
+                } else if(obj.area_id == 11) {
+                    $(".asia_map").removeClass("noneLink");
+                } else if(obj.area_id == 12) {
+                    $(".america_map").removeClass("noneLink");
+                } else if(obj.area_id == 13) {
+                    $(".africa_map").removeClass("noneLink");
+                } else if(obj.area_id == 14) {
+                    $(".australia_map").removeClass("noneLink");
+                } else if(obj.area_id == 15) {
+                    $(".south_map").removeClass("noneLink");
                 }
             })
         })
