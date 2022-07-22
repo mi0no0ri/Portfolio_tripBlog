@@ -52,16 +52,20 @@ class PostsController extends Controller
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment','image')
             ->get();
+            // dd($posts);
 
         foreach($posts as $key => $val) {
             $images = DB::table('posts')
                 ->where('user_id',1)
                 ->where('area_id',$id)
-                ->whereIn('dest',[$key => $val->dest])
-                ->whereIn('date',[$key => $val->date])
+                ->whereIn('dest',[$val->dest])
+                ->whereIn('date',[$val->date])
                 ->select('id','comment','image',)
-                ->get();
+                ->get()
+                ->toArray();
+                // dd([$val->dest]);
             }
+            dd($images);
 
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
     }

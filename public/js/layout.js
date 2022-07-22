@@ -27,35 +27,6 @@ $(function(){
     });
 });
 
-// slide
-$(function(){
-    function toggleChangeBtn(){
-        var slideIndex = $('.modal').index($('.active'));
-        $('.slide_btn').show();
-        if (slideIndex == 0){
-            $('.prev').hide();
-        } else if (slideIndex == 9){
-            $('.next').hide();
-        }
-    }
-
-    toggleChangeBtn();
-
-    $('.next').on('click',function(){
-        var $displaySlide = $('.active');
-        console.log($displaySlide);
-        $displaySlide.removeClass('active');
-        $displaySlide.next().addClass('active');
-        toggleChangeBtn();
-    });
-    $('.prev').on('click',function(){
-        var $displaySlide = $('.active');
-        $displaySlide.removeClass('active');
-        $displaySlide.prev().addClass('active');
-        toggleChangeBtn();
-    });
-});
-
 // post
 $('.img_file').on('change',function(){
     var file = $(this).prop('files')[0];
