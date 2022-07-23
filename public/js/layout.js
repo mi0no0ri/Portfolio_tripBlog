@@ -189,3 +189,20 @@ $('.profile_image').on('change',function(){
     var image = document.getElementById(target);
     $(image).text(file.name);
 });
+
+//  media
+// humberger
+$(function () {
+    $('.menu_trigger').on('click',function () {
+      $(this).toggleClass('active');
+      if ($(this).hasClass('active')) {
+        $('.g_navi').addClass('active');
+      } else {
+        $('.g_navi').removeClass('active');
+      }
+    });
+    $('.nav_wrapper ul li a').on('click',function () {
+      $('.menu_trigger').removeClass('active');
+      $('.g_navi').removeClass('active');
+    });
+  });

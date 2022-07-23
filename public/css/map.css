@@ -1,7 +1,9 @@
 @charset "utf-8";
 
+.mypage_map {
+    margin: 0 15%;
+}
 .map_content {
-    margin: 0 10%;
     border-radius: 5px;
     background-color: gray;
 }
@@ -309,4 +311,169 @@
 }
 .kyushu_color {
     background-color: #ffb3b0;
+}
+@media (max-width:1200px) {
+    .mypage_map {
+        margin: 0 10%;
+    }
+    .prefecture1 {
+        margin: 10px 155px 0 auto;
+    }
+    .prefecture2 {
+        margin: 10px 165px 0 auto;
+    }
+    .prefecture3 {
+        margin: 2px 160px 0 auto;
+    }
+    .prefecture4 {
+        margin: -50px 200px 0 auto;
+    }
+    .prefecture5 {
+        margin: 2px 160px 0 auto;
+    }
+    .prefecture6 {
+        margin: -50px 200px 0 auto;
+    }
+    .prefecture7 {
+        margin: 2px 160px 0 auto;
+    }
+    .prefecture8 {
+        margin: 2px 160px 0 auto;
+    }
+    .prefecture9 {
+        margin: -40px 185px 0 auto;
+    }
+    .prefecture10 {
+        margin: -40px 210px 0 auto;
+    }
+    .prefecture11 {
+        margin: 2px 160px 0 auto;
+    }
+    .prefecture12 {
+        margin: -60px 190px 0 auto;
+    }
+    .prefecture13 {
+        margin: 2px 190px 0 auto;
+    }
+    .prefecture14 {
+        margin: 2px 210px 0 auto;
+    }
+    .prefecture15 {
+        margin: -140px 235px 0 auto;
+    }
+    .prefecture16 {
+        margin: 2px 235px 0 auto;
+    }
+    .prefecture17 {
+        margin: 2px 235px 0 auto;
+    }
+    .prefecture18 {
+        margin: 2px 240px 0 auto;
+    }
+    .prefecture19 {
+        margin: -115px 275px 0 auto;
+    }
+    .prefecture20 {
+        margin: -45px 315px 0 auto;
+    }
+    .prefecture21 {
+        margin: 2px 285px 0 auto;
+    }
+    .prefecture22 {
+        margin: 2px 285px 0 auto;
+    }
+    .prefecture23 {
+        margin: -90px 340px 0 auto;
+    }
+    .prefecture24 {
+        margin: 2px 335px 0 auto;
+    }
+    .prefecture25 {
+        margin: 2px 335px 0 auto;
+    }
+    .prefecture26 {
+        margin: -80px 380px 0 auto;
+    }
+    .prefecture27 {
+        margin: 2px 380px 0 auto;
+    }
+    .prefecture28 {
+        margin: 2px 380px 0 auto;
+    }
+    .prefecture29 {
+        margin: -70px 410px 0 auto;
+    }
+    .prefecture30 {
+        margin: 2px 410px 0 auto;
+    }
+    .prefecture31 {
+        margin: -70px 450px 0 auto;
+    }
+    .prefecture32 {
+        margin: 2px 450px 0 auto;
+    }
+    .prefecture33 {
+        margin: -43px 490px 0 auto;
+    }
+    .prefecture34 {
+        margin: 2px 490px 0 auto;
+    }
+    .prefecture35 {
+        margin: -40px 530px 0 auto;
+    }
+    .prefecture36 {
+        margin: 20px 460px 0 auto;
+    }
+    .prefecture37 {
+        margin: 2px 460px 0 auto;
+    }
+    .prefecture38 {
+        margin: -48px 495px 0 auto;
+    }
+    .prefecture39 {
+        margin: 2px 495px 0 auto;
+    }
+    .prefecture40 {
+        margin: -60px 590px 0 auto;
+    }
+    .prefecture41 {
+        margin: -20px 555px 0 auto;
+    }
+    .prefecture42 {
+        margin: 2px 555px 0 auto;
+    }
+    .prefecture43 {
+        margin: -68px 625px 0 auto;
+    }
+    .prefecture44 {
+        margin: 2px 590px 0 auto;
+    }
+    .prefecture45 {
+        margin: -35px 625px 0 auto;
+    }
+    .prefecture46 {
+        margin: 22px 590px 0 auto;
+    }
+    .prefecture47 {
+        margin: 40px 600px 0 auto;
+    }
+}
+@media (max-width:900px) {
+    .mypage_map {
+        margin: 0;
+    }
+}
+@media (max-width:700px) {
+    .mypage_map {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 10%;
+        justify-content: center;
+    }
+    .map_content {
+        margin: 5px 10px;
+        padding: 10px 30px;
+        height: 50px;
+        width: 80px;
+    }
 }
