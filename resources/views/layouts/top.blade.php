@@ -29,7 +29,7 @@
         <a href="/gallery/{{5}}" id="kansai" class="noneLink">
             <div>Kansai</div>
         </a>
-        <div id="tyugoku_shikoku">
+        <div id="chugoku_shikoku">
             <a href="/gallery/{{6}}" id="chugoku" class="noneLink">
                 <div>Chugoku</div>
             </a>
