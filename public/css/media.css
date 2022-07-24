@@ -66,3 +66,108 @@
         border-bottom: 1px solid #000;
     }
 }
+@media(max-width:1200px) {
+    /* toppage */
+    .top_header {
+        margin: 0 40px 0 0;
+    }
+    .title {
+        min-height: 60vh;
+    }
+    /* gallery */
+    .gallery {
+        margin: 0 20px;
+    }
+    /* category */
+    .category_page {
+        margin: 30px 20px;
+    }
+    /* profile */
+    .profile {
+        min-height: 70vh;
+    }
+    .profile_content {
+        display: inline-block;
+        margin: 30px auto 0;
+    }
+    .profile_list {
+        margin: 30px 10%;
+    }
+    /* mypage */
+    .post_comment {
+        width: 250px;
+    }
+    /* profile_edit */
+    .profile_edit_tag {
+        width: 100px;
+    }
+    .form_controls {
+        width: 150px;
+    }
+    /* post_edit */
+    .post_edit_content {
+        margin: 30px 20px;
+    }
+}
+@media (max-width:700px) {
+    /* toppage */
+    #map {
+        margin: 30px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #hokkaido,
+    #tohoku,
+    #kanto,
+    #chubu,
+    #kansai,
+    #chugoku,
+    #shikoku,
+    #kyushu,
+    #okinawa {
+        padding: 30px 40px;
+        margin: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        width: 160px;
+        text-align: center;
+    }
+    #hokkaido_tohoku,
+    #chugoku_shikoku,
+    #kyushu_okinawa {
+        display: inline-block;
+    }
+    #europe2,
+    #asia2,
+    #japan2,
+    #america2,
+    #africa2,
+    #southAmerica2 {
+        display: none;
+    }
+    #europe,
+    #asia,
+    #japan,
+    #america,
+    #africa,
+    #australia,
+    #southAmerica {
+        border-radius: 5px;
+        margin: 10px;
+        padding: 30px 40px;
+        display: inline-block;
+        width: 160px;
+        text-align: center;
+    }
+    .eu_asia,
+    .europe,
+    .asia,
+    .japan,
+    .america,
+    .africa,
+    .southAmerica {
+        display: inline-block;
+    }
+}
