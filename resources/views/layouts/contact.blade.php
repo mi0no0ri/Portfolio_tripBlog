@@ -9,7 +9,7 @@
 
         <div class="form_content">
             <label for="title" class="title_label">Title</label><small class="required">※</small>
-                <select name="title" id="category" class="contact_title">
+                <select name="title" class="contact_title">
                     @foreach(Config::get('tag.tag_name') as $key => $val)
                         <option value="{{$key}}">{{$val}}</option>
                     @endforeach

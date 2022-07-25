@@ -82,5 +82,23 @@ return [
         '13' => 'Africa',
         '14' => 'Australia',
         '15' => 'South America',
+    ],
+    'tag_area' => [
+        '0' => '',
+        '1' => 'Hokkaido',
+        '2' => 'Tohoku',
+        '3' => 'Kanto',
+        '4' => 'Chubu',
+        '5' => 'Kansai',
+        '6' => 'Chugoku',
+        '7' => 'Shikoku',
+        '8' => 'Kyushu',
+        '9' => 'Okinawa',
+        '10' => 'Europe',
+        '11' => 'Asia',
+        '12' => 'America/Canada',
+        '13' => 'Africa',
+        '14' => 'Australia',
+        '15' => 'South America',
     ]
 ];

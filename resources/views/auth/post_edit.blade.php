@@ -16,7 +16,7 @@
             </div>
             <div>
                 {{ Form::label('area_id','Area') }}
-                {{ Form::select('area_id',['0' => '','1' => 'Hokkaido','2' => 'Tohoku','3' => 'Kanto','4' => 'Chubu','5' => 'Kansai','6' => 'Chugoku','7' => 'Shikoku','8' => 'Kyushu','9' => 'Okinawa'],"$up_post->area_id",['class' => 'area']) }}
+                {{ Form::select('area_id',config('tag.tag_area'),"$up_post->area_id",['class' => 'area']) }}
             </div>
             <div>
                 {{ Form::label('date','Date') }}
@@ -47,7 +47,12 @@
                         <div class="post_edit_center">
                         <select name="category{{$index}}" id="category" class="post_edit_label">
                             @foreach(Config::get('tag.tag_category') as $key => $val)
-                                <option value="{{$post->category_id}}" class="">{{$val}}</option>
+                                <option value="{{$key}}"
+                                    @if($post->category_id == $key)
+                                        selected
+                                    @endif
+                                    >{{$val}}
+                                </option>
                             @endforeach
                         </select>
                         </div>
