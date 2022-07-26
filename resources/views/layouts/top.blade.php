@@ -11,46 +11,77 @@
 
 <div id="japan_map" data-aos="fade-up">
     <h2 class="top_title">Japan</h2>
-    <div id="map">
+    <div class="max_map map">
         <div id="hokkaido_tohoku">
-            <a href="/gallery/{{1}}" id="hokkaido" class="noneLink">
+            <a href="/gallery/{{1}}" class="hokkaido noneLink">
                 <div>Hokkaido</div>
             </a>
-            <a href="/gallery/{{2}}" id="tohoku" class="noneLink">
+            <a href="/gallery/{{2}}" class="tohoku noneLink">
                 <div>Tohoku</div>
             </a>
-            <a href="/gallery/{{3}}" id="kanto" class="noneLink">
+            <a href="/gallery/{{3}}" class="kanto noneLink">
                 <div>Kanto</div>
             </a>
         </div>
-        <a href="/gallery/{{4}}" id="chubu" class="noneLink">
+        <a href="/gallery/{{4}}" class="chubu noneLink">
             <div>Chubu</div>
         </a>
-        <a href="/gallery/{{5}}" id="kansai" class="noneLink">
+        <a href="/gallery/{{5}}" class="kansai noneLink">
             <div>Kansai</div>
         </a>
         <div id="chugoku_shikoku">
-            <a href="/gallery/{{6}}" id="chugoku" class="noneLink">
+            <a href="/gallery/{{6}}" class="chugoku noneLink">
                 <div>Chugoku</div>
             </a>
-            <a href="/gallery/{{7}}" id="shikoku" class="noneLink">
+            <a href="/gallery/{{7}}" class="shikoku noneLink">
                 <div>Shikoku</div>
             </a>
         </div>
         <div id="kyushu_okinawa">
-            <a href="/gallery/{{8}}" id="kyushu" class="noneLink">
+            <a href="/gallery/{{8}}" class="kyushu noneLink">
                 <div>Kyushu</div>
             </a>
-            <a href="/gallery/{{9}}" id="okinawa" class="noneLink">
+            <a href="/gallery/{{9}}" class="okinawa noneLink">
                 <div>Okinawa</div>
             </a>
         </div>
     </div>
+
+    <div class="min_map map">
+        <a href="/gallery/{{1}}" class="hokkaido noneLink">
+            <div>Hokkaido</div>
+        </a>
+        <a href="/gallery/{{2}}" class="tohoku noneLink">
+            <div>Tohoku</div>
+        </a>
+        <a href="/gallery/{{3}}" class="kanto noneLink">
+            <div>Kanto</div>
+        </a>
+        <a href="/gallery/{{4}}" class="chubu noneLink">
+            <div>Chubu</div>
+        </a>
+        <a href="/gallery/{{5}}" class="kansai noneLink">
+            <div>Kansai</div>
+        </a>
+        <a href="/gallery/{{6}}" class="chugoku noneLink">
+            <div>Chugoku</div>
+        </a>
+        <a href="/gallery/{{7}}" class="shikoku noneLink">
+            <div>Shikoku</div>
+        </a>
+        <a href="/gallery/{{8}}" class="kyushu noneLink">
+            <div>Kyushu</div>
+        </a>
+        <a href="/gallery/{{9}}" class="okinawa noneLink">
+            <div>Okinawa</div>
+        </a>
+    </div>
+
 </div>
 
 <div id="world_map" data-aos="fade-up">
     <h2 class="top_title">World</h2>
-    <div id="world">
+    <div id="world" class="max_map">
         <div class="world_list">
             <div class="eu_asia">
                 <div class="europe">
@@ -109,6 +140,30 @@
             </div>
         </div>
     </div>
+
+        <div class="min_map map">
+            <a href="/gallery/{{10}}" id="europe" class="europe_map noneLink">
+                <div>Europe</div>
+            </a>
+            <a href="/gallery/{{11}}" id="asia" class="asia_map noneLink">
+                <div>Asia</div>
+            </a>
+            <a href="#japan_map" id="japan" class="japan_map">
+                <div>Japan</div>
+            </a>
+            <a href="/gallery/{{12}}" id="america" class="america_map noneLink">
+                <div>America, Canada</div>
+            </a>
+            <a href="/gallery/{{13}}" id="africa" class="africa_map noneLink">
+                <div>Africa</div>
+            </a>
+            <a href="/gallery/{{14}}" id="australia" class="australia_map noneLink">
+                <div>Australia</div>
+            </a>
+            <a href="/gallery/{{15}}" id="southAmerica" class="south_map noneLink">
+                <div>South America</div>
+            </a>
+        </div>
 </div>
 
 <div id="category_map" data-aos="fade-up">
@@ -163,23 +218,23 @@
             var array = @json($area);
             var result = $.grep(array,function(obj,index){
                 if(obj.area_id == 1){
-                    $("#hokkaido").removeClass("noneLink");
+                    $(".hokkaido").removeClass("noneLink");
                 } else if(obj.area_id == 2) {
-                    $("#tohoku").removeClass("noneLink");
+                    $(".tohoku").removeClass("noneLink");
                 } else if(obj.area_id == 3) {
-                    $("#kanto").removeClass("noneLink");
+                    $(".kanto").removeClass("noneLink");
                 } else if(obj.area_id == 4) {
-                    $("#chubu").removeClass("noneLink");
+                    $(".chubu").removeClass("noneLink");
                 } else if(obj.area_id == 5) {
-                    $("#kansai").removeClass("noneLink");
+                    $(".kansai").removeClass("noneLink");
                 } else if(obj.area_id == 6) {
-                    $("#chugoku").removeClass("noneLink");
+                    $(".chugoku").removeClass("noneLink");
                 } else if(obj.area_id == 7) {
-                    $("#shikoku").removeClass("noneLink");
+                    $(".shikoku").removeClass("noneLink");
                 } else if(obj.area_id == 8) {
-                    $("#kyushu").removeClass("noneLink");
+                    $(".kyushu").removeClass("noneLink");
                 } else if(obj.area_id == 9) {
-                    $("#okinawa").removeClass("noneLink");
+                    $(".okinawa").removeClass("noneLink");
                 } else if(obj.area_id == 10) {
                     $(".europe_map").removeClass("noneLink");
                 } else if(obj.area_id == 11) {

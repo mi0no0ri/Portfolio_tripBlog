@@ -111,65 +111,6 @@
 }
 @media (max-width:700px) {
     /* toppage */
-    #map {
-        margin: 30px auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #hokkaido,
-    #tohoku,
-    #kanto,
-    #chubu,
-    #kansai,
-    #chugoku,
-    #shikoku,
-    #kyushu,
-    #okinawa {
-        padding: 30px 40px;
-        margin: 10px;
-        border-radius: 5px;
-        display: inline-block;
-        width: 160px;
-        text-align: center;
-    }
-    #hokkaido_tohoku,
-    #chugoku_shikoku,
-    #kyushu_okinawa {
-        display: inline-block;
-    }
-    #europe2,
-    #asia2,
-    #japan2,
-    #america2,
-    #africa2,
-    #southAmerica2 {
-        display: none;
-    }
-    #europe,
-    #asia,
-    #japan,
-    #america,
-    #africa,
-    #australia,
-    #southAmerica {
-        border-radius: 5px;
-        margin: 10px;
-        padding: 30px 40px;
-        display: inline-block;
-        width: 160px;
-        text-align: center;
-    }
-    .eu_asia,
-    .europe,
-    .asia,
-    .japan,
-    .america,
-    .africa,
-    .southAmerica {
-        display: inline-block;
-    }
     .category_img {
         margin: 50px 10px;
     }
@@ -178,6 +119,14 @@
     /* toppage */
     #category {
         display: inline-block;
+    }
+    /* gallery */
+    .pic {
+        height: 120px;
+        width: 120px;
+    }
+    #gallery_subtitle {
+        margin: 20px auto 20px 50px;
     }
     /* profile */
     .profile_pic {

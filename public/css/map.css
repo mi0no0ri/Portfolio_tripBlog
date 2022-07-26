@@ -1,11 +1,156 @@
 @charset "utf-8";
 
+/* japan_map */
+#japan_map {
+    min-height: auto;
+    margin: 50px 7%;
+}
+.map {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 0 0 20px;
+}
+.min_map {
+    display: none!important;
+}
+.hokkaido {
+    display: flex;
+    justify-content: center;
+    padding: 40px 60px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+    position: relative;
+}
+.hokkaido:hover {
+    background-color: #7e7ef2;
+    transition: .2s;
+    color: #fff;
+}
+.tohoku {
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px 0 10px;
+    padding: 70px 50px;
+    border-radius: 5px 5px 5px 0;
+    color: #fff;
+    background-color: gray;
+}
+.tohoku:hover {
+    background-color: #7e7ef2;
+    transition: .2s;
+    color: #fff;
+}
+.kanto {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 0;
+    padding: 40px 0;
+    border-radius: 0 5px 5px 5px;
+    color: #fff;
+    background-color: gray;
+}
+.kanto:hover {
+    background-color: #575dff;
+    transition: .2s;
+    color: #fff;
+}
+.chubu {
+    display: flex;
+    justify-content: center;
+    margin: 250px -10px 120px 0;
+    padding: 50px 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.chubu:hover {
+    background-color: #3dc8ff;
+    transition: .2s;
+    color: #fff;
+}
+.kansai {
+    display: flex;
+    justify-content: center;
+    margin: 250px 0 90px 0;
+    padding: 60px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.kansai:hover {
+    background-color: #00a300;
+    transition: .2s;
+    color: #fff;
+}
+.chugoku {
+    display: flex;
+    justify-content: center;
+    margin: 250px 0 50px 0;
+    padding: 40px 50px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.chugoku:hover {
+    background-color: #ffc46b;
+    transition: .2s;
+    color: #fff;
+}
+.shikoku {
+    display: flex;
+    justify-content: center;
+    margin: -30px 20px 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.shikoku:hover {
+    background-color: #ff504a;
+    transition: .2s;
+    color: #fff;
+}
+.kyushu {
+    display: flex;
+    justify-content: center;
+    margin: 300px 30px 30px 0;
+    padding: 50px 40px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.kyushu:hover {
+    background-color: #ffb3b0;
+    transition: .2s;
+    color: #fff;
+}
+.okinawa {
+    display: flex;
+    justify-content: center;
+    margin: 0 60px 0 -30px;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #fff;
+    background-color: gray;
+}
+.okinawa:hover {
+    background-color: #ffb3b0;
+    transition: .2s;
+    color: #fff;
+}
+
+/* mypage */
 .mypage_map {
     margin: 0 15%;
 }
 .map_content {
     border-radius: 5px;
     background-color: gray;
+}
+.min_myMap {
+    display: none;
 }
 /* hokkaido */
 .prefecture1 {
@@ -312,7 +457,9 @@
 .kyushu_color {
     background-color: #ffb3b0;
 }
+
 @media (max-width:1200px) {
+    /* mypage */
     .mypage_map {
         margin: 0 15%;
     }
@@ -458,11 +605,59 @@
         margin: 40px 600px 0 auto;
     }
 }
+
 @media (max-width:900px) {
     .mypage_map {
         margin: 0;
     }
+    .max_map {
+        display: none!important;
+    }
+    .min_map {
+        display: flex!important;
+    }
+    .map {
+        margin: 30px auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hokkaido,
+    .tohoku,
+    .kanto,
+    .chubu,
+    .kansai,
+    .chugoku,
+    .shikoku,
+    .kyushu,
+    .okinawa,
+    #europe,
+    #asia,
+    #japan,
+    #america,
+    #africa,
+    #australia,
+    #southAmerica {
+        padding: 20px;
+        margin: 10px 10px;
+        border-radius: 5px;
+        display: inline-flex;
+        width: 130px;
+        height: 60px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    #europe2,
+    #asia2,
+    #japan2,
+    #america2,
+    #africa2,
+    #southAmerica2 {
+        display: none;
+    }
 }
+
 @media (max-width:700px) {
     .mypage_map {
         display: flex;
@@ -470,10 +665,25 @@
         margin: 0 10%;
         justify-content: center;
     }
+    .min_myMap {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: #fff;
+    }
     .map_content {
         margin: 5px 10px;
-        padding: 10px 30px;
+        padding: 10px 10px;
         height: 50px;
         width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    .mypage_map {
+        display: none;
+    }
+}
+
+@media (max-width:400px) {
 }

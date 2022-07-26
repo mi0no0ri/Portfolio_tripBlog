@@ -10,7 +10,15 @@
                 <p class="map_content prefecture{{$i}}"></p>
             @endfor
         </div>
-    </div>
+        <div class="min_myMap">
+            @for($i = 1; $i <= 47; $i++)
+            <div>
+                <p class="map_content prefecture{{$i}}">
+                    {{config("tag.tag_pref.$i")}}
+                </p>
+            </div>
+            @endfor
+        </div>
 
     <div>
         <h3 class="mypage_title">The form i received is...</h3>

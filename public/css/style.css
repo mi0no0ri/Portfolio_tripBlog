@@ -122,140 +122,6 @@ footer {
     pointer-events: none;
 }
 
-/* japan_map */
-#japan_map {
-    min-height: auto;
-    margin: 50px 7% 150px;
-}
-#map {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-}
-#hokkaido {
-    display: flex;
-    justify-content: center;
-    padding: 40px 60px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-    position: relative;
-}
-#hokkaido:hover {
-    background-color: #7e7ef2;
-    transition: .2s;
-}
-#tohoku {
-    display: flex;
-    justify-content: center;
-    margin: 50px 10px 0 10px;
-    padding: 70px 50px;
-    border-radius: 5px 5px 5px 0;
-    color: #fff;
-    background-color: gray;
-}
-#tohoku:hover {
-    background-color: #7e7ef2;
-    transition: .2s;
-}
-#kanto {
-    display: flex;
-    justify-content: center;
-    margin: 0 10px 0;
-    padding: 40px 0;
-    border-radius: 0 5px 5px 5px;
-    color: #fff;
-    background-color: gray;
-}
-#kanto:hover {
-    background-color: #575dff;
-    transition: .2s;
-}
-#chubu {
-    display: flex;
-    justify-content: center;
-    margin: 250px -10px 120px 0;
-    padding: 50px 30px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#chubu:hover {
-    background-color: #3dc8ff;
-    transition: .2s;
-}
-#kansai {
-    display: flex;
-    justify-content: center;
-    margin: 250px 0 90px 0;
-    padding: 60px 20px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#kansai:hover {
-    background-color: #00a300;
-    transition: .2s;
-}
-#chugoku {
-    display: flex;
-    justify-content: center;
-    margin: 250px 0 50px 0;
-    padding: 40px 50px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#chugoku:hover {
-    background-color: #ffc46b;
-    transition: .2s;
-}
-#shikoku {
-    display: flex;
-    justify-content: center;
-    margin: -30px 20px 0 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#shikoku:hover {
-    background-color: #ff504a;
-    transition: .2s;
-}
-#kyushu {
-    display: flex;
-    justify-content: center;
-    margin: 300px 30px 30px 0;
-    padding: 50px 40px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#kyushu:hover {
-    background-color: #ffb3b0;
-    transition: .2s;
-}
-#okinawa {
-    display: flex;
-    justify-content: center;
-    margin: 0 60px 0 -30px;
-    padding: 10px 0;
-    border-radius: 5px;
-    color: #fff;
-    background-color: gray;
-}
-#okinawa:hover {
-    background-color: #ffb3b0;
-    transition: .2s;
-}
-#hokkaido_tohoku,
-#tyugoku_shikoku,
-#kyushu_okinawa {
-    display: flex;
-    flex-direction: column;
-}
-
 /* World */
 #world_map {
     min-height: auto;
@@ -435,6 +301,7 @@ footer {
 .gallery {
     margin: 0 120px;
     position: relative;
+    padding: 0;
 }
 #gallery_title {
     margin: 20px 120px;

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/map.css">
     <link rel="stylesheet" href="/css/media.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Comforter&family=Great+Vibes&family=Lobster&display=swap" rel="stylesheet">    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--スマホ,タブレット対応-->
@@ -26,7 +27,12 @@
     <header>
         <div class="top_header">
             <a href="/"><img src="/image/スクリーンショット_2022-06-30_0.00.12-removebg-preview.png" class="top_image"></a>
-            <ul class="header_menu">
+            <div class="menu_trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header_menu g_navi">
                 <a href="/"><li class="menu">Top</li></a>
                 <a href="/profile"><li class="menu">Profile</li></a>
                 <a href="/contact"><li class="menu"  >Contact</li></a>
