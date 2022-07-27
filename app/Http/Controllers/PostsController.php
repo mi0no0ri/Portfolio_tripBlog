@@ -95,17 +95,17 @@ class PostsController extends Controller
             ->get();
         return view('auth.post_edit',['up_post' => $up_post,'posts' => $posts]);
     }
-    public function update($id,PostRequest $request)
+    public function update(PostRequest $request)
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             if (!empty($request->input("comment{$i}"))) {
-                if($request->file("image{$i}") !== null){
-                $filename = $request->file("image{$i}")->getClientOriginalName();
-                $path = $request->file("image{$i}")->storeAs('public/posts',$filename);
+                if($request->input("image{$i}") !== null){
+                $filename = $request->input("image{$i}")->getClientOriginalName();
+                $path = $request->input("image{$i}")->storeAs('public/posts',$filename);
                 }
 
-                DB::table('posts')
-                    ->where('id',$id)
+                $edit = DB::table('posts')
+                    ->where('id',$request->id)
                     ->update([
                     'user_id' => Auth::id(),
                     'dest' => $request->input('dest'),

@@ -9,7 +9,7 @@
 
         <div class="post_title">
             <div class="post_list">
-                {{ Form::label('dest','Destination') }}<small class="required">※</small>
+                {{ Form::label('dest','Destination',['class' => 'required']) }}
                 {{ Form::text('dest',null,['class' => 'dest','placeholder' => 'ex)Tokyo']) }}
                 @foreach ($errors->get('dest') as $error)
                     <div>
@@ -18,7 +18,7 @@
                 @endforeach
             </div>
             <div class="post_list">
-                {{ Form::label('area','Area') }}<small class="required"></small>
+                {{ Form::label('area','Area') }}
                 {{ Form::select('area',config('tag.tag_area'),0,['class' => 'area']) }}
                 @foreach ($errors->get('area_id') as $error)
                     <div>
@@ -27,8 +27,8 @@
                 @endforeach
             </div>
             <div class="post_list">
-                {{ Form::label('pref','Prefecture') }}<small class="required"></small>
-                {{ Form::select('pref',config('tag.tag_pref'),0,['class' => 'area']) }}
+                {{ Form::label('pref','Prefecture') }}
+                {{ Form::select('pref',config('tag.tag_pref'),0,['class' => 'pref']) }}
                 @foreach ($errors->get('pref') as $error)
                     <div>
                         <strong class="errors">{{ $error }}</strong>
@@ -36,7 +36,7 @@
                 @endforeach
             </div>
             <div class="post_list">
-                {{ Form::label('date','Date') }}<small class="required">※</small>
+                {{ Form::label('date','Date',['class' => 'required']) }}
                 {{ Form::text('date',null,['class' => 'date','placeholder' => 'DD/MMM/YY']) }}
                 @foreach ($errors->get('date') as $error)
                     <div>
