@@ -24,19 +24,19 @@
         <h3 class="mypage_title">The form i received is...</h3>
         <table class="mypage_contact">
             <tr class="contact_list">
-                <th class="mypage_date">Date</th>
+                <th class="mypage_date contact_blind">Date</th>
                 <th class="mypage_sub_title">title</th>
                 <th class="mypage_comment">Comment</th>
                 <th class="mypage_name">name</th>
-                <th class="mypage_email">email</th>
+                <th class="mypage_email contact_blind">email</th>
             </tr>
             @foreach ($contacts as $contact)
             <tr>
-                <td>{{ $contact->created_at }}</td>
+                <td class="contact_blind">{{ $contact->created_at }}</td>
                 <td>{{ config("tag.tag_name.$contact->title") }}</td>
                 <td>{{ $contact->comment }}</td>
                 <td>{{ $contact->name }}</td>
-                <td>{{ $contact->email }}</td>
+                <td class="contact_blind">{{ $contact->email }}</td>
             </tr>
             @endforeach
         </table>
@@ -52,7 +52,7 @@
             {!! Form::hidden('id',Auth::id()) !!}
             {{csrf_field()}}
             <div class="todo_list mypage_contact">
-                {{ Form::label('list','ToDo List',['class' => 'list_title']) }}
+                {{ Form::label('list','ToDoList',['class' => 'list_title']) }}
                 <div class="list_bar">
                     {{ Form::text('list',null,['class' => 'list_content','placeholder' => '世界一周したい!']) }}
                     {{ Form::submit('追加する',['class'=>'']) }}
@@ -65,19 +65,21 @@
             </div>
             {!! Form::close() !!}
             <div class="todo">
-                <table>
-                    <tr class="todo_show">
+                <table class="todo_show">
+                    <tr class="">
+                        <th class="todo_show_box">Check Box</th>
                         <th class="todo_show_list">ToDo List</th>
-                        <th class="">Check Box</th>
+                        <th class="todo_show_date">Date</th>
                     </tr>
                     @foreach($todo as $list)
-                    <tr class="todo_show">
-                        <td class="todo_show_list">・{{ $list->list }}</td>
-                        <td>
+                    <tr class="">
+                        <td class="todo_show_box">
                             <a href="mypage/{{$list->id}}" onclick="return confirm('todoを更新します。')">
-                                <i class="fa-solid fa-square-check"></i>
+                                <i class="fa-regular fa-square"></i>
                             </a>
                         </td>
+                        <td class="todo_show_list">{{ $list->list }}</td>
+                        <td class="todo_show_date">{{ $list->created_at }}</td>
                     </tr>
                     @endforeach
                 </table>

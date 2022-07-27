@@ -68,7 +68,7 @@ class LoginController extends Controller
         $posts = DB::table('posts')
             ->whereIn('id',$ids)
             ->latest()
-            ->get();
+            ->paginate(5);
         return view('auth.post_list',['posts' => $posts]);
     }
     public function profile_edit()

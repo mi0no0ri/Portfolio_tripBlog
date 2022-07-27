@@ -11,7 +11,7 @@
     {{csrf_field()}}
 
     <div class="form_content">
-        {{ Form::label('kana','Kana',['class' => 'profile_edit_tag']) }}<small class="required">※</small>
+        {{ Form::label('kana','Kana',['class' => 'profile_edit_tag required']) }}
         {{ Form::text('kana',$auth->kana,['class'=>'form_controls']) }}
         @foreach ($errors->get("kana") as $error)
             <div>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form_content">
-        {{ Form::label('username','Username',['class' => 'profile_edit_tag']) }}<small class="required">※</small>
+        {{ Form::label('username','Username',['class' => 'profile_edit_tag required']) }}
         {{ Form::text('username',$auth->username,['class'=>'form_controls']) }}
         @foreach ($errors->get("username") as $error)
             <div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="form_content">
-        {{ Form::label('email','Email',['class' => 'profile_edit_tag']) }}<small class="required">※</small>
+        {{ Form::label('email','Email',['class' => 'profile_edit_tag required']) }}
         {{ Form::text('email',$auth->email,['class'=>'form_controls']) }}
         @foreach ($errors->get("email") as $error)
             <div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="form_content">
-        {{ Form::label('password','New Password',['class' => 'profile_edit_tag']) }}<small class="required"></small>
+        {{ Form::label('password','New Password',['class' => 'profile_edit_tag']) }}
         {{ Form::password('password',['class'=>'form_controls','value'=>encrypt($auth->password)]) }}
         @foreach ($errors->get("password") as $error)
             <div>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="form_content">
-        {{ Form::label('bio','Bio',['class' => 'profile_edit_tag']) }}<small class="required">※</small>
+        {{ Form::label('bio','Bio',['class' => 'profile_edit_tag required']) }}
         {{ Form::textarea('bio',$auth->bio,['class' => 'profile_bio']) }}
         @foreach ($errors->get("bio") as $error)
             <div>
@@ -61,7 +61,7 @@
     </div>
 
     <div class="form_content">
-        <label for="" class="profile_edit_tag">Image</label><small class="required"></small>
+        <label for="" class="profile_edit_tag">Image</label>
         <div class="profile_img">
             <label for="image" class="image_label">Image Select</label>
             <div class="image_input">
@@ -75,7 +75,7 @@
     </div>
 
     <div class="send">
-        {{Form::submit('更新する',['class'=>'send_btn'])}}
+        {{Form::submit('Edit',['class'=>'send_btn'])}}
     </div>
 </div>
 
