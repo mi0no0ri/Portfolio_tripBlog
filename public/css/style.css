@@ -513,7 +513,8 @@ footer {
 }
 .dest,
 .date,
-.area {
+.area,
+.pref {
     margin: 10px;
     width: 12%;
 }
@@ -645,6 +646,9 @@ footer {
     height: 160px;
     width: 160px;
     border-radius: 5px;
+}
+.post_edit_id {
+    display: none;
 }
 
 /* contact */
