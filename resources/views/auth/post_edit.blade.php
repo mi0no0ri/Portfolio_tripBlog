@@ -5,7 +5,7 @@
     <h2>Post edit</h2>
 </div>
 
-<div class="post_title">
+<div class="">
     <div>
         {!! Form::open(['url' => "post_edit/{{$up_post->id}}",'enctype' => 'multipart/form-data','method' => 'POST']) !!}
         {{ csrf_field() }}
@@ -35,15 +35,15 @@
                             <input type="file" name="image{{$index}}" class="img_file" id="image{{$index}}" data-target="post{{$index}}" value="{{$post->image}}">
                         </div>
                     </div>
-                    <div class="image_name" id="post{{$index}}">
+                    <div class="image_name post_edit_name" id="post{{$index}}">
                         <span>{{$post->image}}</span>
                     </div>
                     <div class="post_edit_comment">
                         <label for="comment{{$index}}" class="">Comment</label>
                         <input type="text" name="comment{{$index}}" class="" value="{{$post->comment}}">
                     </div>
-                    <div class="">
-                        <label for="category{{$index}}" class="post_edit_category">Category</label>
+                    <div class="post_edit_category">
+                        <label for="category{{$index}}" class="">Category</label>
                         <div class="post_edit_center">
                         <select name="category{{$index}}" id="category" class="post_edit_label">
                             @foreach(Config::get('tag.tag_category') as $key => $val)

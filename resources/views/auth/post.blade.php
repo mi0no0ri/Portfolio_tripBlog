@@ -44,7 +44,7 @@
                     </div>
                 @endforeach
             </div>
-            <div>
+            <div class="post_caution">
                 <small>※画像は1枚2MB,トータル20MBまでアップロードできます。<br></small>
                 <small>※画像の拡張子はJPEG,PNG,BMPでアップロードしてください。</small>
             </div>
@@ -62,7 +62,6 @@
                                 <strong class="errors">{{ $error }}</strong>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
                 <div class="image_name" id="post{{$i}}">
@@ -77,7 +76,6 @@
                             <strong class="errors">{{ $error }}</strong>
                         </div>
                     @endforeach
-
                 </div>
                 <div>
                     <label for="category{{$i}}" class="">Category</label>

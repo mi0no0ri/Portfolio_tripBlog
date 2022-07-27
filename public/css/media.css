@@ -114,6 +114,64 @@
     .category_img {
         margin: 50px 10px;
     }
+    /* mypage */
+    /* todo */
+    .list_content {
+        width: 60%;
+    }
+    .todo_show_box {
+        width: 90px;
+    }
+    .todo_show_list {
+        width: 130px;
+    }
+    /* post */
+    .post_title label {
+        width: 20%;
+    }
+    .post_title input,
+    .post_title select {
+        width: 40%;
+    }
+    .post_img {
+        border-bottom: 1px solid gray;
+        gap: 10px;
+        padding: 0 0 30px;
+    }
+    .image_name {
+        max-width: 100px;
+    }
+    /* post edit */
+    .post_edit_content {
+        margin: 20px 5px;
+    }
+    .post_edit_name {
+        max-width: 160px;
+    }
+    .post_edit_content label,
+    .post_edit_content input {
+        width: 160px;
+    }
+    .post_edit_content select {
+        width: 100px;
+    }
+    .post_edit_center {
+        display: flex;
+        justify-content: center;
+    }
+    .post_edit_category {
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+    }
+    .post_edit_btn {
+        width: 70px!important;
+    }
+    /* profile */
+    .image_ex {
+        margin: 50px 0 0;
+        width: 500px;
+    }
 }
 @media (max-width:400px) {
     /* toppage */
@@ -142,5 +200,55 @@
     }
     .comment_label {
         width: 80px;
+    }
+    /* mypage */
+    /* contact */
+    .contact_blind {
+        display: none;
+    }
+    .contact_form_list {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact_form_list {
+        border-bottom: 1px solid gray;
+        margin: 20px 0 0 0;
+    }
+    /* post */
+    .post {
+        margin: 20px 0 20px auto;
+    }
+    .post_edit {
+        padding: 20px;
+    }
+    .post_comment {
+        display: block;
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+        .post_title label {
+            width: 30%;
+        }
+    .post_title input,
+    .post_title select {
+        width: 40%;
+    }
+    .post_img {
+        border-bottom: 1px solid gray;
+        gap: 10px;
+        padding: 0 0 30px;
+    }
+    /* profile */
+    .image_ex {
+        width: 150px;
+    }
+    .form_content {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile_bio {
+        width: 100%;
     }
 }

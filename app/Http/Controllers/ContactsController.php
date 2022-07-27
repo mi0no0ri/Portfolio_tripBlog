@@ -37,7 +37,7 @@ class ContactsController extends Controller
             ->where('user_id',Auth::id())
             ->select('id','list','created_at')
             ->orderBy('id','desc')
-            ->paginate(3);
+            ->paginate(5);
 
         $data = [
             'msg' => $msg,
