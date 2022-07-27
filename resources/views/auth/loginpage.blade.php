@@ -32,7 +32,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <ul class="header_menu g_navi">
+            <ul class="header_menu g_navi login_gnavi">
                 <a href="/"><li class="menu">Top</li></a>
                 <a href="/mypage"><li class="menu">My page</li></a>
                 <a href="{{ route('post_list') }}"><li class="menu">Post edit</li></a>

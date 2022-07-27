@@ -9,7 +9,6 @@ li {
 header {
     display: flex;
     justify-content: space-around;
-    padding: 0 50px;
     background-color: #dedede;
 }
 .header_menu {
@@ -17,7 +16,7 @@ header {
     justify-content: right;
     gap: 40px;
     font-size: 15px;
-    padding: 0 20px 0 0;
+    padding: 0 50px 0 0;
     margin-bottom: 0px!important;
     align-items: center;
 }
@@ -37,7 +36,7 @@ a:hover {
 .top_image {
     height: 50px;
     width: 110px;
-    margin: 0 50% 0 20px;
+    margin: 0 auto 0 50px;
     align-items: center;
 }
 
