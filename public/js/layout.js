@@ -1,22 +1,5 @@
 'use strict';
 
-// modal
-$(function(){
-	$('.modal_open').each(function(){
-        $(this).on('click',function(){
-		var target = $(this).data('target');
-		var modal = document.getElementById(target);
-		$(modal).fadeIn(500);
-        $(modal).addClass("active");
-		return false;
-	});
-    $(".modal_close").on("click",function(){
-        $(".modal").fadeOut(500);
-        $(".modal").removeClass("active");
-    })
-});
-});
-
 // toppage animation
 AOS.init();
 
