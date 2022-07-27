@@ -67,6 +67,12 @@ class UsersController extends Controller
             ->whereDate('created_at',$today)
             ->orderBy('created_at','desc')
             ->get();
-        return view('layouts.top',['area' => $area,'new' => $new]);
+
+        $categories = DB::table('posts')
+            ->where('user_id',1)
+            ->select('category_id')
+            ->groupBy('category_id')
+            ->get();
+        return view('layouts.top',['area' => $area,'new' => $new,'categories' => $categories]);
     }
 }

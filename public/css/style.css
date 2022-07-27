@@ -338,7 +338,7 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 0;
 }
 .modal_content {
     text-align: center;
@@ -354,7 +354,6 @@ footer {
 .image {
     width: 55%;
     margin: 20px 0 10px 0;
-    z-index: 3;
 }
 .slide_btn {
     position: absolute;

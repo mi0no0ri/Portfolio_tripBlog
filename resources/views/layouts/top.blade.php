@@ -169,32 +169,15 @@
 <div id="category_map" data-aos="fade-up">
     <h2 class="top_title">Category</h2>
     <ul id="category">
-        <a href="/category/{{1}}" class="category_list">
-            <li class="category_img">Urban<br>
-                <img src="/image/IMG_6938.JPG" alt="" class="pic">
-            </li>
-        </a>
-        <a href="/category/{{2}}" class="category_list">
-            <li class="category_img">Nature<br>
-                <img src="/image/IMG_7185.jpg" alt="" class="pic">
-            </li>
-        </a>
-        <a href="/category/{{3}}" class="category_list">
-            <li class="category_img">Calture<br>
-                <img src="/image/IMG_7877.JPG" alt="" class="pic">
-            </li>
-        </a>
-        <a href="/category/{{4}}" class="category_list">
-            <li class="category_img">Food<br>
-                <img src="/image/IMG_7902.jpg" alt="" class="pic">
-            </li>
-        </a>
-        <a href="/category/{{5}}" class="category_list">
-            <li class="category_img">Others<br>
-                <img src="/image/IMG_4145.JPG" alt="" class="pic">
-            </li>
-        </a>
+        @foreach($categories as $index => $category)
+            <a href="/category/{{$index + 1}}" class="category_list">
+                <li class="category_img">{{config("tag.tag_category.$category->category_id")}}<br>
+                    <img src="/storage/posts/{{}}" alt="" class="pic">
+                </li>
+            </a>
+        @endforeach
     </ul>
+
 </div>
 
 <div>
