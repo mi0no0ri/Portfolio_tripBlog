@@ -7,7 +7,7 @@
 
 <div class="">
     <div>
-        {!! Form::open(['url' => "post_edit/{{$up_post->id}}",'enctype' => 'multipart/form-data','method' => 'POST']) !!}
+        {!! Form::open(['url' => "post_edit/{{$up_post->id}}",'enctype' => 'multipart/form-data','method' => 'PUT']) !!}
         {{ csrf_field() }}
         <div class="post_title">
             <div>
@@ -55,15 +55,15 @@
             @foreach($posts as $index => $post)
                 <div class="post_edit_content">
                     <div>
-                        <input type="text" name="id{{$index}}" class="post_edit_id" value="{{$post->id}}">
+                        <input type="hidden" name="id{{$index}}" class="post_edit_id" value="{{$post->id}}">
                     </div>
                     <div id="image_insert" class="post_edit_center">
                         <label for="image{{$index}}" class="post_edit_label">IconImage
-                            <img src="/storage/posts/{{$post->image}}" class="edit_image" value="{{$post->image}}">
+                            <img src="/storage/posts/{{$post->image}}" class="edit_image">
                         </label>
                         <div class="image_post">
                             <input type="hidden" name="image{{$index}}" class="img_file" value="{{$post->image}}">
-                            <input type="file" name="image{{$index}}" class="img_file" id="image{{$index}}" data-target="post{{$index}}" value="{{$post->image}}">
+                            <input type="file" name="image{{$index}}" class="img_file" id="image{{$index}}" data-target="post{{$index}}">
                         </div>
                     </div>
                     <div class="image_name post_edit_name" id="post{{$index}}">

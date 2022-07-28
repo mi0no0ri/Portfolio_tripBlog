@@ -85,7 +85,6 @@ class LoginController extends Controller
             ->select('pref')
             ->groupBy('pref')
             ->get('pref');
-            dd($pref);
         return view('auth.mypage',['pref' => $pref]);
     }
     public function redirectTo()
