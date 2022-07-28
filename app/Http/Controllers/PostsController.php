@@ -46,27 +46,23 @@ class PostsController extends Controller
             ->groupBy('dest')
             ->groupBy('date')
             ->pluck('id');
-            // dd($ids);
         $posts = DB::table('posts')
             ->where('user_id',1)
             ->whereIn('id',$ids)
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment','image')
-            ->get()
-            ->toArray();
+            ->get();
             // dd($posts);
 
-        foreach($posts as $key => $val) {
-            $images = DB::table('posts')
-                ->where('user_id',1)
-                ->where('area_id',$id)
-                ->where('dest',[$key => $val->dest])
-                ->select('id','comment','image',)
-                ->get();
-            }
-            // dd($images);
+        $images = DB::table('posts')
+            ->where('dest','Enoshima')
+            ->select('id','comment','image')
+            ->get();
 
+            // dd($images);
+            // var_dump($images);
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
+
     }
     public function delete($id)
     {
@@ -95,24 +91,27 @@ class PostsController extends Controller
             ->get();
         return view('auth.post_edit',['up_post' => $up_post,'posts' => $posts]);
     }
-    public function update(PostRequest $request)
+    public function update(PostRequest $request,Post $post)
     {
         for ($i = 0; $i < 10; $i++) {
-            if (!empty($request->input("comment{$i}"))) {
-                if($request->input("image{$i}") !== null){
-                $filename = $request->input("image{$i}")->getClientOriginalName();
-                $path = $request->input("image{$i}")->storeAs('public/posts',$filename);
-                }
+            if (!empty($request->input('dest'))) {
+                if(!empty($request->file("image{$i}"))){
+                    $file = $request->file("image{$i}");
+                    $filename = $file->getClientOriginalName();
+                    $path = $file->storeAs('public/posts',$filename);
+                    $post->where('id',$request->input("id{$i}"))
+                    ->update([
+                        'image' => $filename
+                    ]);
+                    }
 
-                $edit = DB::table('posts')
-                    ->where('id',$request->id)
+                $post->where('id',$request->input("id{$i}"))
                     ->update([
                     'user_id' => Auth::id(),
                     'dest' => $request->input('dest'),
-                    'area_id' => $request->input('area'),
+                    'area_id' => $request->input('area_id'),
                     'pref' => $request->input('pref'),
                     'date' => $request->input('date'),
-                    'image' => $filename,
                     'comment' => $request->input("comment{$i}"),
                     'category_id' => $request->input("category{$i}"),
                     'updated_at' => now(),
