@@ -36,18 +36,13 @@ class UsersController extends Controller
         if(null!==$request->password){
             $user->password = bcrypt($request->input('password'));
         }
-        if($request->image !== null){
-            $user->image = $request
-                ->file('image');
-        }
 
-        if(null!==($request->file('image'))){
-            $fileName = $request
-                ->file('image');
-            $path = $request
-                ->file('image')
-                ->storeAs('public/images',$fileName);
-        }
+        if(!empty($request->file("image"))){
+            $file = $request->file("image");
+            $filename = $file->getClientOriginalName();
+            $path = $file->storeAs('public/images',$filename);
+            $user->image = $filename;
+            }
 
         $user->updated_at = now();
         $user->save();

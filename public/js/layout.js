@@ -18,7 +18,6 @@ $('.img_file').on('change',function(){
     $(image).text(file.name);
 });
 
-// post drag&drop
 
 // post edit
 $('.post_edit_label').on('change',function(){

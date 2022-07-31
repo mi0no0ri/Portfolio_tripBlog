@@ -650,6 +650,21 @@ footer {
 .post_edit_id {
     display: none;
 }
+.fa-xmark {
+    position: absolute;
+    padding: 5px 7px;
+    background-color: rgba(255,255,255,.6);
+    border-radius: 20px;
+    color: #737373;
+    margin: -270px -30px auto;
+}
+.fa-xmark:hover {
+    color: #262626;
+}
+.edit_delete {
+    display: flex;
+    justify-content: end;
+}
 
 /* contact */
 .contact_content {
@@ -737,6 +752,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 30px auto;
 }
 .todo_show_box {
     width: 100px;

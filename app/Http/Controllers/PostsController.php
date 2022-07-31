@@ -52,15 +52,12 @@ class PostsController extends Controller
             ->where('area_id',$id)
             ->select('id','area_id','dest','date','comment','image')
             ->get();
-            // dd($posts);
 
         $images = DB::table('posts')
-            ->where('dest','Enoshima')
-            ->select('id','comment','image')
+            ->where('area_id',$id)
+            ->select('id','comment','image','dest')
             ->get();
 
-            // dd($images);
-            // var_dump($images);
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
 
     }
@@ -135,5 +132,12 @@ class PostsController extends Controller
             ->select('id','area_id','dest','date','comment','image')
             ->get();
         return view('layouts.category',['cateTitle' => $cateTitle,'categorys' => $categorys]);
+    }
+    public function edit_delete($id)
+    {
+        DB::table('posts')
+            ->where('id',$id)
+            ->delete();
+        return redirect('post_list');
     }
 }
