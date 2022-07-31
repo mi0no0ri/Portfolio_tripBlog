@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'],function()
     // post_edit
     Route::get('/post_edit/{id}','PostsController@show_update');
     Route::put('/post_edit/{id}','PostsController@update');
+    Route::get('/post_edit/delete/{id}','PostsController@edit_delete');
     // post_delete
     Route::get('/post/delete/{id}','PostsController@delete')->name('delete');
     // profile

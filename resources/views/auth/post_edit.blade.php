@@ -47,7 +47,7 @@
                 @endforeach
             </div>
             <div class="post_caution">
-                <small>※画像は1枚2MB,トータル20MBまでアップロードできます。<br></small>
+                <small>※画像は1枚3MB,トータル30MBまでアップロードできます。<br></small>
                 <small>※画像の拡張子はJPEG,PNG,BMPでアップロードしてください。</small>
             </div>
         </div>
@@ -87,6 +87,11 @@
                             @endforeach
                         </select>
                         </div>
+                    </div>
+                    <div class="edit_delete">
+                        <a href="/post_edit/delete/{{$post->id}}" onclick="return confirm('投稿を削除しますか')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </a>
                     </div>
                 </div>
             @endforeach
