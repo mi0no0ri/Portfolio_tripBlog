@@ -66,6 +66,10 @@
                     </form>
                 </div>
             </div>
+            <div>
+                <small>Email Adress：test1@gmail.com<br></small>
+                <small>Password：testtest</small>
+            </div>
         </div>
     </div>
 </div>
