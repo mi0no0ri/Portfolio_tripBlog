@@ -561,6 +561,10 @@ footer {
 .errors {
     color: red;
 }
+.transform {
+    font-size: 85%;
+    color: #636b6f;
+}
 
 /* post_edit */
 .post_edit {

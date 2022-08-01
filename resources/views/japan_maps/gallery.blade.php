@@ -9,7 +9,7 @@
         <h3>{{ $post->date }}</h3>
         <div class="gallery_list">
             @foreach($images as $index => $val)
-            @if($post->dest == $val->dest)
+            @if($post->dest == $val->dest&&$post->date == $val->date)
             <li>
                 <a href="" data-target="modal{{$index}}" class="modal_open">
                     <img src="/storage/posts/{{$val->image}}" class="pic map_pic">

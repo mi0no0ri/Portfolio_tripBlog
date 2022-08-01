@@ -48,10 +48,10 @@
                 <small>※画像は1枚3MB,トータル30MBまでアップロードできます。<br></small>
                 <small>※画像の拡張子はJPEG,PNG,BMPでアップロードしてください。</small>
             </div>
-        </div>
-        <div>
-            <a href="https://www.iloveimg.com/ja/compress-image">画像圧縮はこちら（外部リンク）</a>
-            <a href="https://www.iloveimg.com/ja/convert-to-jpg">拡張子変更はこちら（外部リンク）</a>
+            <div>
+                <a href="https://www.iloveimg.com/ja/compress-image" class="transform">・画像圧縮はこちら（外部リンク）<br></a>
+                <a href="https://www.iloveimg.com/ja/convert-to-jpg" class="transform">・拡張子変更はこちら（外部リンク）</a>
+            </div>
         </div>
 
         @for($i = 1; $i <= 10; $i++)

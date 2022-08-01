@@ -55,7 +55,7 @@ class PostsController extends Controller
 
         $images = DB::table('posts')
             ->where('area_id',$id)
-            ->select('id','comment','image','dest')
+            ->select('id','comment','image','dest','date')
             ->get();
 
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
