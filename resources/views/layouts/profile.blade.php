@@ -1,7 +1,7 @@
 @extends('layouts.toppage')
 
 @section('content')
-<div class="profile">
+<div class="profile" style="background-image: url('/storage/images/{{ $profiles->back_image }}')">
     <h3 class="profile_title">Profile</h3>
     <div class="profile_content">
         @if($profiles->image == null)

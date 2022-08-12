@@ -74,6 +74,20 @@
         </div>
     </div>
 
+    <div class="form_content">
+        <label for="" class="profile_edit_tag">Background</label>
+        <div class="profile_img">
+            <label for="backImg" class="image_label">Image Select</label>
+            <div class="image_input">
+                <input type="hidden" name="back_image" class="img_file">
+                <input type="file" name="back_image" class="img_file form_controls" value="{{$auth->back_image}}" data-target="back_image" id="backImg">
+            </div>
+            <div class="image_name" id="back_image">
+                <span>No select</span>
+            </div>
+        </div>
+    </div>
+
     <div class="send">
         {{Form::submit('Edit',['class'=>'send_btn'])}}
     </div>
@@ -82,12 +96,25 @@
 {!! Form::close() !!}
 
 <div class="image_ex">
-    @if($auth->image == null)
-        <i class="fa-solid fa-user fa-8x"></i>
-    @else
-        <img src="/storage/images/{{ $auth->image }}" class="profile_pic">
-    @endif
+    <div class="profile_edit_img">
+        <p>profile Imgae</p>
+        @if($auth->image == null)
+            <i class="fa-solid fa-user fa-8x"></i>
+        @else
+            <img src="/storage/images/{{ $auth->image }}" class="profile_edit_pic">
+        @endif
+    </div>
 </div>
 
+<div class="backImg_ex image_ex">
+    <div class="profile_edit_img">
+        <p>Profile Background</p>
+        @if($auth->back_image == null)
+            <i class="fa-solid fa-image"></i>
+        @else
+            <img src="/storage/images/{{ $auth->back_image }}" class="profile_edit_pic profile_edit_background">
+        @endif
+    </div>
+</div>
 
 @endsection

@@ -28,8 +28,7 @@ class ProfileRequest extends FormRequest
             'kana' => 'required|max:40',
             'email' => 'required|max:40',
             'password' => 'nullable|max:20|alpha_num',
-            'bio' => 'required|max:200',
-            'image' => 'image|file|mimes:jpg,png,bmp,gif,svg',
+            'bio' => 'max:200',
         ];
     }
     public function message()

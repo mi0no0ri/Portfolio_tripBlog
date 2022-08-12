@@ -24,14 +24,14 @@ class UsersController extends Controller
     public function profile(){
         $profiles = DB::table('users')
             ->where('id',1)
-            ->select('id','username','kana','bio','image')
+            ->select('id','username','kana','bio','image','back_image')
             ->first();
         return view('layouts.profile',['profiles'=>$profiles]);
     }
     public function profile_edit(ProfileRequest $request){
         $user = Auth::user();
 
-        $user->fill($request->except('password','image'));
+        $user->fill($request->except('password','image','back_image'));
 
         if(null!==$request->password){
             $user->password = bcrypt($request->input('password'));
@@ -43,6 +43,13 @@ class UsersController extends Controller
             $path = $file->storeAs('public/images',$filename);
             $user->image = $filename;
             }
+
+        if(!empty($request->file("back_image"))){
+            $back = $request->file("back_image");
+            $backname = $back->getClientOriginalName();
+            $path = $back->storeAs('public/images',$backname);
+            $user->back_image = $backname;
+        }
 
         $user->updated_at = now();
         $user->save();
@@ -68,6 +75,15 @@ class UsersController extends Controller
             ->select('category_id')
             ->groupBy('category_id')
             ->get();
-        return view('layouts.top',['area' => $area,'new' => $new,'categories' => $categories]);
+        $cate_images = DB::table('posts')
+            ->where('user_id',1)
+            ->select('category_id','image')
+            ->get();
+
+        $back = DB::table('posts')
+            ->select('image')
+            ->inRandomOrder()
+            ->first();
+        return view('layouts.top',['area' => $area,'new' => $new,'categories' => $categories,'cate_images' => $cate_images,'back' => $back]);
     }
 }
