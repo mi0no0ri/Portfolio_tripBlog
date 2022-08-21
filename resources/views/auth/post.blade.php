@@ -19,7 +19,7 @@
             </div>
             <div class="post_list">
                 {{ Form::label('area','Area') }}
-                {{ Form::select('area',config('tag.tag_area'),0,['class' => 'area']) }}
+                {{ Form::select('area',config('tag.tag_area'),0,['class' => 'area','id' => 'area']) }}
                 @foreach ($errors->get('area_id') as $error)
                     <div>
                         <strong class="errors">{{ $error }}</strong>
@@ -28,7 +28,7 @@
             </div>
             <div class="post_list">
                 {{ Form::label('pref','Prefecture') }}
-                {{ Form::select('pref',config('tag.tag_pref'),0,['class' => 'pref']) }}
+                {{ Form::select('pref',config('tag.tag_pref'),0,['class' => 'pref','id' => 'pref']) }}
                 @foreach ($errors->get('pref') as $error)
                     <div>
                         <strong class="errors">{{ $error }}</strong>
@@ -95,4 +95,9 @@
 
     {!! Form::close() !!}
 </div>
+
+<script>
+
+</script>
+
 @endsection

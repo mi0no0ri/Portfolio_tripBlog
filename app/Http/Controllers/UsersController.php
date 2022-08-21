@@ -56,15 +56,17 @@ class UsersController extends Controller
 
         return redirect()->route('profile_edit',['user' => $user]);
     }
-    public function topPage()
+    public function top()
     {
         $area = DB::table('posts')
+            ->where('user_id',1)
             ->select('area_id')
             ->groupBy('area_id')
             ->get('area_id');
 
         $today = today();
         $new = DB::table('posts')
+            ->where('user_id',1)
             ->select('created_at')
             ->whereDate('created_at',$today)
             ->orderBy('created_at','desc')
@@ -81,6 +83,7 @@ class UsersController extends Controller
             ->get();
 
         $back = DB::table('posts')
+            ->where('user_id',1)
             ->select('image')
             ->inRandomOrder()
             ->first();

@@ -42,6 +42,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $ids = DB::table('posts')
+            ->where('user_id',1)
             ->selectRaw('min(id) as id')
             ->groupBy('dest')
             ->groupBy('date')
@@ -54,12 +55,12 @@ class PostsController extends Controller
             ->get();
 
         $images = DB::table('posts')
+            ->where('user_id',1)
             ->where('area_id',$id)
             ->select('id','comment','image','dest','date')
             ->get();
 
         return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
-
     }
     public function delete($id)
     {
@@ -122,16 +123,18 @@ class PostsController extends Controller
     public function category($id)
     {
         $title = DB::table('posts')
+            ->where('user_id',1)
             ->where('category_id',$id)
             ->select('category_id')
             ->first();
         $cateTitle = config("tag.tag_category.$title->category_id");
 
-        $categorys = DB::table('posts')
+        $categories = DB::table('posts')
+            ->where('user_id',1)
             ->where('category_id',$id)
             ->select('id','area_id','dest','date','comment','image')
             ->get();
-        return view('layouts.category',['cateTitle' => $cateTitle,'categorys' => $categorys]);
+        return view('layouts.category',['cateTitle' => $cateTitle,'categories' => $categories]);
     }
     public function edit_delete($id)
     {

@@ -6,9 +6,8 @@
     <div class="contact_content">
         {!! Form::open(['url' => 'contact','method' => 'POST']) !!}
         {{ csrf_field() }}
-
         <div class="form_content">
-            <label for="title" class="title_label">Title</label><small class="required">※</small>
+            <label for="title" class="title_label">Title</label><small class="required"></small>
                 <select name="title" class="contact_title">
                     @foreach(Config::get('tag.tag_name') as $key => $val)
                         <option value="{{$key}}">{{$val}}</option>
@@ -22,7 +21,7 @@
         </div>
 
         <div class="form_content">
-            {{ Form::label('name','Name',['class' => 'title_label']) }}<small class="required">※</small>
+            {{ Form::label('name','Name',['class' => 'title_label']) }}<small class="required"></small>
             {{ Form::text('name',null,['class' => 'contact_title']) }}
                 @foreach ($errors->get('name') as $error)
                     <div>
@@ -44,7 +43,7 @@
         </div>
 
         <div class="form_content">
-            {{ Form::label('comment','Comment',['class' => 'comment_label']) }}<small class="required">※</small>
+            {{ Form::label('comment','Comment',['class' => 'comment_label']) }}<small class="required"></small>
             {{ Form::textarea('comment',null,['class' => 'contact_comment']) }}
                 @foreach ($errors->get('comment') as $error)
                     <div>

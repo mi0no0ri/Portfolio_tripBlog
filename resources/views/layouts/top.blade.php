@@ -171,19 +171,19 @@
     <h2 class="top_title">Category</h2>
     <ul id="category">
         @foreach($categories as $index => $category)
-            @if($index == 0)
-            @else
-                @foreach($cate_images as $cate_image)
+            @foreach($cate_images as $cate_image)
+                @if($cate_image->category_id == 0)
+                @else
                     @if($cate_image->category_id == $category->category_id)
-                    <a href="/category/{{$index}}" class="category_list">
+                    <a href="/category/{{$cate_image->category_id}}" class="category_list">
                         <li class="category_img">{{ config("tag.tag_category.$category->category_id") }}<br>
                             <img src="/storage/posts/{{$cate_image->image}}" alt="" class="pic">
                         </li>
                     </a>
                     @break
                     @endif
-                @endforeach
-            @endif
+                @endif
+            @endforeach
         @endforeach
     </ul>
 

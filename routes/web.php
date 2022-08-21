@@ -12,10 +12,7 @@
 */
 
 // top
-Route::get('/', function () {
-    return view('layouts/top');
-});
-Route::get('/','UsersController@topPage');
+Route::get('/','UsersController@top');
 
 // profile
 Route::get('/profile','UsersController@profile');
@@ -25,7 +22,6 @@ Route::get('/contact','UsersController@contact');
 Route::post('/contact','ContactsController@create');
 
 // gallery
-Route::get('/gallery','MapsController@gallery');
 Route::get('/gallery/{id}','PostsController@show');
 Route::get('/category/{id}','PostsController@category');
 
