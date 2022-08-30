@@ -26,7 +26,17 @@
 <body>
     <header>
         <div class="top_header">
-            <a href="/"><img src="/image/スクリーンショット_2022-06-30_0.00.12-removebg-preview.png" class="top_image"></a>
+            <div class="top_header_left">
+                <a href="/"><img src="/image/スクリーンショット_2022-06-30_0.00.12-removebg-preview.png" class="top_image"></a>
+                {!! Form::open(['route' => 'search','method' => 'POST']) !!}
+                {{ csrf_field() }}
+                <div>
+                    {{Form::label('search',' ',['class' => 'top_search'])}}
+                    {{Form::text('search',null,['class' => 'search_bar','placeholder' => 'User Search'])}}
+                    <button class="search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                {!! Form::close() !!}
+            </div>
             <div class="menu_trigger">
                 <span></span>
                 <span></span>
@@ -34,7 +44,6 @@
             </div>
             <ul class="header_menu g_navi">
                 <a href="/"><li class="menu">Top</li></a>
-                <a href="/profile"><li class="menu">Profile</li></a>
                 <a href="/contact"><li class="menu"  >Contact</li></a>
                 @if(Auth::User())
                     <a href="/mypage">

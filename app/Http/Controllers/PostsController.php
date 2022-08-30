@@ -39,28 +39,23 @@ class PostsController extends Controller
         }
         return redirect()->route('post_list');
     }
-    public function show($id)
+    public function post_list()
     {
+        $id = Auth::user('id')
+            ->get();
+
         $ids = DB::table('posts')
-            ->where('user_id',1)
             ->selectRaw('min(id) as id')
-            ->groupBy('dest')
+            ->groupBy('area_id')
             ->groupBy('date')
+            ->groupBy('dest')
             ->pluck('id');
         $posts = DB::table('posts')
-            ->where('user_id',1)
             ->whereIn('id',$ids)
-            ->where('area_id',$id)
-            ->select('id','area_id','dest','date','comment','image')
-            ->get();
-
-        $images = DB::table('posts')
-            ->where('user_id',1)
-            ->where('area_id',$id)
-            ->select('id','comment','image','dest','date')
-            ->get();
-
-        return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
+            ->where('user_id',Auth::id())
+            ->latest()
+            ->paginate(10);
+        return view('auth.post_list',['posts' => $posts]);
     }
     public function delete($id)
     {
@@ -69,6 +64,7 @@ class PostsController extends Controller
             ->select('dest','date','area_id')
             ->first();
         DB::table('posts')
+            ->where('user_id',Auth::id())
             ->where('area_id',$del->area_id)
             ->where('dest',$del->dest)
             ->where('date',$del->date)
@@ -82,6 +78,7 @@ class PostsController extends Controller
             ->first();
 
         $posts = DB::table('posts')
+            ->where('user_id',Auth::id())
             ->where('area_id',$up_post->area_id)
             ->where('dest',$up_post->dest)
             ->where('date',$up_post->date)
@@ -120,27 +117,72 @@ class PostsController extends Controller
         }
         return redirect('/post_list');
     }
-    public function category($id)
-    {
-        $title = DB::table('posts')
-            ->where('user_id',1)
-            ->where('category_id',$id)
-            ->select('category_id')
-            ->first();
-        $cateTitle = config("tag.tag_category.$title->category_id");
-
-        $categories = DB::table('posts')
-            ->where('user_id',1)
-            ->where('category_id',$id)
-            ->select('id','area_id','dest','date','comment','image')
-            ->get();
-        return view('layouts.category',['cateTitle' => $cateTitle,'categories' => $categories]);
-    }
     public function edit_delete($id)
     {
         DB::table('posts')
             ->where('id',$id)
             ->delete();
         return redirect('post_list');
+    }
+    public function show($id,$pref)
+    {
+        $ids = DB::table('posts')
+            ->where('user_id',$id)
+            ->selectRaw('min(id) as id')
+            ->groupBy('dest')
+            ->groupBy('date')
+            ->pluck('id');
+        $posts = DB::table('posts')
+            ->where('user_id',$id)
+            ->whereIn('id',$ids)
+            ->where('pref',$pref)
+            ->select('id','area_id','dest','date','comment','image')
+            ->get();
+
+        $images = DB::table('posts')
+            ->where('user_id',$id)
+            ->where('pref',$pref)
+            ->select('id','comment','image','dest','date')
+            ->get();
+
+        return view('japan_maps.gallery',['posts' => $posts,'images' => $images]);
+    }
+    public function category($id)
+    {
+        $title = DB::table('posts')
+            ->where('category_id',$id)
+            ->select('category_id')
+            ->first();
+        $cateTitle = config("tag.tag_category.$title->category_id");
+
+        $categories = DB::table('posts')
+            ->join('users','posts.user_id','=','users.id')
+            ->where('category_id',$id)
+            ->select('posts.id','posts.user_id','area_id','dest','date','comment','posts.image','users.username')
+            ->get();
+        return view('layouts.category',['cateTitle' => $cateTitle,'categories' => $categories]);
+    }
+    public function gallery($area_id)
+    {
+        $ids = DB::table('posts')
+            ->selectRaw('min(id) as id')
+            ->groupBy('user_id')
+            ->groupBy('dest')
+            ->groupBy('date')
+            ->pluck('id');
+
+        $galleries = DB::table('posts')
+            ->join('users','posts.user_id','=','users.id')
+            ->whereIn('posts.id',$ids)
+            ->where('area_id',$area_id)
+            ->select('posts.id','user_id','pref','dest','date','username','users.image')
+            ->get();
+
+        $area = DB::table('posts')
+            ->whereIn('id',$ids)
+            ->where('area_id',$area_id)
+            ->select('area_id')
+            ->first();
+    return view('japan_maps.gallery_list',['galleries' => $galleries,'area' => $area]);
     }
 }

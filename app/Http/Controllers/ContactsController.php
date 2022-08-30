@@ -10,9 +10,16 @@ use App\Http\Requests\CommentRequest;
 
 class ContactsController extends Controller
 {
+    public function contact(){
+        $users = DB::table('users')
+            ->select('id','username')
+            ->get();
+        return view('layouts.contact',['users' => $users]);
+    }
     public function create(CommentRequest $request)
     {
         $contact = Contact::create([
+            'user_id' => $request->id,
             'title' => $request->title,
             'comment' => $request->comment,
             'name' => $request->name,
@@ -20,15 +27,16 @@ class ContactsController extends Controller
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        return redirect("/contact");
+        return redirect("contact");
     }
-    public function view(Request $request)
+    public function mypage(Request $request)
     {
         if($request !== null){
         $id = $request->query('page');
         $msg = 'show page: ' . $id;
 
         $contacts = DB::table('contacts')
+            ->where('user_id',Auth::id())
             ->select('title','comment','name','email','created_at')
             ->latest()
             ->paginate(5);
@@ -45,6 +53,7 @@ class ContactsController extends Controller
         ];
         }
         $pref = DB::table('posts')
+            ->where('user_id',Auth::id())
             ->select('pref')
             ->groupBy('pref')
             ->get('pref');

@@ -4,11 +4,25 @@
 <div>
     <h3 class="profile_title">Contact</h3>
     <div class="contact_content">
-        {!! Form::open(['url' => 'contact','method' => 'POST']) !!}
+        {!! Form::open(['url' => "contact",'method' => 'POST']) !!}
         {{ csrf_field() }}
         <div class="form_content">
+            <label for="username" class="">Send for...</label><small class="required"></small>
+            <select name="id" id="username" class="contact_title">
+                @foreach($users as $user)
+                <option value="{{$user->id}}">{{$user->username}}</option>
+                @endforeach
+            </select>
+                @foreach ($errors->get('username') as $error)
+                    <div>
+                        <strong class="errors">{{ $error }}</strong>
+                    </div>
+                @endforeach
+        </div>
+
+        <div class="form_content">
             <label for="title" class="title_label">Title</label><small class="required"></small>
-                <select name="title" class="contact_title">
+                <select name="title" class="contact_title" id="title">
                     @foreach(Config::get('tag.tag_name') as $key => $val)
                         <option value="{{$key}}">{{$val}}</option>
                     @endforeach
