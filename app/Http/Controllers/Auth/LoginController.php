@@ -54,23 +54,6 @@ class LoginController extends Controller
     {
         return view('auth.loginpage');
     }
-    public function post_list()
-    {
-        $id = Auth::user('id')
-            ->get();
-
-        $ids = DB::table('posts')
-            ->selectRaw('min(id) as id')
-            ->groupBy('area_id')
-            ->groupBy('date')
-            ->groupBy('dest')
-            ->pluck('id');
-        $posts = DB::table('posts')
-            ->whereIn('id',$ids)
-            ->latest()
-            ->paginate(10);
-        return view('auth.post_list',['posts' => $posts]);
-    }
     public function profile_edit()
     {
         return view('auth.profile_edit');
@@ -78,14 +61,6 @@ class LoginController extends Controller
     public function post()
     {
         return view('auth.post');
-    }
-    public function mypage()
-    {
-        $pref = DB::table('posts')
-            ->select('pref')
-            ->groupBy('pref')
-            ->get('pref');
-        return view('auth.mypage',['pref' => $pref]);
     }
     public function redirectTo()
     {

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts',function(Blueprint $table) {
             $table->increments('id')->autoIncrement();
-            $table->string('kana')->nullable();
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('bio')->nullable();
-            $table->string('image',400)->nullable();
-            $table->string('back_image',400)->nullable();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('area_id');
+            $table->integer('category_id');
+            $table->string('pref');
+            $table->string('date',50);
+            $table->string('dest',50);
+            $table->string('comment',50);
+            $table->string('image',400);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-            $table->rememberToken();
         });
     }
 
@@ -36,9 +37,5 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
-        Schema::dropIfExists('contacts');
-        Schema::dropIfExists('lists');
-        Schema::dropIfExists('alreadyGone');
-        Schema::dropIfExists('users');
     }
 }

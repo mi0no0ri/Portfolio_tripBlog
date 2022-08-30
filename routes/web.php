@@ -13,17 +13,22 @@
 
 // top
 Route::get('/','UsersController@top');
+Route::post('/','UsersController@search')->name('search');
 
 // profile
-Route::get('/profile','UsersController@profile');
+Route::get('/profile/{id}','UsersController@profile');
 
 // contact
-Route::get('/contact','UsersController@contact');
+Route::get('/contact','ContactsController@contact');
 Route::post('/contact','ContactsController@create');
 
 // gallery
-Route::get('/gallery/{id}','PostsController@show');
+Route::get('/gallery/{id}/{pref}','PostsController@show');
 Route::get('/category/{id}','PostsController@category');
+Route::get('/gallery_list/{area_id}','PostsController@gallery');
+
+// search
+Route::get('/search','UsersContoller@searchResult');
 
 // login
 Auth::routes([
@@ -47,13 +52,12 @@ Route::group(['middleware' => 'auth'],function()
     // login
     Route::get('/loginpage','Auth\LoginController@loginpage');
     // mypage
-    Route::get('mypage','Auth\LoginController@mypage')->name('mypage');
-    Route::get('mypage','ContactsController@view');
+    Route::get('mypage','ContactsController@mypage')->name('mypage');
     Route::get('mypage/{id}','ListsController@delete')->name('delete');
-    Route::get('contactForm','ContactsController@show');
     Route::post('mypage','ListsController@create')->name('todo');
+    Route::get('contactForm','ContactsController@show');
     // post
-    Route::get('/post_list','Auth\LoginController@post_list')->name('post_list');
+    Route::get('/post_list','PostsController@post_list')->name('post_list');
     Route::get('/post','Auth\LoginController@post')->name('post');
     Route::get('/post/create','PostsController@create');
     Route::post('/post/create','PostsController@create');
